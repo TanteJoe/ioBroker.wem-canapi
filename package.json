@@ -4,7 +4,7 @@
     "description": "Get Values directly from the Weishaupt devices via CanAPI",
     "author": {
         "name": "TanteJoe",
-        "email": "giithub@schubel.info"
+        "email": "github@schubel.info"
     },
     "homepage": "https://github.com/TanteJoe/ioBroker.wem_canapi",
     "license": "MIT",
@@ -36,8 +36,8 @@
         "@types/react":                                   "^18.0.0",
         "@types/react-dom":                               "^18.0.0",
         "@vitejs/plugin-react":                           "^4.0.0",
-        "react":                                          "^18.0.0",
-        "react-dom":                                      "^18.0.0",
+        "react":                                          "^15.4.0 || ^16.0.0",
+        "react-dom":                                      "^15.4.0 || ^16.0.0",
         "typescript":                                     "~5.9.3",
         "vite":                                           "^5.0.0"
     },
