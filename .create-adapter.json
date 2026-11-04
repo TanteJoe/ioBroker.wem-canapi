@@ -1,0 +1,41 @@
+{
+	"cli": true,
+	"target": "directory",
+	"adapterName": "wem_canapi",
+	"title": "WEM CanAPI",
+	"description": "Get Values directly from the Weishaupt devices via CanAPI",
+	"keywords": [
+		"WEM Weishaupt CanAPI"
+	],
+	"expert": "no",
+	"features": [
+		"adapter"
+	],
+	"adminFeatures": [],
+	"type": "climate-control",
+	"startMode": "daemon",
+	"connectionType": "local",
+	"dataSource": "poll",
+	"connectionIndicator": "no",
+	"language": "JavaScript",
+	"nodeVersion": "20",
+	"adminUi": "react",
+	"tools": [
+		"ESLint",
+		"type checking"
+	],
+	"eslintConfig": "official",
+	"releaseScript": "yes",
+	"devServer": "local",
+	"indentation": "Tab",
+	"quotes": "single",
+	"authorName": "TanteJoe",
+	"authorGithub": "TanteJoe",
+	"authorEmail": "giithub@schubel.info",
+	"gitRemoteProtocol": "HTTPS",
+	"gitCommit": "no",
+	"defaultBranch": "main",
+	"license": "MIT License",
+	"dependabot": "yes",
+	"creatorVersion": "3.1.5"
+}

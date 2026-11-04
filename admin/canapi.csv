@@ -1,0 +1,210 @@
+﻿richtung;;MI;MX;OX;OS;VS;VA;;;;;;Reg.;Registername;Funktion;Datentyp;Auflösg.;Länge;S/Cov;Aktualis.
+DDC;01;04;00;2501;00;0002;00;9473;10;Sol;SOL1;20;20;Kollektortemperatur;Aktueller Wert;Temperatur;0,1 °C;2 Bytes;;s/≥30s
+DDC;01;04;00;2502;00;0002;00;9474;30;Sol;SOL1;21;21;Speichertemperatur unten;Aktueller Wert;Temperatur;0,1 °C;2 Bytes;;m/≥60s
+DDC;01;04;00;252b;02;0004;00;9515;60;Sol;SOL1;"22
+23";"22,
+23";Solarertrag Gesamtzähler;Solarertrag;Wirkarbeit;0,01 kWh;4 Bytes;;l/≥10min
+DDC;01;04;00;252a;02;0004;00;9514;30;Sol;SOL1;"24
+25";"24,
+25";Solarertrag (heute);Solarertrag;Wirkarbeit;0,01 kWh;4 Bytes;;m/≥60s
+DDC;01;04;00;2529;02;0004;00;9513;60;Sol;SOL1;"26
+27";"26,
+27";Solarertrag (Vortag);Solarertrag;Wirkarbeit;0,01 kWh;4 Bytes;;l/≥10min
+DDC;01;02;00;2533;02;0001;00;9523;30;SG;SG1;100;100;Betriebsart Heizkreis 1 Vorgabe;"1: Standby
+2: Zeitprogramm 1
+3: Zeitprogramm 2
+4: Zeitprogramm 3
+5: Sommer
+6: Komfort
+7: Normal
+8: Absenk";Schalten;;1 Byte;S;m/≥60s
+DDC;01;02;00;2582;02;0001;00;9602;30;SG;SG1;101;101;So/Wi Umschaltung Heizkreis 1;"0: Aus
+1: Ein";Boolesch;;1 Byte;S;m/≥60s
+DDC;01;02;00;257e;04;0001;00;9598;30;SG;SG1;102;102;Betriebsart Heizkreis 1 aktuell;"1: System Standby
+2: System Sommer
+3: Estrich: Funktionsheizen
+4: Estrich: Belegreifheizen 5: Urlaub
+6: Zeitprogramm 1
+7: Zeitprogramm 2
+8: Zeitprogramm 3
+9: Sommer
+10: Absenk
+11: Normal
+12: Komfort
+13: Standby";Schalten;;1 Byte;;m/≥60s
+DDC;01;02;00;257e;05;0001;00;9598;30;SG;SG1;103;103;Status Heizkreis 1;"1: Raumfrostschutz
+2: Anlagenfrostschutz
+16: Eingang H1: Sonder
+17: Eingang H1: Komfort
+18: Eingang H1: Normal
+19: Eingang H1: Absenk
+20: Eingang H1: Standby
+21: Eingang H1: Not-Aus
+24: Party
+32: Optimierung
+33: Niveauanhebung Außentemperatur
+48: ext. Notabnahme
+49: ext. Überangebot
+50: ext. Heizvorgabe
+51: Warmwasser-vorrang
+64: Sommerbetrieb witterungsgeführt
+65: Heizgrenze Raum
+66: Heizgrenze VL
+67: Raumthermostat
+80: Komfort
+81: Normal
+82: Absenken
+83: Frost
+84: Frostschutz aktiv";Schalten;;1 Byte;;m/≥60s
+DDC;01;02;00;253b;02;0002;00;9531;30;SG;SG1;106;106;Raumsolltemperatur;Komfort;Temperatur;0,1 °C;2 Bytes;S: 0,5K;m/≥60s
+DDC;01;02;00;253a;02;0002;00;9530;30;SG;SG1;107;107;Raumsolltemperatur;Normal;Temperatur;0,1 °C;2 Bytes;S: 0,5K;m/≥60s
+DDC;01;02;00;2539;02;0002;00;9529;30;SG;SG1;108;108;Raumsolltemperatur;Absenk;Temperatur;0,1 °C;2 Bytes;S: 0,5K;m/≥60s
+DDC;01;02;00;2558;02;0002;00;9560;30;SG;SG1;109;109;Raumsolltemperatur;Aktueller Wert;Temperatur;0,1 °C;2 Bytes;;m/≥60s
+DDC;01;02;00;256b;02;0002;00;9579;30;SG;SG1;110;110;Vorlaufsolltemperatur;Komfort;Temperatur;0,1 °C;2 Bytes;S: 1K;m/≥60s
+DDC;01;02;00;256a;02;0002;00;9578;30;SG;SG1;111;111;Vorlaufsolltemperatur;Normal;Temperatur;0,1 °C;2 Bytes;S: 1K;m/≥60s
+DDC;01;02;00;2569;02;0002;00;9577;30;SG;SG1;112;112;Vorlaufsolltemperatur;Absenk;Temperatur;0,1 °C;2 Bytes;S: 1K;m/≥60s
+DDC;01;02;00;252c;02;0002;00;9516;10;SG;SG1;113;113;Vorlaufsolltemperatur;Sonderniveau;Temperatur;0,1 °C;2 Bytes;S: 1K;s/≥30s
+DDC;01;01;00;27f9;02;0002;00;10233;10;SG;SG1;114;114;N1-Vorgabe über Ethernet;;"Prozent
+(0...100%)";0,01 %;2 Bytes;"S:
+0,1%";s/≥30s
+DDC;01;02;00;2559;02;0002;00;9561;30;SG;SG1;115;115;Vorlaufsolltemperatur;Aktueller Wert;Temperatur;0,1 °C;2 Bytes;;m/≥60s
+DDC;01;02;00;2507;02;0002;00;9479;10;SG;SG1;116;116;Vorlaufisttemperatur;Aktueller Wert;Temperatur;0,1 °C;2 Bytes;;s/≥30s
+DDC;01;01;00;261f;02;0002;00;9759;10;SG;SG1;117;117;Plattenwärmetauschertemperatur (B2);Aktueller Wert;Temperatur;0,1 °C;2 Bytes;;s/≥30s
+DDC;01;01;00;2560;02;0002;00;9568;30;SG;SG1;118;118;Pufferspeicher Temperatur oben;Aktueller Wert;Temperatur;0,1 °C;2 Bytes;;m/≥60s
+DDC;01;01;00;2561;02;0002;00;9569;30;SG;SG1;119;119;Pufferspeicher Temperatur unten;Aktueller Wert;Temperatur;0,1 °C;2 Bytes;;m/≥60s
+DDC;01;01;00;263f;00;0008;00;9791;30;SG;SG1;"120
+121
+122
+123";120;Can Open spezifisch;;;;2 Bytes;;m/≥60s
+DDC;01;01;00;261e;00;0001;00;9758;30;SG;SG1;124;124;Systembetriebsart;"1: Standby
+2: Sommer
+3: Automatik";Schalten;;1 Byte;S;m/≥60s
+DDC;01;01;00;26b1;02;0002;00;9905;30;SG;SG1;125;125;Außentemperatur;Aktueller Wert;Temperatur;0,1 °C;2 Bytes;;m/≥60s
+DDC;01;01;00;259c;01;0002;00;9628;10;SG;SG1;126;126;Wärmeanforderung Heizung;Aktueller Wert;Temperatur;0,1 °C;2 Bytes;;s/≥30s
+DDC;01;01;00;259d;01;0002;00;9629;10;SG;SG1;127;127;Wärmeanforderung Warmwasser;Aktueller Wert;Temperatur;0,1 °C;2 Bytes;;s/≥30s
+DDC;01;03;00;2569;02;0001;00;9577;30;SG;SG1;130;130;Status Warmwasser;"0: Warnung anstehend
+1: Fehler anstehend";Boolesch;;1 Byte;;m/≥60s
+DDC;01;03;00;2549;02;0001;00;9545;10;SG;SG1;131;131;Warmwasser-Push;Starten;Boolesch;;1 Byte;S;s/≥30s
+DDC;01;03;00;2539;02;0002;00;9529;30;SG;SG1;132;132;WWsolltemperatur Vorgabe;Normal;Temperatur;0,1 °C;2 Bytes;S: 1K;m/≥60s
+DDC;01;03;00;2538;02;0002;00;9528;30;SG;SG1;133;133;WWsolltemperatur Vorgabe;Absenk;Temperatur;0,1 °C;2 Bytes;S: 1K;m/≥60s
+DDC;01;03;00;252c;02;0002;00;9516;30;SG;SG1;134;134;WWsolltemperatur;Aktueller Wert;Temperatur;0,1 °C;2 Bytes;;m/≥60s
+DDC;01;03;00;2529;02;0002;00;9513;10;SG;SG1;135;135;Warmwassertemperatur;Aktueller Wert;Temperatur;0,1 °C;2 Bytes;;s/≥30s
+DDC;01;03;00;2557;02;0002;00;9559;30;SG;SG1;136;136;Rücklauftemperatur Zirkulation;Aktueller Wert;Temperatur;0,1 °C;2 Bytes;;m/≥60s
+DDC;01;03;00;2551;02;0001;00;9553;10;SG;SG1;137;137;Pumpe Warmwasser;"0: Aus
+1: Ein";Boolesch;;1 Byte;;s/≥30s
+DDC;01;01;00;26e4;02;0001;00;9956;60;SG;SG1;140;140;Folgewechsel;"0: normal
+1: invertiert
+2: zeitlich
+3: Betriebsstunden";Schalten;;1 Byte;S;l/≥10min
+DDC;01;01;00;26e6;02;0002;00;9958;60;SG;SG1;141;141;Wechselzeit;Aktueller Wert;Zeit;1 h;2 Bytes;S: 1h;l/≥10min
+DDC;01;01;00;26fe;02;0002;00;9982;10;SG;SG1;142;142;Kaskade;Abgleichtemperatur;Temperatur;0,1 °C;2 Bytes;;s/≥30s
+DDC;01;01;00;261c;00;0002;00;9756;30;SG;SG1;143;143;Kaskade;"Soll-Modulation
+System HZ";"Prozent
+(0...255%)";0,01 %;2 Bytes;;m/≥60s
+DDC;01;01;00;261d;00;0002;00;9757;30;SG;SG1;144;144;Kaskade;"Soll-Modulation
+System WW";"Prozent
+(0...255%)";0,01 %;2 Bytes;;m/≥60s
+DDC;01;01;00;2612;00;0002;00;9746;30;SG;SG1;145;145;Kaskade;Sollwert System HZ;Temperatur;0,1 °C;2 Bytes;;m/≥60s
+DDC;01;01;00;2613;00;0002;00;9747;30;SG;SG1;146;146;Kaskade;Sollwert System WW;Temperatur;0,1 °C;2 Bytes;;m/≥60s
+DDC;01;01;00;2562;02;0001;00;9570;10;SG;SG1;150;"150,
+151";Uhrzeit;Aktuelle Uhrzeit;Tageszeit;;2 Bytes;;s/≥30s
+DDC;01;01;00;2562;03;0001;00;9570;10;SG;SG1;151;;;;;;;;
+DDC;01;01;00;2563;02;0001;00;9571;30;SG;SG1;153;"153,
+154,
+155";Datum;Aktuelles Datum;Datum;;3 Bytes;;m/≥60s
+DDC;01;01;00;2563;03;0001;00;9571;30;SG;SG1;154;;;;;;;;
+DDC;01;01;00;2563;04;0001;00;9571;30;SG;SG1;155;;;;;;;;
+DDC;01;09;01;2639;00;0001;00;9785;10;WTC;WTC1;160;160;Betriebsphase WTC;"0: Normalbetrieb
+10: Pumpennachlauf
+15: Brennertaktsperre Heizen
+20: Sperre Mindest-heizleistung
+24: Adaption Gasstell-glied läuft
+25: Verzögerter Heizbetrieb
+30: Softstart Warm-wasser
+35: Abregelfunktion Fernsteuerung
+40: Spreizung Vorlauf/Abgas
+45: Spreizung Vorlauf/Rücklauf
+50: Abregelfunktion Abgastemperatur
+55: Abschaltung Fernsteuerung
+60: Abschaltung Mindestumlauf
+70: SCOT Kalibration läuft";Schalten;;1 Byte;;s/≥30s
+DDC;01;07;00;2541;00;0001;00;9537;10;WTC;WTC1;161;161;Betriebsphase Brenner;"0: Brenner aus
+1: Vorbelüftung
+2: Brenner ein: Steuerbetrieb
+3: Brenner ein: Regelbetrieb
+4: Nachbelüftung";Schalten;;1 Byte;;s/≥30s
+DDC;01;07;00;2545;00;0002;00;9541;30;WTC;WTC1;163;163;Vorlaufsolltemperatur;Aktueller Wert;Temperatur;0,1 °C;2 Bytes;;m/≥60s
+DDC;01;07;00;2532;00;0002;00;9522;10;WTC;WTC1;164;164;Kesseltemperatur;Aktueller Wert;Temperatur;0,1 °C;2 Bytes;;s/≥30s
+DDC;01;09;01;2613;02;0002;00;9747;30;WTC;WTC1;165;165;Volumenstrom VPT;Aktueller Wert;"Durchfluss-
+menge";1 l/h;2 Bytes;;m/≥60s
+DDC;01;09;01;2614;02;0002;00;9748;30;WTC;WTC1;166;166;Anlagendruck;Aktueller Wert;Druck;0,01 bar;2 Bytes;;m/≥60s
+DDC;01;07;00;2533;02;0002;00;9523;10;WTC;WTC1;167;;nicht dokumentiert;;;;;;
+DDC;01;07;00;2537;00;0002;00;9527;10;WTC;WTC1;168;;nicht dokumentiert;;;;;;
+DDC;01;09;01;2631;02;0004;00;9777;30;WTC;WTC1;"170
+171";"170,
+171";Wärmeleistung VPT;Aktueller Wert;Leistung;0,01 kW;4 Bytes;;m/≥60s
+DDC;01;09;01;2628;02;0004;00;9768;60;WTC;WTC1;"172
+173";"172,
+173";Tageswärmemenge (Vortag);Gesamt;Wirkarbeit;0,01 kWh;4 Bytes;;l/≥10min
+DDC;01;09;01;2626;02;0004;00;9766;60;WTC;WTC1;"174
+175";"174,
+175";Tageswärmemenge (Vortag);Heizbetrieb;Wirkarbeit;0,01 kWh;4 Bytes;;l/≥10min
+DDC;01;09;01;2627;02;0004;00;9767;60;WTC;WTC1;"176
+177";"176,
+177";Tageswärmemenge (Vortag);Warmwasserbetrieb;Wirkarbeit;0,01 kWh;4 Bytes;;l/≥10min
+DDC;01;02;01;2533;02;0001;00;9523;30;HK;HK2;1030;1030;Betriebsart Vorgabe;"1: Standby
+2: Zeitprogramm 1
+3: Zeitprogramm 2
+4: Zeitprogramm 3
+5: Sommer
+6: Komfort
+7: Normal
+8: Absenk";Schalten;;1 Byte;S;m/≥60s
+DDC;01;02;01;2582;02;0001;00;9602;30;HK;HK2;1031;1031;So/Wi Umschaltung;"0: Aus
+1: Ein";Boolesch;;1 Byte;S;m/≥60s
+DDC;01;02;01;257e;04;0001;00;9598;30;HK;HK2;1032;1032;Betriebsart aktuell;"1: System Standby
+2: System Sommer
+3: Estrich: Funktionsheizen
+4: Estrich: Belegreifheizen 5: Urlaub
+6: Zeitprogramm 1
+7: Zeitprogramm 2
+8: Zeitprogramm 3
+9: Sommer
+10: Absenk
+11: Normal
+12: Komfort
+13: Standby";Schalten;;1 Bit;;m/≥60s
+DDC;01;02;01;257e;05;0001;00;9598;30;HK;HK2;1033;1033;Status;"1: Raumfrostschutz
+2: Anlagenfrostschutz
+16: Eingang H1: Sonder
+17: Eingang H1: Komfort
+18: Eingang H1: Normal
+19: Eingang H1: Absenk
+20: Eingang H1: Standby
+21: Eingang H1: Not-Aus
+24: Party
+32: Optimierung
+33: Niveauanhebung Außentemperatur
+48: ext. Notabnahme
+49: ext. Überangebot
+50: ext. Heizvorgabe
+51: Warmwasser-vorrang
+64: Sommerbetrieb witterungsgeführt
+65: Heizgrenze Raum
+66: Heizgrenze VL
+67: Raumthermostat
+80: Komfort
+81: Normal
+82: Absenken
+83: Frost
+84: Frostschutz aktiv";Schalten;;1 Byte;;m/≥60s
+DDC;01;02;01;253b;02;0002;00;9531;30;HK;HK2;1036;1036;Raumsolltemperatur;Komfort;Temperatur;0,1 °C;2 Bytes;S: 0,5K;m/≥60s
+DDC;01;02;01;253a;02;0002;00;9530;30;HK;HK2;1037;1037;Raumsolltemperatur;Normal;Temperatur;0,1 °C;2 Bytes;S: 0,5K;m/≥60s
+DDC;01;02;01;2539;02;0002;00;9529;30;HK;HK2;1038;1038;Raumsolltemperatur;Absenk;Temperatur;0,1 °C;2 Bytes;S: 0,5K;m/≥60s
+DDC;01;02;01;2558;02;0002;00;9560;30;HK;HK2;1039;1039;Raumsolltemperatur;Aktueller Wert;Temperatur;0,1 °C;2 Bytes;;m/≥60s
+DDC;01;02;01;256b;02;0002;00;9579;30;HK;HK2;1040;1040;Vorlaufsolltemperatur;Komfort;Temperatur;0,1 °C;2 Bytes;S: 1K;m/≥60s
+DDC;01;02;01;256a;02;0002;00;9578;30;HK;HK2;1041;1041;Vorlaufsolltemperatur;Normal;Temperatur;0,1 °C;2 Bytes;S: 1K;m/≥60s
+DDC;01;02;01;2569;02;0002;00;9577;30;HK;HK2;1042;1042;Vorlaufsolltemperatur;Absenk;Temperatur;0,1 °C;2 Bytes;S: 1K;m/≥60s
+DDC;01;02;01;252c;02;0002;00;9516;10;HK;HK2;1043;1043;Vorlaufsolltemperatur;Sonderniveau;Temperatur;0,1 °C;2 Bytes;S: 1K;s/≥30s
+DDC;01;02;01;2559;02;0002;00;9561;30;HK;HK2;1045;1045;Vorlaufsolltemperatur;Aktueller Wert;Temperatur;0,1 °C;2 Bytes;;m/≥60s
+DDC;01;02;01;2507;02;0002;00;9479;10;HK;HK2;1046;1046;Vorlaufisttemperatur;Aktueller Wert;Temperatur;0,1 °C;2 Bytes;;s/≥30s

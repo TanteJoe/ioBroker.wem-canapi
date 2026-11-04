@@ -1,0 +1,74 @@
+{
+    "name": "iobroker.wem_canapi",
+    "version": "0.0.1",
+    "description": "Get Values directly from the Weishaupt devices via CanAPI",
+    "author": {
+        "name": "TanteJoe",
+        "email": "giithub@schubel.info"
+    },
+    "homepage": "https://github.com/TanteJoe/ioBroker.wem_canapi",
+    "license": "MIT",
+    "keywords": ["WEM", "Weishaupt", "CanAPI", "ioBroker"],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/TanteJoe/ioBroker.wem_canapi.git"
+    },
+    "engines": {
+        "node": ">= 20"
+    },
+    "dependencies": {
+        "@iobroker/adapter-core": "^3.4.3"
+    },
+    "devDependencies": {
+        "@alcalzone/release-script":                       "^5.2.1",
+        "@alcalzone/release-script-plugin-iobroker":      "^5.2.0",
+        "@alcalzone/release-script-plugin-license":       "^5.2.2",
+        "@alcalzone/release-script-plugin-manual-review": "^5.2.0",
+        "@iobroker/adapter-dev":                          "^1.5.0",
+        "@mui/material":                                  "^7.0.0",
+        "material-ui":                                    "^0.20.0",
+        "@iobroker/adapter-react-v5":                     "^7.5.0",
+        "@iobroker/dev-server":                           "^0.8.0",
+        "@iobroker/eslint-config":                        "^2.3.4",
+        "@iobroker/testing":                              "^6.3.1",
+        "@tsconfig/node20":                               "^20.1.10",
+        "@types/node":                                    "^20.0.0",
+        "@types/react":                                   "^18.0.0",
+        "@types/react-dom":                               "^18.0.0",
+        "@vitejs/plugin-react":                           "^4.0.0",
+        "react":                                          "^18.0.0",
+        "react-dom":                                      "^18.0.0",
+        "typescript":                                     "~5.9.3",
+        "vite":                                           "^5.0.0"
+    },
+   "main": "main.js",
+   "files": [
+        "admin/build/",
+        "admin/index_m.html",
+        "admin/index.js",
+        "admin/index.css",
+        "admin/canapi.csv",
+        "admin/wem_canapi.png",
+        "lib/",
+        "io-package.json",
+        "LICENSE",
+        "main.js"
+    ],
+    "scripts": {
+        "build":        "cd admin && npm run build && cd .. && node scripts/sync.mjs",
+        "watch":        "cd admin && npm run watch",
+        "sync":       "node scripts/sync.mjs",
+        "test:js":      "mocha --config test/mocharc.custom.json \"{!(node_modules|test)/**/*.test.js,*.test.js,test/**/test!(PackageFiles|Startup).js}\"",
+        "test:package": "mocha test/package --exit",
+        "test":         "npm run test:js && npm run test:package",
+        "lint":         "eslint -c eslint.config.mjs .",
+        "translate":    "translate-adapter",
+        "release":      "release-script",
+        "dev-server":   "dev-server watch --no-start",
+        "dev-debug" :   "dev-server debug --wait --no-start"
+    },
+    "bugs": {
+        "url": "https://github.com/TanteJoe/ioBroker.wem_canapi/issues"
+    },
+    "readmeFilename": "README.md"
+}

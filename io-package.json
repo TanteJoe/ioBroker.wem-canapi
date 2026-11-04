@@ -1,0 +1,105 @@
+{
+	"common": {
+		"name": "wem_canapi",
+		"version": "0.0.1",
+		"news": {
+			"0.0.1": {
+				"en": "initial release",
+				"de": "Erstveröffentlichung",
+				"ru": "Начальная версия",
+				"pt": "lançamento inicial",
+				"nl": "Eerste uitgave",
+				"fr": "Première version",
+				"it": "Versione iniziale",
+				"es": "Versión inicial",
+				"pl": "Pierwsze wydanie",
+				"uk": "Початкова версія",
+				"zh-cn": "首次出版"
+			}
+		},
+		"titleLang": {
+			"en": "WEM CanAPI",
+			"de": "WEM CanAPI",
+			"ru": "WEM-CanAPI",
+			"pt": "WEM CanAPI",
+			"nl": "WEM CanAPI",
+			"fr": "WEM CanAPI",
+			"it": "WEM CanAPI",
+			"es": "MEM CanAPI",
+			"pl": "WEM CanAPI",
+			"uk": "WEM CanAPI",
+			"zh-cn": "WEM CanAPI"
+		},
+		"desc": {
+			"en": "Get Values directly from the Weishaupt devices via CanAPI",
+			"de": "Erhalten Sie Werte direkt von den Weishaupt-Geräten über CanAPI",
+			"ru": "Получайте значения напрямую с устройств Weishaupt через CanAPI.",
+			"pt": "Obtenha valores diretamente dos dispositivos Weishaupt via CanAPI",
+			"nl": "Ontvang waarden rechtstreeks van de Weishaupt-apparaten via CanAPI",
+			"fr": "Obtenez des valeurs directement depuis les appareils Weishaupt via CanAPI",
+			"it": "Ottieni valori direttamente dai dispositivi Weishaupt tramite CanAPI",
+			"es": "Obtenga valores directamente desde los dispositivos Weishaupt a través de CanAPI",
+			"pl": "Uzyskaj wartości bezpośrednio z urządzeń Weishaupt za pośrednictwem CanAPI",
+			"uk": "Отримайте значення безпосередньо з пристроїв Weishaupt через CanAPI",
+			"zh-cn": "通过 CanAPI 直接从 Weishaupt 设备获取值"
+		},
+		"authors": [
+			"TanteJoe <giithub@schubel.info>"
+		],
+		"keywords": [
+			"WEM Weishaupt CanAPI"
+		],
+		"licenseInformation": {
+			"type": "free",
+			"license": "MIT"
+		},
+		"platform": "Javascript/Node.js",
+		"icon": "wem_canapi.png",
+		"enabled": true,
+		"extIcon": "https://raw.githubusercontent.com/TanteJoe/ioBroker.wem_canapi/main/admin/wem_canapi.png",
+		"readme": "https://github.com/TanteJoe/ioBroker.wem_canapi/blob/main/README.md",
+		"loglevel": "info",
+		"tier": 3,
+		"mode": "daemon",
+		"type": "climate-control",
+		"compact": true,
+		"connectionType": "local",
+		"dataSource": "poll",
+		"adminUI": {
+            "config": "materialize",
+			"tab":"html"
+        }
+		
+    },
+    "native": {
+        "host":               "",
+        "port":               80,
+        "username":           "",
+        "password":           "",
+        "timeout":            5000,
+        "selectedDatapoints": [],
+        "importedDatapoints": []
+    },
+    "objects": [],
+    "instanceObjects": [
+        {
+            "_id": "info",
+            "type": "channel",
+            "common": { "name": "Information" },
+            "native": {}
+        },
+        {
+            "_id": "info.connection",
+            "type": "state",
+            "common": {
+                "name":  "Verbindungsstatus",
+                "type":  "boolean",
+                "role":  "indicator.connected",
+                "read":  true,
+                "write": false,
+                "def":   false
+            },
+            "native": {}
+        }
+    ]
+}

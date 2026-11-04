@@ -1,0 +1,22 @@
+{
+    "name": "iobroker.wem_canapi-admin",
+    "version": "0.0.1",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "build":  "vite build",
+        "watch":  "vite build --watch",
+        "dev":    "vite"
+    },
+    "dependencies": {
+        "react":     "^18.0.0",
+        "react-dom": "^18.0.0"
+    },
+    "devDependencies": {
+        "@vitejs/plugin-react": "^4.0.0",
+        "@types/react":         "^18.0.0",
+        "@types/react-dom":     "^18.0.0",
+        "typescript":           "^5.0.0",
+        "vite":                 "^5.0.0"
+    }
+}
