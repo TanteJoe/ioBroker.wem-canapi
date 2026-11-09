@@ -19,7 +19,7 @@ export default function TabConnection({ native, socket, instance, onChange }: Pr
         setStatus('⏳ Verbinde…');
 
         socket.emit('sendTo',
-            `wem_canapi.${instance}`,
+            `wem-canapi.${instance}`,
             'testConnection',
             {
                 host:     native.host,

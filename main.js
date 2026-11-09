@@ -20,7 +20,7 @@ class WemCanapi extends utils.Adapter {
 	constructor(options) {
 		super({
 			...options,
-			name: 'wem_canapi',
+			name: 'wem-canapi',
 		});
 		  /** @type {CanApiClient|null} */
         this.client  = null;

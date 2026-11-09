@@ -24,8 +24,8 @@
     {
   "type": "node",
   "request": "launch",
-  "name": "Launch iobroker.wem_canapi",
-  "program": "${workspaceFolder}/.dev-server/default/node_modules/iobroker.wem_canapi/main.js",
+  "name": "Launch iobroker.wem-canapi",
+  "program": "${workspaceFolder}/.dev-server/default/node_modules/iobroker.wem-canapi/main.js",
   "cwd": "${workspaceFolder}/.dev-server/default",
   "runtimeArgs": [
     "--preserve-symlinks",

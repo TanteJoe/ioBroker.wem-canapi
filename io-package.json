@@ -1,6 +1,6 @@
 {
 	"common": {
-		"name": "wem_canapi",
+		"name": "wem-canapi",
 		"version": "0.0.1",
 		"news": {
 			"0.0.1": {
@@ -54,10 +54,10 @@
 			"license": "MIT"
 		},
 		"platform": "Javascript/Node.js",
-		"icon": "wem_canapi.png",
+		"icon": "wem-canapi.png",
 		"enabled": true,
-		"extIcon": "https://raw.githubusercontent.com/TanteJoe/ioBroker.wem_canapi/main/admin/wem_canapi.png",
-		"readme": "https://github.com/TanteJoe/ioBroker.wem_canapi/blob/main/README.md",
+		"extIcon": "https://raw.githubusercontent.com/TanteJoe/ioBroker.wem-canapi/main/admin/wem-canapi.png",
+		"readme": "https://github.com/TanteJoe/ioBroker.wem-canapi/blob/main/README.md",
 		"loglevel": "info",
 		"tier": 3,
 		"mode": "daemon",

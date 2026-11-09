@@ -66,7 +66,7 @@ export default function App() {
             // Konfiguration laden
             setSockStatus('⏳ Lade Konfiguration…');
             sock.emit('getObject',
-                `system.adapter.wem_canapi.${inst}`,
+                `system.adapter.wem-canapi.${inst}`,
                 (err: any, obj: any) => {
                     if (!err && obj?.native) {
                         setNative({ ...DEFAULTS, ...obj.native });
@@ -91,10 +91,10 @@ export default function App() {
         setSaving(true);
         setSaveMsg('⏳ Speichern…');
         try {
-            const obj = await getObject(socket, `system.adapter.wem_canapi.${instance}`);
+            const obj = await getObject(socket, `system.adapter.wem-canapi.${instance}`);
             if (!obj) throw new Error('Objekt nicht gefunden');
             obj.native = { ...obj.native, ...native };
-            await setObject(socket, `system.adapter.wem_canapi.${instance}`, obj);
+            await setObject(socket, `system.adapter.wem-canapi.${instance}`, obj);
             setDirty(false);
             setSaveMsg('✅ Gespeichert!');
             setTimeout(() => setSaveMsg(''), 3000);
@@ -102,12 +102,12 @@ export default function App() {
             setTimeout(async () => {
                 try {
                     await extendObject(socket,
-                        `system.adapter.wem_canapi.${instance}`,
+                        `system.adapter.wem-canapi.${instance}`,
                         { common: { enabled: false } }
                     );
                     setTimeout(async () => {
                         await extendObject(socket,
-                            `system.adapter.wem_canapi.${instance}`,
+                            `system.adapter.wem-canapi.${instance}`,
                             { common: { enabled: true } }
                         );
                     }, 1500);

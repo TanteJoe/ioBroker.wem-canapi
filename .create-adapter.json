@@ -1,7 +1,7 @@
 {
 	"cli": true,
 	"target": "directory",
-	"adapterName": "wem_canapi",
+	"adapterName": "wem-canapi",
 	"title": "WEM CanAPI",
 	"description": "Get Values directly from the Weishaupt devices via CanAPI",
 	"keywords": [

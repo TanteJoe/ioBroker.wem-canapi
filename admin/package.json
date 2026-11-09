@@ -1,5 +1,5 @@
 {
-    "name": "iobroker.wem_canapi-admin",
+    "name": "iobroker.wem-canapi-admin",
     "version": "0.0.1",
     "private": true,
     "type": "module",

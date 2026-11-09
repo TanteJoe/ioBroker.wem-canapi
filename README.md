@@ -1,16 +1,16 @@
-![Logo](admin/wem_canapi.png)
-# ioBroker.wem_canapi
+![Logo](admin/wem-canapi.png)
+# ioBroker.wem-canapi
 
-[![NPM version](https://img.shields.io/npm/v/iobroker.wem_canapi.svg)](https://www.npmjs.com/package/iobroker.wem_canapi)
-[![Downloads](https://img.shields.io/npm/dm/iobroker.wem_canapi.svg)](https://www.npmjs.com/package/iobroker.wem_canapi)
-![Number of Installations](https://iobroker.live/badges/wem_canapi-installed.svg)
-![Current version in stable repository](https://iobroker.live/badges/wem_canapi-stable.svg)
+[![NPM version](https://img.shields.io/npm/v/iobroker.wem-canapi.svg)](https://www.npmjs.com/package/iobroker.wem-canapi)
+[![Downloads](https://img.shields.io/npm/dm/iobroker.wem-canapi.svg)](https://www.npmjs.com/package/iobroker.wem-canapi)
+![Number of Installations](https://iobroker.live/badges/wem-canapi-installed.svg)
+![Current version in stable repository](https://iobroker.live/badges/wem-canapi-stable.svg)
 
 [![NPM](https://nodei.co/npm/iobroker.wem_canapi.png?downloads=true)](https://nodei.co/npm/iobroker.wem_canapi/)
 
 **Tests:** ![Test and Release](https://github.com/TanteJoe/ioBroker.wem_canapi/workflows/Test%20and%20Release/badge.svg)
 
-## wem_canapi adapter for ioBroker
+## wem-canapi adapter for ioBroker
 
 Get Values directly from the Weishaupt devices via CanAPI
 
