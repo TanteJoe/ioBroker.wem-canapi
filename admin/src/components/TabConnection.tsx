@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import { testCon } from '../lib/socket';
 interface Props {
     native:   Record<string, any>;
     socket:   any;
@@ -14,27 +14,17 @@ export default function TabConnection({ native, socket, instance, onChange }: Pr
     async function testConnection() {
         if (!native.host) { setStatus('⚠️ Bitte Host eingeben'); return; }
         if (!socket)      { setStatus('❌ Kein Socket');          return; }
-
+        try {
         setTesting(true);
         setStatus('⏳ Verbinde…');
-
-        socket.emit('sendTo',
-            `wem-canapi.${instance}`,
-            'testConnection',
-            {
-                host:     native.host,
-                port:     native.port     || 80,
-                username: native.username || '',
-                password: native.password || '',
-            },
-            (res: any) => {
-                setStatus(res?.result
-                    ? '✅ Verbindung erfolgreich!'
-                    : `❌ ${res?.error || 'Fehler'}`
-                );
-                setTesting(false);
-            }
-        );
+        const result = await testCon(socket,`wem-canapi.${instance}`,native);
+        setStatus('✅ Verbindung erfolgreich!');
+        } catch(error) {
+            setStatus(`❌ ${error.message}`);
+        }
+        
+       
+        
     }
 
     const inp: React.CSSProperties = {

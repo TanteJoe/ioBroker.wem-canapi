@@ -8,7 +8,7 @@ function escapeCSVValue(value: string | number | boolean | null | undefined): st
   const stringValue = String(value);
 
   // Wrap in quotes if contains comma, quote, or newline
-  if (stringValue.includes(',') || stringValue.includes('"') || stringValue.includes('\n')) {
+  if (stringValue.includes(';') || stringValue.includes('"') || stringValue.includes('\n')) {
     return `"${stringValue.replace(/"/g, '""')}"`;
   }
 
@@ -26,13 +26,13 @@ function recordToString(record: Record<number, string> | null): string {
 }
 
 const CSV_HEADERS = [
-  'id',           // 1
+  'DIRECTION',
   'MI',           // 2
   'MX',           // 3
   'OX',           // 4
   'OS',           // 5
   'VS',           // 6
-  'updateInterval', // 7 (10th field in original order if needed)
+  'updateInterval in sec', // 7 (10th field in original order if needed)
   'deviceGroupName', // 8
   'deviceName',   // 9
   'pointName',    // 10 (15th field in original order if needed)
@@ -44,7 +44,7 @@ const CSV_HEADERS = [
   'enumValues',   // 16
   'canWrite',     // 17
   'ioType',       // 18
-  'treePath',     // 19
+  'treePath generated',     // 19
   'label',        // 20
   'readHex',      // 21
   'respbites',    // 22
@@ -52,12 +52,13 @@ const CSV_HEADERS = [
 
 const datapointToCSVRow = (datapoint: Datapoint): string => {
   const values = [
-    escapeCSVValue(datapoint.id),
-    escapeCSVValue(datapoint.MI),
-    escapeCSVValue(datapoint.MX),
-    escapeCSVValue(datapoint.OX),
-    escapeCSVValue(datapoint.OS),
-    escapeCSVValue(datapoint.VS),
+    "DCC",
+ //   escapeCSVValue(datapoint.id),
+    datapoint.MI.toString(16).padStart(2,'0'),
+    datapoint.MX.toString(16).padStart(2,'0'),
+    datapoint.OX.toString(16).padStart(4,'0'),
+    datapoint.OS.toString(16).padStart(2,'0'),
+    datapoint.VS.toString(16).padStart(4,'0'),
     escapeCSVValue(datapoint.updateInterval),
     escapeCSVValue(datapoint.deviceGroupName),
     escapeCSVValue(datapoint.deviceName),
@@ -76,11 +77,11 @@ const datapointToCSVRow = (datapoint: Datapoint): string => {
     escapeCSVValue(datapoint.respbites),
   ];
 
-  return values.join(',');
+  return values.join(';');
 };
 
 export function generateCSV(datapoints: Datapoint[]): string {
-  const headerRow = CSV_HEADERS.join(',');
+  const headerRow = CSV_HEADERS.join(';');
   const dataRows = datapoints.map(datapointToCSVRow);
 
   return [headerRow, ...dataRows].join('\n');

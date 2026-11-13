@@ -1,6 +1,7 @@
 {
 	"common": {
 		"name": "wem-canapi",
+		"messagebox": true,
 		"version": "0.0.1",
 		"news": {
 			"0.0.1": {

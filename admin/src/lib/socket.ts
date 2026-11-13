@@ -129,3 +129,80 @@ export function extendObject(socket: any, id: string, obj: any): Promise<void> {
         });
     });
 }
+// export function testCon(socket:any,id:string,native : Record<string, any>):Promise<void>{
+//     return new Promise(
+//         (resolve, reject) => {
+            
+// socket.emit('sendTo',
+//             `wem-canapi.${id}`,
+//             'testConnection',
+//             {
+//                 host:     native.host,
+//                 port:     native.port     || 80,
+//                 username: native.username || '',
+//                 password: native.password || '',
+//             },
+//             (err: any) => {
+//                 if (err) reject(new Error(String(err)));
+//             else resolve();
+//                 /* setStatus(res?.result
+//                     ? '✅ Verbindung erfolgreich!'
+//                     : `❌ ${res?.error || 'Fehler'}`
+//                 );
+//                 setTesting(false);
+//                 console.log('Verbindundstest Result:',res); */
+//             }
+            
+//         );
+
+//  } )
+// }
+export function testCon(socket: any, id: string, native: Record<string, any>): Promise<any> {
+    return new Promise((resolve, reject) => {
+       const targetInstance = `${id}`;
+        const data = {
+            host: native.host,
+            port: native.port || 80,
+            username: native.username || '',
+            password: native.password || '',
+        };
+
+        console.log('Target:', targetInstance);
+        console.log('Data:', data);
+
+        // Versuch 1: Connection Objekt (ioBroker v5)
+        if (socket && typeof socket.sendTo === 'function') {
+            console.log('✅ Using socket.sendTo()');
+            socket.sendTo(targetInstance, 'testConnection', data)
+                .then(resolve)
+                .catch(reject);
+        }
+        // Versuch 2: Legacy Socket mit _socket
+        else if (socket?._socket && typeof socket._socket.emit === 'function') {
+            console.log('✅ Using socket._socket.emit()');
+            socket._socket.emit('sendTo', targetInstance, 'testConnection', data, (result: any) => {
+                result?.error ? reject(new Error(result.error)) : resolve(result);
+            });
+        }
+        // Versuch 3: Direkter Socket.io Socket
+        else if (socket && typeof socket.emit === 'function') {
+            console.log('✅ Using socket.emit()');
+            socket.emit('sendTo', targetInstance, 'testConnection', data, (result: any) => {
+                console.log(result);
+                result?.error ? reject(new Error(result.error)) : resolve(result);
+            });
+        }
+        // Versuch 4: GenericApp props
+        else if (socket?.socket && typeof socket.socket.emit === 'function') {
+            console.log('✅ Using socket.socket.emit()');
+            socket.socket.emit('sendTo', targetInstance, 'testConnection', data, (result: any) => {
+                result?.error ? reject(new Error(result.error)) : resolve(result);
+            });
+        }
+        else {
+            console.error('❌ No valid socket method found!');
+            console.log('Socket:', socket);
+            reject(new Error('Socket hat keine sendTo/emit Methode'));
+        }
+    });
+}

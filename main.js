@@ -157,6 +157,11 @@ class WemCanapi extends utils.Adapter {
     // ─────────────────────────────────────────────────────────────
 
     async onMessage(obj) {
+           this.log.debug('========================================');
+    this.log.debug('MESSAGE RECEIVED IN ADAPTER!');
+    this.log.debug('Command:'+obj.command);
+    this.log.debug('Data:'+obj.message);
+    this.log.debug('========================================');
         if (!obj?.command) return;
 
         switch (obj.command) {
@@ -181,8 +186,9 @@ class WemCanapi extends utils.Adapter {
                         port:     obj.message.port || 80,
                         username: obj.message.username || '',
                         password: obj.message.password || '',
-                        log:      this.log,
+                        log:      this.log.debug,
                     });
+                    this.log.debug('Testing Connection from AdminGUI')
                     const ok = await testClient.testConnection();
                     this._respond(obj, { result: ok, error: ok ? null : 'Verbindung fehlgeschlagen' });
                 } catch (e) {

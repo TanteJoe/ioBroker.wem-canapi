@@ -22,6 +22,24 @@ export interface Datapoint {
     readHex: string;
     respbites: string;
 }
+export function parseCSV(content: string): Datapoint[] {
+    if (!content) return [];
+    const lines  = content.split('\n');
+    //const groups = parseLines(content);
+    //groupLines(lines);
+    const result: Datapoint[] = [];
+
+    lines.forEach((g, i) => {
+        try {
+            const dp = _csvRowToDatapoint(g);
+            if (dp) result.push(dp);
+        } catch(e: any) {
+            console.warn(`[CSV] Gruppe ${i} übersprungen:`, e.message);
+        }
+    });
+
+    return result;
+}
 function _stringToRecord(str) {
     if (!str) return null;
 
@@ -42,6 +60,10 @@ function _stringToRecord(str) {
     return record;
 }
 
+function _stringToBoolean(str: string): boolean {
+  return str.toLowerCase() === 'true';
+}
+
 function _unescapeCSVValue(value) {
     if (!value) return '';
 
@@ -60,32 +82,32 @@ function _csvRowToDatapoint(row) {
 
     // Split by comma, but respect quoted values
     const values = parseCSVRow(row);
-
-    if (values.length < 22) return null; // Ensure we have all expected fields
-
+    console.log('Anzahl felder ${values.length}');
+    if (values.length < 21) return null; // Ensure we have all expected fields
+    
     return {
-        id: _unescapeCSVValue(values[0]),
-        MI: _unescapeCSVValue(values[1]),
-        MX: _unescapeCSVValue(values[2]),
-        OX: _unescapeCSVValue(values[3]),
-        OS: _unescapeCSVValue(values[4]),
-        VS: _unescapeCSVValue(values[5]),
-        updateInterval: _unescapeCSVValue(values[6]),
-        deviceGroupName: _unescapeCSVValue(values[7]),
-        deviceName: _unescapeCSVValue(values[8]),
-        pointName: _unescapeCSVValue(values[9]),
-        pointfunction: _stringToRecord(values[10]),
-        dataType: _unescapeCSVValue(values[11]),
-        resolution: _unescapeCSVValue(values[12]),
-        unit: _unescapeCSVValue(values[13]),
-        sCov: _unescapeCSVValue(values[14]),
-        enumValues: _stringToRecord(values[15]),
-        canWrite: _unescapeCSVValue(values[16]),
-        ioType: _unescapeCSVValue(values[17]),
-        treePath: _unescapeCSVValue(values[18]),
-        label: _unescapeCSVValue(values[19]),
-        readHex: _unescapeCSVValue(values[20]),
-        respbites: _unescapeCSVValue(values[21]),
+        id: `${_unescapeCSVValue(values[6])}_${_unescapeCSVValue(values[7])}_${_unescapeCSVValue(values[0])}_${_unescapeCSVValue(values[1])}}_${_unescapeCSVValue(values[2])}_${_unescapeCSVValue(values[3])}_${_unescapeCSVValue(values[4])}`,
+        MI: parseInt(_unescapeCSVValue(values[0]),16),
+        MX: parseInt(_unescapeCSVValue(values[1]),16),
+        OX: parseInt(_unescapeCSVValue(values[2]),16),
+        OS: parseInt(_unescapeCSVValue(values[3]),16),
+        VS: parseInt(_unescapeCSVValue(values[4]),16),
+        updateInterval: parseInt(_unescapeCSVValue(values[5]),10),
+        deviceGroupName: _unescapeCSVValue(values[6]),
+        deviceName: _unescapeCSVValue(values[7]),
+        pointName: _unescapeCSVValue(values[8]),
+        pointfunction: _stringToRecord(values[9]),
+        dataType: _unescapeCSVValue(values[10]),
+        resolution: _unescapeCSVValue(values[11]),
+        unit: _unescapeCSVValue(values[12]),
+        sCov: _unescapeCSVValue(values[13]),
+        enumValues: _stringToRecord(values[14]),
+        canWrite: _stringToBoolean(_unescapeCSVValue(values[15])),
+        ioType: _unescapeCSVValue(values[16]),
+        treePath: `${_unescapeCSVValue(values[6])}.${_unescapeCSVValue(values[7])}.${_unescapeCSVValue(values[8])}`,
+        label: _unescapeCSVValue(values[18]),
+        readHex: _unescapeCSVValue(values[19]),
+        respbites: _unescapeCSVValue(values[20]),
     };
 }
 
@@ -94,8 +116,15 @@ function parseCSVRow(row) {
     const values = [];
     let current = '';
     let inQuotes = false;
+    //Test if Line ist Datapoint.DP must start with DCC
+    const di = row.indexOf('DCC');
+    if (di < 0){
+        console.log('DDC nicht gefunden');
+         return null;
+    }
+         let i = 0;
 
-    for (let i = 0; i < row.length; i++) {
+    for (i = 0; i < row.length; i++) {
         const char = row[i];
         const nextChar = row[i + 1];
 
@@ -108,9 +137,11 @@ function parseCSVRow(row) {
                 // Toggle quote state
                 inQuotes = !inQuotes;
             }
-        } else if (char === ',' && !inQuotes) {
+        } else if (char === ';' && !inQuotes) {
             // End of field
-            values.push(current);
+            console.log("Feld ende gefunden");
+            if (current!='DCC'){
+            values.push(current);}
             current = '';
         } else {
             current += char;

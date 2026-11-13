@@ -1,7 +1,7 @@
 import React, {
     useState, useEffect, useMemo, useCallback, useRef
 } from 'react';
-import { parseCSV, type Datapoint } from '../lib/csvParser';
+import { parseCSV, type Datapoint } from '../lib/importCSV';
 import { downloadCSV, handleDownload } from '../lib/exportCSV';
 
 interface Props {
