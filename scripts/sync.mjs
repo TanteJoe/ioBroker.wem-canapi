@@ -4,36 +4,31 @@ import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const root      = resolve(__dirname, '..');
-const src       = resolve(root, 'admin/build');
-const dst       = resolve(root, '.dev-server/default/node_modules/iobroker.wem-canapi/admin');
+const root = resolve(__dirname, '..');
+const src = resolve(root, 'admin/build');
+const dst = resolve(root, '.dev-server/default/node_modules/iobroker.wem-canapi/admin');
 
 if (!existsSync(dst)) {
-    console.log('⚠️  Dev-Server Pfad nicht gefunden');
-    process.exit(0);
+	console.log('⚠️  Dev-Server Pfad nicht gefunden');
+	process.exit(0);
 }
 
 // Diese Dateien synchronisieren
-const files = [
-    'index_m.html',
-    'index.js',
-    'index.css',
-    'jsonConfig.json',
-];
+const files = ['index_m.html', 'index.js', 'index.css', 'jsonConfig.json'];
 
 let copied = 0;
 for (const file of files) {
-    const srcFile = resolve(src, file);
-    const dstFile = resolve(dst, file);
+	const srcFile = resolve(src, file);
+	const dstFile = resolve(dst, file);
 
-    if (!existsSync(srcFile)) {
-        console.warn(`⚠️  ${file} nicht in admin/ gefunden`);
-        continue;
-    }
+	if (!existsSync(srcFile)) {
+		console.warn(`⚠️  ${file} nicht in admin/ gefunden`);
+		continue;
+	}
 
-    copyFileSync(srcFile, dstFile);
-    console.log(`✅ ${file}`);
-    copied++;
+	copyFileSync(srcFile, dstFile);
+	console.log(`✅ ${file}`);
+	copied++;
 }
 
 console.log(`\n📦 ${copied} Dateien synchronisiert → Dev-Server`);

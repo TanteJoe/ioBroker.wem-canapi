@@ -11,4 +11,6 @@ style.textContent = `
 document.head.appendChild(style);
 
 const el = document.getElementById('root');
-if (el) ReactDOM.createRoot(el).render(<App />);
+if (el) {
+	ReactDOM.createRoot(el).render(<App />);
+}

@@ -1,5 +1,9 @@
 {
 	"eslint.enable": true,
+	"eslint.format.enable": true,
+  "editor.codeActionsOnSave": {
+	"source.fixAll.eslint": "explicit"
+},
 	"json.schemas": [
 		{
 			"fileMatch": [

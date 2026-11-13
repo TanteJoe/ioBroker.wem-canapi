@@ -17,20 +17,25 @@ export default [
 			'admin/words.js',
 			'admin/admin.d.ts',
 			'admin/blockly.js',
+			'admin/vite.config.ts',
+			'admin/index.js', 
 			'**/adapter-config.d.ts',
 			'widgets/**/*.js',
-			'admin/build'
+			'admin/build',
+			'scripts/',
+			'workflows',
+			'nodes_modules'
 		],
 	},
 	{
 		// you may disable some 'jsdoc' warnings - but using jsdoc is highly recommended
 		// as this improves maintainability. jsdoc warnings will not block build process.
 		rules: {
-			// 'jsdoc/require-jsdoc': 'off',
-			// 'jsdoc/require-param': 'off',
-			// 'jsdoc/require-param-description': 'off',
-			// 'jsdoc/require-returns-description': 'off',
-			// 'jsdoc/require-returns-check': 'off',
+			 'jsdoc/require-jsdoc': 'off',
+			 'jsdoc/require-param': 'off',
+			 'jsdoc/require-param-description': 'off',
+			 'jsdoc/require-returns-description': 'off',
+			 'jsdoc/require-returns-check': 'off',
 		},
 	},
 ];
