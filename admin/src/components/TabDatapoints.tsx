@@ -429,7 +429,18 @@ export default function TabDatapoints({ native, onChange }: Props) {
 }
 
 // ── Sub-Komponenten ──────────────────────────────────────────────
-
+const fmtIvl = (s: number) => {
+	if (!s) {
+		return '?';
+	}
+	if (s < 60) {
+		return `${s}s`;
+	}
+	if (s < 3600) {
+		return `${Math.round(s / 60)}min`;
+	}
+	return `${Math.round(s / 3600)}h`;
+};
 function NodeHdr({
 	icon,
 	label,
@@ -562,16 +573,3 @@ function DPRow({
 		</div>
 	);
 }
-
-const fmtIvl = (s: number) => {
-	if (!s) {
-		return '?';
-	}
-	if (s < 60) {
-		return `${s}s`;
-	}
-	if (s < 3600) {
-		return `${Math.round(s / 60)}min`;
-	}
-	return `${Math.round(s / 3600)}h`;
-};

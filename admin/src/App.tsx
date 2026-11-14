@@ -122,7 +122,7 @@ export default function App() {
 						});
 					}, 1500);
 				} catch (e) {
-					/* ignore */
+					console.log(e.message);
 				}
 			}, 500);
 		} catch (e: any) {

@@ -1,4 +1,4 @@
-import type { Datapoint } from './csvParser';
+import type { Datapoint } from './importCSV';
 import fs from 'fs';
 
 function escapeCSVValue(value: string | number | boolean | null | undefined): string {
@@ -66,7 +66,7 @@ const datapointToCSVRow = (datapoint: Datapoint): string => {
 		escapeCSVValue(datapoint.deviceGroupName),
 		escapeCSVValue(datapoint.deviceName),
 		escapeCSVValue(datapoint.pointName),
-		recordToString(datapoint.function),
+		recordToString(datapoint.pointfunction),
 		escapeCSVValue(datapoint.dataType),
 		escapeCSVValue(datapoint.resolution),
 		escapeCSVValue(datapoint.unit),
@@ -115,7 +115,7 @@ export function downloadCSV(datapoints: Datapoint[], fileName: string = 'datapoi
 
 	URL.revokeObjectURL(url);
 }
-export const handleDownload = async () => {
+export const handleDownload = async (): Promise<void> => {
 	const response = await fetch('./canapi.csv');
 	const blob = await response.blob();
 	const url = window.URL.createObjectURL(blob);

@@ -36,6 +36,9 @@ export default [
 			 'jsdoc/require-param-description': 'off',
 			 'jsdoc/require-returns-description': 'off',
 			 'jsdoc/require-returns-check': 'off',
+			 "@typescript-eslint/explicit-function-return-type": 'warn' ,
+			 "@typescript-eslint/no-unused-vars": "warn",
+			 "@typescript-eslint/explicit-module-boundary-types": "warn",
 		},
 	},
 ];

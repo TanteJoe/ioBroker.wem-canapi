@@ -1,6 +1,6 @@
 type Callback = (socket: any) => void;
 
-let _socketInstance: any = null;
+//let _socketInstance: any = null;
 
 export function connectToSocket(callback: Callback): void {
 	// Script dynamisch laden - genau wie in der funktionierenden Version
@@ -67,7 +67,7 @@ export function connectToSocket(callback: Callback): void {
 			return;
 		}
 
-		_socketInstance = sock;
+		//	_socketInstance = sock;
 		console.log('[WEM] Socket erstellt:', typeof sock);
 
 		sock.on('connect', () => {
@@ -179,24 +179,18 @@ export function testCon(socket: any, id: string, native: Record<string, any>): P
 		if (socket && typeof socket.sendTo === 'function') {
 			console.log('✅ Using socket.sendTo()');
 			socket.sendTo(targetInstance, 'testConnection', data).then(resolve).catch(reject);
-		}
-		// Versuch 2: Legacy Socket mit _socket
-		else if (socket?._socket && typeof socket._socket.emit === 'function') {
+		} else if (socket?._socket && typeof socket._socket.emit === 'function') {
 			console.log('✅ Using socket._socket.emit()');
 			socket._socket.emit('sendTo', targetInstance, 'testConnection', data, (result: any) => {
 				result?.error ? reject(new Error(result.error)) : resolve(result);
 			});
-		}
-		// Versuch 3: Direkter Socket.io Socket
-		else if (socket && typeof socket.emit === 'function') {
+		} else if (socket && typeof socket.emit === 'function') {
 			console.log('✅ Using socket.emit()');
 			socket.emit('sendTo', targetInstance, 'testConnection', data, (result: any) => {
 				console.log(result);
 				result?.error ? reject(new Error(result.error)) : resolve(result);
 			});
-		}
-		// Versuch 4: GenericApp props
-		else if (socket?.socket && typeof socket.socket.emit === 'function') {
+		} else if (socket?.socket && typeof socket.socket.emit === 'function') {
 			console.log('✅ Using socket.socket.emit()');
 			socket.socket.emit('sendTo', targetInstance, 'testConnection', data, (result: any) => {
 				result?.error ? reject(new Error(result.error)) : resolve(result);
