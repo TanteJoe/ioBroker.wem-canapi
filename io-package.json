@@ -69,9 +69,27 @@
 		"adminUI": {
             "config": "materialize",
 			"tab":"html"
-        }
+        },
+		"dependencies": [
+      {
+        "js-controller": ">=6.0.11",
+        "web": ">=5.1.2"
+      }
+    ],
+    "globalDependencies": [
+      {
+        "admin": ">=7.6.20"
+      }
+    ]
 		
     },
+	 "protectedNative": [
+    "username",
+    "password"
+  ],
+  "encryptedNative": [
+    "password"
+  ],
     "native": {
         "host":               "",
         "port":               80,

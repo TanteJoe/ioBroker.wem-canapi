@@ -2,10 +2,7 @@
     "name": "iobroker.wem-canapi",
     "version": "0.0.1",
     "description": "Get Values directly from the Weishaupt devices via CanAPI",
-    "author": {
-        "name": "TanteJoe",
-        "email": "github@schubel.info"
-    },
+    "author": "TanteJoe <github@schubel.info>",
     "homepage": "https://github.com/TanteJoe/ioBroker.wem-canapi",
     "license": "MIT",
     "keywords": [
@@ -16,7 +13,7 @@
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/TanteJoe/ioBroker.wem-canapi.git"
+        "url": "git+https://github.com/TanteJoe/ioBroker.wem-canapi.git"
     },
     "engines": {
         "node": ">= 22"
@@ -72,13 +69,16 @@
         "translate": "translate-adapter",
         "release": "release-script",
         "release-patch": "release-script patch --yes",
-    "release-minor": "release-script minor --yes",
-    "release-major": "release-script major --yes",
+        "release-minor": "release-script minor --yes",
+        "release-major": "release-script major --yes",
         "dev-server": "dev-server watch --no-start",
         "dev-debug": "dev-server debug --wait --no-start"
     },
     "bugs": {
         "url": "https://github.com/TanteJoe/ioBroker.wem-canapi/issues"
     },
-    "readmeFilename": "README.md"
+    "directories": {
+        "lib": "lib",
+        "test": "test"
+    }
 }
