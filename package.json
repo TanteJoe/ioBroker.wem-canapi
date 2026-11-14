@@ -1,6 +1,6 @@
 {
     "name": "iobroker.wem-canapi",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "Get Values directly from the Weishaupt devices via CanAPI",
     "author": "TanteJoe <github@schubel.info>",
     "homepage": "https://github.com/TanteJoe/ioBroker.wem-canapi",
