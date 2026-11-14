@@ -100,7 +100,7 @@ function _csvRowToDatapoint(row): Datapoint {
 	} // Ensure we have all expected fields
 
 	return {
-		id: `${_unescapeCSVValue(values[6])}_${_unescapeCSVValue(values[7])}_${_unescapeCSVValue(values[0])}_${_unescapeCSVValue(values[1])}}_${_unescapeCSVValue(values[2])}_${_unescapeCSVValue(values[3])}_${_unescapeCSVValue(values[4])}`,
+		id: `${_unescapeCSVValue(values[6])}_${_unescapeCSVValue(values[7])}_${_unescapeCSVValue(values[0])}_${_unescapeCSVValue(values[1])}_${_unescapeCSVValue(values[2])}_${_unescapeCSVValue(values[3])}_${_unescapeCSVValue(values[4])}`,
 		MI: parseInt(_unescapeCSVValue(values[0]), 16),
 		MX: parseInt(_unescapeCSVValue(values[1]), 16),
 		OX: parseInt(_unescapeCSVValue(values[2]), 16),
