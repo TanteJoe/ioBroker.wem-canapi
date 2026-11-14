@@ -67,58 +67,59 @@
 		"connectionType": "local",
 		"dataSource": "poll",
 		"adminUI": {
-            "config": "materialize",
-			"tab":"html"
-        },
+			"config": "materialize",
+			"tab": "html"
+		},
 		"dependencies": [
-      {
-        "js-controller": ">=6.0.11",
-        "web": ">=5.1.2"
-      }
-    ],
-    "globalDependencies": [
-      {
-        "admin": ">=7.6.20"
-      }
-    ]
-		
-    },
-	 "protectedNative": [
-    "username",
-    "password"
-  ],
-  "encryptedNative": [
-    "password"
-  ],
-    "native": {
-        "host":               "",
-        "port":               80,
-        "username":           "",
-        "password":           "",
-        "timeout":            5000,
-        "selectedDatapoints": [],
-        "importedDatapoints": []
-    },
-    "objects": [],
-    "instanceObjects": [
-        {
-            "_id": "info",
-            "type": "channel",
-            "common": { "name": "Information" },
-            "native": {}
-        },
-        {
-            "_id": "info.connection",
-            "type": "state",
-            "common": {
-                "name":  "Verbindungsstatus",
-                "type":  "boolean",
-                "role":  "indicator.connected",
-                "read":  true,
-                "write": false,
-                "def":   false
-            },
-            "native": {}
-        }
-    ]
+			{
+				"js-controller": ">=6.0.11",
+				"web": ">=5.1.2"
+			}
+		],
+		"globalDependencies": [
+			{
+				"admin": ">=7.6.20"
+			}
+		]
+	},
+	"protectedNative": [
+		"username",
+		"password"
+	],
+	"encryptedNative": [
+		"password"
+	],
+	"native": {
+		"host": "",
+		"port": 80,
+		"username": "",
+		"password": "",
+		"timeout": 5000,
+		"selectedDatapoints": [],
+		"importedDatapoints": []
+	},
+	"objects": [],
+	"instanceObjects": [
+		{
+			"_id": "info",
+			"type": "channel",
+			"common": {
+				"name": "Information"
+			},
+			"native": {}
+		},
+		{
+			"_id": "info.connection",
+			"type": "state",
+			"common": {
+				"name": "Verbindungsstatus",
+				"type": "boolean",
+				"role": "indicator.connected",
+				"read": true,
+				"write": false,
+				"def": false
+			},
+			"native": {}
+		}
+	]
 }
