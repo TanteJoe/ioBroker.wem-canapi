@@ -99,6 +99,18 @@ function _csvRowToDatapoint(row): Datapoint {
 		return null;
 	} // Ensure we have all expected fields
 
+	const readh = `02${parseInt(_unescapeCSVValue(values[0]), 16).toString(16).padStart(2, '0')}${parseInt(
+		_unescapeCSVValue(values[1]),
+		16,
+	)
+		.toString(16)
+		.padStart(2, '0')}${parseInt(_unescapeCSVValue(values[2]), 16).toString(16).padStart(4, '0')}${parseInt(
+		_unescapeCSVValue(values[3]),
+		16,
+	)
+		.toString(16)
+		.padStart(2, '0')}${parseInt(_unescapeCSVValue(values[4]), 16).toString(16).padStart(4, '0')}00`;
+
 	return {
 		id: `${_unescapeCSVValue(values[6])}_${_unescapeCSVValue(values[7])}_${_unescapeCSVValue(values[0])}_${_unescapeCSVValue(values[1])}_${_unescapeCSVValue(values[2])}_${_unescapeCSVValue(values[3])}_${_unescapeCSVValue(values[4])}`,
 		MI: parseInt(_unescapeCSVValue(values[0]), 16),
@@ -120,7 +132,7 @@ function _csvRowToDatapoint(row): Datapoint {
 		ioType: _unescapeCSVValue(values[16]),
 		treePath: `${_unescapeCSVValue(values[6])}.${_unescapeCSVValue(values[7])}.${_unescapeCSVValue(values[8])}`,
 		label: _unescapeCSVValue(values[18]),
-		readHex: _unescapeCSVValue(values[19]),
+		readHex: readh,
 		respbites: _unescapeCSVValue(values[20]),
 	};
 }
