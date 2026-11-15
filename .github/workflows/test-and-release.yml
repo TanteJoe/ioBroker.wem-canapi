@@ -77,13 +77,12 @@ jobs:
 
 
    steps:
-    - run: |
+     - run: |
         echo "build:   ${{ needs.build.result }}"
         echo "test:    ${{ needs.test.result }}"
         echo "publish: ${{ needs.publish.result }}"
-        echo "event_name: ${{ github.event_name }}"
-        echo "event_name: ${{ github.event.head_commit.message }}"
-
+        echo "event:   ${{ github.event_name }}"
+        echo "commit:  ${{ github.event.head_commit.message || 'N/A (not a push event)' }}"
      - uses: ioBroker/testing-action-deploy@v1
        with:
          node-version: '24.x'
