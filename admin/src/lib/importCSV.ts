@@ -99,25 +99,20 @@ function _csvRowToDatapoint(row): Datapoint {
 		return null;
 	} // Ensure we have all expected fields
 
-	const readh = `02${parseInt(_unescapeCSVValue(values[0]), 16).toString(16).padStart(2, '0')}${parseInt(
-		_unescapeCSVValue(values[1]),
-		16,
-	)
-		.toString(16)
-		.padStart(2, '0')}${parseInt(_unescapeCSVValue(values[2]), 16).toString(16).padStart(4, '0')}${parseInt(
-		_unescapeCSVValue(values[3]),
-		16,
-	)
-		.toString(16)
-		.padStart(2, '0')}${parseInt(_unescapeCSVValue(values[4]), 16).toString(16).padStart(4, '0')}00`;
+	const mi = parseInt(_unescapeCSVValue(values[0]), 16);
+	const mx = parseInt(_unescapeCSVValue(values[1]), 16);
+	const ox = parseInt(_unescapeCSVValue(values[2]), 16);
+	const os = parseInt(_unescapeCSVValue(values[3]), 16);
+	const vs = parseInt(_unescapeCSVValue(values[4]), 16);
+	const readh = `${mi.toString(16).padStart(2, '0')}${mx.toString(16).padStart(2, '0')}${ox.toString(16).padStart(4, '0')}${os.toString(16).padStart(2, '0')}${vs.toString(16).padStart(4, '0')}00`;
 
 	return {
 		id: `${_unescapeCSVValue(values[6])}_${_unescapeCSVValue(values[7])}_${_unescapeCSVValue(values[0])}_${_unescapeCSVValue(values[1])}_${_unescapeCSVValue(values[2])}_${_unescapeCSVValue(values[3])}_${_unescapeCSVValue(values[4])}`,
-		MI: parseInt(_unescapeCSVValue(values[0]), 16),
-		MX: parseInt(_unescapeCSVValue(values[1]), 16),
-		OX: parseInt(_unescapeCSVValue(values[2]), 16),
-		OS: parseInt(_unescapeCSVValue(values[3]), 16),
-		VS: parseInt(_unescapeCSVValue(values[4]), 16),
+		MI: mi,
+		MX: mx,
+		OX: ox,
+		OS: os,
+		VS: vs,
 		updateInterval: parseInt(_unescapeCSVValue(values[5]), 10),
 		deviceGroupName: _unescapeCSVValue(values[6]),
 		deviceName: _unescapeCSVValue(values[7]),

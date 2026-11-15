@@ -1,80 +1,86 @@
 ﻿DIRECTION;MI;MX;OX;OS;VS;updateInterval in sec;deviceGroupName;deviceName;pointName;function;dataType;resolution;unit;sCov;enumValues;canWrite;ioType;treePath generated;label;readHex;respbites
-DCC;4;0;2501;0;2;10;Solar;Sol1;Kollektortemperatur;;Temperatur;0,1;°C;;;false;;Sol.Solar.Kollektortemperatur;;0400250100000200;2
-DCC;4;0;2502;0;2;30;Solar;Sol1;Speichertemperatur unten;;Temperatur;0,1;°C;;;false;;Sol.Solar.Speichertemperatur unten;;0400250200000200;2
-DCC;4;0;252b;2;4;60;Solar;Sol1;Solarertrag Gesamtzähler Solarertrag;;Wirkarbeit;0,01;kWh;;;false;;Sol.Solar.Solarertrag Gesamtzähler Solarertrag;;0400252b02000400;4
-DCC;4;0;252a;2;4;30;Solar;Sol1;Solarertrag (heute) Solarertrag;;Wirkarbeit;0,01;kWh;;;false;;Sol.Solar.Solarertrag (heute) Solarertrag;;0400252a02000400;4
-DCC;4;0;2529;2;4;60;Solar;Sol1;Solarertrag (Vortag) Solarertrag;;Wirkarbeit;0,01;kWh;;;false;;Sol.Solar.Solarertrag (Vortag) Solarertrag;;0400252902000400;4
-Heitzkreise;;;;;;;;;;;;;;;;;;;;;
-HK1;;;;;;;;;;;;;;;;;;;;;
-DCC;2;0;2533;2;1;30;HK;Heizkörper;Betriebsart Heizkreis 1 Vorgabe;;Schalten;;;S;1:Standby|2:Zeitprogramm 1|3:Zeitprogramm 2|4:Zeitprogramm 3|5:Sommer|6:Komfort|7:Normal|8:Absenk;true;;SG.SG1.Betriebsart Heizkreis 1 Vorgabe;;0200253302000100;1
-DCC;2;0;2582;2;1;30;HK;Heizkörper;So/Wi Umschaltung Heizkreis 1;;Boolesch;;;S;0:Aus|1:Ein;true;;SG.SG1.So/Wi Umschaltung Heizkreis 1;;0200258202000100;1
-DCC;2;0;257e;4;1;30;HK;Heizkörper;Betriebsart Heizkreis 1 aktuell;;Schalten;;;;1:System Standby|2:System Sommer|3:Estrich|4:Estrich|6:Zeitprogramm 1|7:Zeitprogramm 2|8:Zeitprogramm 3|9:Sommer|10:Absenk|11:Normal|12:Komfort|13:Standby;false;;SG.SG1.Betriebsart Heizkreis 1 aktuell;;0200257e04000100;1
-DCC;2;0;257e;5;1;30;HK;Heizkörper;Status Heizkreis 1;;Schalten;;;;1:Raumfrostschutz|2:Anlagenfrostschutz|16:Eingang H1|17:Eingang H1|18:Eingang H1|19:Eingang H1|20:Eingang H1|21:Eingang H1|24:Party|32:Optimierung|33:Niveauanhebung Außentemperatur|48:ext. Notabnahme|49:ext. Überangebot|50:ext. Heizvorgabe|51:Warmwasser-vorrang|64:Sommerbetrieb witterungsgeführt|65:Heizgrenze Raum|66:Heizgrenze VL|67:Raumthermostat|80:Komfort|81:Normal|82:Absenken|83:Frost|84:Frostschutz aktiv;false;;SG.SG1.Status Heizkreis 1;;0200257e05000100;1
-DCC;2;0;253b;2;2;30;HK;Heizkörper;Raumsolltemperatur Komfort;;Temperatur;0,1;°C;S: 0,5K;;true;;SG.SG1.Raumsolltemperatur Komfort;;0200253b02000200;2
-DCC;2;0;253a;2;2;30;HK;Heizkörper;Raumsolltemperatur Normal;;Temperatur;0,1;°C;S: 0,5K;;true;;SG.SG1.Raumsolltemperatur Normal;;0200253a02000200;2
-DCC;2;0;2539;2;2;30;HK;Heizkörper;Raumsolltemperatur Absenk;;Temperatur;0,1;°C;S: 0,5K;;true;;SG.SG1.Raumsolltemperatur Absenk;;0200253902000200;2
-DCC;2;0;2558;2;2;30;HK;Heizkörper;Raumsolltemperatur;;Temperatur;0,1;°C;;;false;;SG.SG1.Raumsolltemperatur;;0200255802000200;2
-DCC;2;0;256b;2;2;30;HK;Heizkörper;Vorlaufsolltemperatur Komfort;;Temperatur;0,1;°C;S: 1K;;true;;SG.SG1.Vorlaufsolltemperatur Komfort;;0200256b02000200;2
-DCC;2;0;256a;2;2;30;HK;Heizkörper;Vorlaufsolltemperatur Normal;;Temperatur;0,1;°C;S: 1K;;true;;SG.SG1.Vorlaufsolltemperatur Normal;;0200256a02000200;2
-DCC;2;0;2569;2;2;30;HK;Heizkörper;Vorlaufsolltemperatur Absenk;;Temperatur;0,1;°C;S: 1K;;true;;SG.SG1.Vorlaufsolltemperatur Absenk;;0200256902000200;2
-DCC;2;0;252c;2;2;10;HK;Heizkörper;Vorlaufsolltemperatur Sonderniveau;;Temperatur;0,1;°C;S: 1K;;true;;SG.SG1.Vorlaufsolltemperatur Sonderniveau;;0200252c02000200;2
-DCC;2;0;2559;2;2;30;HK;Heizkörper;Vorlaufsolltemperatur;;Temperatur;0,1;°C;;;false;;SG.SG1.Vorlaufsolltemperatur;;0200255902000200;2
-DCC;2;0;2507;2;2;10;HK;Heizkörper;Vorlaufisttemperatur;;Temperatur;0,1;°C;;;false;;SG.SG1.Vorlaufisttemperatur;;0200250702000200;2
-HK2;;;;;;;;;;;;;;;;;;;;;
-DCC;2;1;2533;2;1;30;HK;Fussboden;Betriebsart Heizkreis 2 Vorgabe;;Schalten;;;S;1:Standby|2:Zeitprogramm 1|3:Zeitprogramm 2|4:Zeitprogramm 3|5:Sommer|6:Komfort|7:Normal|8:Absenk;true;;SG.SG1.Betriebsart Heizkreis 1 Vorgabe;;0200253302000100;1
-DCC;2;1;2582;2;1;30;HK;Fussboden;So/Wi Umschaltung Heizkreis 2;;Boolesch;;;S;0:Aus|1:Ein;true;;SG.SG1.So/Wi Umschaltung Heizkreis 1;;0200258202000100;1
-DCC;2;1;257e;4;1;30;HK;Fussboden;Betriebsart Heizkreis 2 aktuell;;Schalten;;;;1:System Standby|2:System Sommer|3:Estrich|4:Estrich|6:Zeitprogramm 1|7:Zeitprogramm 2|8:Zeitprogramm 3|9:Sommer|10:Absenk|11:Normal|12:Komfort|13:Standby;false;;SG.SG1.Betriebsart Heizkreis 1 aktuell;;0200257e04000100;1
-DCC;2;1;257e;5;1;30;HK;Fussboden;Status Heizkreis 2;;Schalten;;;;1:Raumfrostschutz|2:Anlagenfrostschutz|16:Eingang H1|17:Eingang H1|18:Eingang H1|19:Eingang H1|20:Eingang H1|21:Eingang H1|24:Party|32:Optimierung|33:Niveauanhebung Außentemperatur|48:ext. Notabnahme|49:ext. Überangebot|50:ext. Heizvorgabe|51:Warmwasser-vorrang|64:Sommerbetrieb witterungsgeführt|65:Heizgrenze Raum|66:Heizgrenze VL|67:Raumthermostat|80:Komfort|81:Normal|82:Absenken|83:Frost|84:Frostschutz aktiv;false;;SG.SG1.Status Heizkreis 1;;0200257e05000100;1
-DCC;2;1;253b;2;2;30;HK;Fussboden;Raumsolltemperatur Komfort;;Temperatur;0,1;°C;S: 0,5K;;true;;SG.SG1.Raumsolltemperatur Komfort;;0200253b02000200;2
-DCC;2;1;253a;2;2;30;HK;Fussboden;Raumsolltemperatur Normal;;Temperatur;0,1;°C;S: 0,5K;;true;;SG.SG1.Raumsolltemperatur Normal;;0200253a02000200;2
-DCC;2;1;2539;2;2;30;HK;Fussboden;Raumsolltemperatur Absenk;;Temperatur;0,1;°C;S: 0,5K;;true;;SG.SG1.Raumsolltemperatur Absenk;;0200253902000200;2
-DCC;2;1;2558;2;2;30;HK;Fussboden;Raumsolltemperatur;;Temperatur;0,1;°C;;;false;;SG.SG1.Raumsolltemperatur;;0200255802000200;2
-DCC;2;1;256b;2;2;30;HK;Fussboden;Vorlaufsolltemperatur Komfort;;Temperatur;0,1;°C;S: 1K;;true;;SG.SG1.Vorlaufsolltemperatur Komfort;;0200256b02000200;2
-DCC;2;1;256a;2;2;30;HK;Fussboden;Vorlaufsolltemperatur Normal;;Temperatur;0,1;°C;S: 1K;;true;;SG.SG1.Vorlaufsolltemperatur Normal;;0200256a02000200;2
-DCC;2;1;2569;2;2;30;HK;Fussboden;Vorlaufsolltemperatur Absenk;;Temperatur;0,1;°C;S: 1K;;true;;SG.SG1.Vorlaufsolltemperatur Absenk;;0200256902000200;2
-DCC;2;1;252c;2;2;10;HK;Fussboden;Vorlaufsolltemperatur Sonderniveau;;Temperatur;0,1;°C;S: 1K;;true;;SG.SG1.Vorlaufsolltemperatur Sonderniveau;;0200252c02000200;2
-DCC;2;1;2559;2;2;30;HK;Fussboden;Vorlaufsolltemperatur;;Temperatur;0,1;°C;;;false;;SG.SG1.Vorlaufsolltemperatur;;0200255902000200;2
-DCC;2;1;2507;2;2;10;HK;Fussboden;Vorlaufisttemperatur;;Temperatur;0,1;°C;;;false;;SG.SG1.Vorlaufisttemperatur;;0200250702000200;2
-Heitzung;;;;;;;;;;;;;;;;;;;;;
-DCC;1;0;27f9;2;2;10;SG;SG1;N1-Vorgabe über Ethernet ;;Prozent;;;;;false;;SG.SG1.N1-Vorgabe über Ethernet ;;;
-DCC;1;0;261f;2;2;10;SG;SG1;Plattenwärmetauschertemperatur (B2);;Temperatur;0,1;°C;;;false;;SG.SG1.Plattenwärmetauschertemperatur (B2);;0100261f02000200;2
-DCC;1;0;2560;2;2;30;SG;SG1;Pufferspeicher Temperatur oben;;Temperatur;0,1;°C;;;false;;SG.SG1.Pufferspeicher Temperatur oben;;0100256002000200;2
-DCC;1;0;2561;2;2;30;SG;SG1;Pufferspeicher Temperatur unten;;Temperatur;0,1;°C;;;false;;SG.SG1.Pufferspeicher Temperatur unten;;0100256102000200;2
-DCC;1;0;263f;0;8;30;SG;SG1;Can Open spezifisch ;;;;;;;false;;SG.SG1.Can Open spezifisch ;;0100263f00000800;2
-DCC;1;0;261e;0;1;30;SG;SG1;Systembetriebsart;;Schalten;;;S;1:Standby|2:Sommer|3:Automatik;true;;SG.SG1.Systembetriebsart;;0100261e00000100;1
-DCC;1;0;26b1;2;2;30;SG;SG1;Außentemperatur;;Temperatur;0,1;°C;;;false;;SG.SG1.Außentemperatur;;010026b102000200;2
-DCC;1;0;259c;1;2;10;SG;SG1;Wärmeanforderung Heizung;;Temperatur;0,1;°C;;;false;;SG.SG1.Wärmeanforderung Heizung;;0100259c01000200;2
-DCC;3;0;2557;2;2;30;SG;SG1;Rücklauftemperatur Zirkulation;;Temperatur;0,1;°C;;;false;;SG.SG1.Rücklauftemperatur Zirkulation;;0300255702000200;2
-DCC;3;0;2551;2;1;10;SG;SG1;Pumpe Warmwasser;;Boolesch;;;;0:Aus|1:Ein;false;;SG.SG1.Pumpe Warmwasser;;0300255102000100;1
-DCC;1;0;26e4;2;1;60;SG;SG1;Folgewechsel;;Schalten;;;S;0:normal|1:invertiert|2:zeitlich|3:Betriebsstunden;true;;SG.SG1.Folgewechsel;;010026e402000100;1
-DCC;1;0;26e6;2;2;60;SG;SG1;Wechselzeit;;Zeit;1;h;S: 1h;;true;;SG.SG1.Wechselzeit;;010026e602000200;2
-DCC;1;0;26fe;2;2;10;SG;SG1;Kaskade Abgleichtemperatur;;Temperatur;0,1;°C;;;false;;SG.SG1.Kaskade Abgleichtemperatur;;010026fe02000200;2
-DCC;1;0;261c;0;2;30;SG;SG1;Kaskade Soll-Modulation;;;;;;;false;;SG.SG1.Kaskade Soll-Modulation;;;
-DCC;1;0;2612;0;2;30;SG;SG1;Kaskade Sollwert System HZ;;Temperatur;0,1;°C;;;false;;SG.SG1.Kaskade Sollwert System HZ;;0100261200000200;2
-DCC;1;0;2613;0;2;30;SG;SG1;Kaskade Sollwert System WW;;Temperatur;0,1;°C;;;false;;SG.SG1.Kaskade Sollwert System WW;;0100261300000200;2
-DCC;1;0;2562;2;1;10;SG;SG1;Uhrzeit Aktuelle Uhrzeit Stunde;;Tageszeit;;;;;false;;SG.SG1.Uhrzeit Aktuelle Uhrzeit;;0100256202000100;2
-DCC;1;0;2562;3;1;10;SG;SG1;Uhrzeit Aktuelle Uhrzeit Minute;;Tageszeit;;;;;false;;SG.SG1. ;;0100256203000100;
-DCC;1;0;2563;2;1;30;SG;SG1;Datum Aktuelles Datum Tag;;Datum;;;;;false;;SG.SG1.Datum Aktuelles Datum;;0100256302000100;3
-DCC;1;0;2563;3;1;30;SG;SG1;Datum Aktuelles Datum Monat;;Datum;;;;;false;;SG.SG1. ;;0100256303000100;
-DCC;1;0;2563;4;1;30;SG;SG1;Datum Aktuelles Datum Jahr;;Datum;;;;;false;;SG.SG1. ;;0100256304000100;
-DCC;9;1;2639;0;1;10;WTC;WTC1;Betriebsphase WTC;;Schalten;;;;0:Normalbetrieb|10:Pumpennachlauf|15:Brennertaktsperre Heizen|20:Sperre Mindest-heizleistung|24:Adaption Gasstell-glied läuft|25:Verz√∂gerter Heizbetrieb|30:Softstart Warm-wasser|35:Abregelfunktion Fernsteuerung|40:Spreizung Vorlauf/Abgas|45:Spreizung Vorlauf/Rücklauf|50:Abregelfunktion Abgastemperatur|55:Abschaltung Fernsteuerung|60:Abschaltung Mindestumlauf|70:SCOT Kalibration läuft;false;;WTC.WTC1.Betriebsphase WTC;;0901263900000100;1
-DCC;7;0;2541;0;1;10;WTC;WTC1;Betriebsphase Brenner;;Schalten;;;;0:Brenner aus|1:Vorbelüftung|2:Brenner ein|3:Brenner ein|4:Nachbelüftung;false;;WTC.WTC1.Betriebsphase Brenner;;0700254100000100;1
-DCC;7;0;2545;0;2;30;WTC;WTC1;Vorlaufsolltemperatur;;Temperatur;0,1;°C;;;false;;WTC.WTC1.Vorlaufsolltemperatur;;0700254500000200;2
-DCC;7;0;2532;0;2;10;WTC;WTC1;Kesseltemperatur;;Temperatur;0,1;°C;;;false;;WTC.WTC1.Kesseltemperatur;;0700253200000200;2
-DCC;9;1;2613;2;2;30;WTC;WTC1;Volumenstrom VPT;;Durchfluss-;;;;;false;;WTC.WTC1.Volumenstrom VPT;;;
-DCC;9;1;2614;2;2;30;WTC;WTC1;Anlagendruck;;Druck;0,01;bar;;;false;;WTC.WTC1.Anlagendruck;;0901261402000200;2
-;;;;;;;;;;;;;;;;;;;;;
-Leistung;;;;;;;;;;;;;;;;;;;;;
-DCC;9;1;2631;2;4;30;Leistung;WTC1;Wärmeleistung VPT;;Leistung;0,01;kW;;;false;;WTC.WTC1.Wärmeleistung VPT;;0901263102000400;4
-DCC;9;1;2628;2;4;60;Leistung;WTC1;Tageswärmemenge (Vortag) Gesamt;;Wirkarbeit;0,01;kWh;;;false;;WTC.WTC1.Tageswärmemenge (Vortag) Gesamt;;0901262802000400;4
-DCC;9;1;2626;2;4;60;Leistung;WTC1;Tageswärmemenge (Vortag) Heizbetrieb;;Wirkarbeit;0,01;kWh;;;false;;WTC.WTC1.Tageswärmemenge (Vortag) Heizbetrieb;;0901262602000400;4
-DCC;9;1;2627;2;4;60;Leistung;WTC1;Tageswärmemenge (Vortag) Warmwasserbetrieb;;Wirkarbeit;0,01;kWh;;;false;;WTC.WTC1.Tageswärmemenge (Vortag) Warmwasserbetrieb;;0901262702000400;4
-;;;;;;;;;;;;;;;;;;;;;
-Warmwasser;;;;;;;;;;;;;;;;;;;;;
-DCC;1;0;259d;1;2;10;Wasser;SG1;Wärmeanforderung Warmwasser;;Temperatur;0,1;°C;;;false;;SG.SG1.Wärmeanforderung Warmwasser;;0100259d01000200;2
-DCC;3;0;2569;2;1;30;Wasser;SG1;Status Warmwasser;;Boolesch;;;;0:Warnung anstehend|1:Fehler anstehend;false;;SG.SG1.Status Warmwasser;;0300256902000100;1
-DCC;3;0;2549;2;1;10;Wasser;SG1;Warmwasser-Push Starten;;Boolesch;;;S;;true;;SG.SG1.Warmwasser-Push Starten;;0300254902000100;1
-DCC;3;0;2539;2;2;30;Wasser;SG1;WWsolltemperatur Vorgabe Normal;;Temperatur;0,1;°C;S: 1K;;true;;SG.SG1.WWsolltemperatur Vorgabe Normal;;0300253902000200;2
-DCC;3;0;2538;2;2;30;Wasser;SG1;WWsolltemperatur Vorgabe Absenk;;Temperatur;0,1;°C;S: 1K;;true;;SG.SG1.WWsolltemperatur Vorgabe Absenk;;0300253802000200;2
-DCC;3;0;252c;2;2;30;Wasser;SG1;WWsolltemperatur;;Temperatur;0,1;°C;;;false;;SG.SG1.WWsolltemperatur;;0300252c02000200;2
-DCC;3;0;2529;2;2;10;Wasser;SG1;Warmwassertemperatur;;Temperatur;0,1;°C;;;false;;SG.SG1.Warmwassertemperatur;;0300252902000200;2
+DCC;04;00;2501;00;0002;10;Solar;Sol1;Kollektortemperatur;;Temperatur;0,1;°C;;;false;;Solar.Sol1.Kollektortemperatur;;020400250100000200;2
+DCC;04;00;2502;00;0002;30;Solar;Sol1;Speichertemperatur unten;;Temperatur;0,1;°C;;;false;;Solar.Sol1.Speichertemperatur unten;;020400250200000200;2
+DCC;04;00;252b;02;0004;60;Solar;Sol1;Solarertrag Gesamtzähler Solarertrag;;Wirkarbeit;0,01;kWh;;;false;;Solar.Sol1.Solarertrag Gesamtzähler Solarertrag;;020400252b02000400;4
+DCC;04;00;252a;02;0004;30;Solar;Sol1;Solarertrag (heute) Solarertrag;;Wirkarbeit;0,01;kWh;;;false;;Solar.Sol1.Solarertrag (heute) Solarertrag;;020400252a02000400;4
+DCC;04;00;2529;02;0004;60;Solar;Sol1;Solarertrag (Vortag) Solarertrag;;Wirkarbeit;0,01;kWh;;;false;;Solar.Sol1.Solarertrag (Vortag) Solarertrag;;020400252902000400;4
+DCC;02;00;2533;02;0002;30;HK;Heizkörper;Betriebsart Heizkreis 1 Vorgabe;;Schalten;;;S;1:Standby|2:Zeitprogramm 1|3:Zeitprogramm 2|4:Zeitprogramm 3|5:Sommer|6:Komfort|7:Normal|8:Absenk;true;;HK.Heizkörper.Betriebsart Heizkreis 1 Vorgabe;;020200253302000200;1
+DCC;02;00;2582;02;0002;30;HK;Heizkörper;So/Wi Umschaltung Heizkreis 1;;Boolesch;;;S;0:Aus|1:Ein;true;;HK.Heizkörper.So/Wi Umschaltung Heizkreis 1;;020200258202000200;1
+DCC;02;00;257e;04;0002;30;HK;Heizkörper;Betriebsart Heizkreis 1 aktuell;;Schalten;;;;1:System Standby|2:System Sommer|3:Estrich|4:Estrich|6:Zeitprogramm 1|7:Zeitprogramm 2|8:Zeitprogramm 3|9:Sommer|10:Absenk|11:Normal|12:Komfort|13:Standby;false;;HK.Heizkörper.Betriebsart Heizkreis 1 aktuell;;020200257e04000200;1
+DCC;02;00;257e;05;0002;30;HK;Heizkörper;Status Heizkreis 1;;Schalten;;;;1:Raumfrostschutz|2:Anlagenfrostschutz|16:Eingang H1|17:Eingang H1|18:Eingang H1|19:Eingang H1|20:Eingang H1|21:Eingang H1|24:Party|32:Optimierung|33:Niveauanhebung Außentemperatur|48:ext. Notabnahme|49:ext. Überangebot|50:ext. Heizvorgabe|51:Warmwasser-vorrang|64:Sommerbetrieb witterungsgeführt|65:Heizgrenze Raum|66:Heizgrenze VL|67:Raumthermostat|80:Komfort|81:Normal|82:Absenken|83:Frost|84:Frostschutz aktiv;false;;HK.Heizkörper.Status Heizkreis 1;;020200257e05000200;1
+DCC;02;00;253b;02;0002;30;HK;Heizkörper;Raumsolltemperatur Komfort;;Temperatur;0,1;°C;S: 0,5K;;true;;HK.Heizkörper.Raumsolltemperatur Komfort;;020200253b02000200;2
+DCC;02;00;253a;02;0002;30;HK;Heizkörper;Raumsolltemperatur Normal;;Temperatur;0,1;°C;S: 0,5K;;true;;HK.Heizkörper.Raumsolltemperatur Normal;;020200253a02000200;2
+DCC;02;00;2539;02;0002;30;HK;Heizkörper;Raumsolltemperatur Absenk;;Temperatur;0,1;°C;S: 0,5K;;true;;HK.Heizkörper.Raumsolltemperatur Absenk;;020200253902000200;2
+DCC;02;00;2558;02;0002;30;HK;Heizkörper;Raumsolltemperatur;;Temperatur;0,1;°C;;;false;;HK.Heizkörper.Raumsolltemperatur;;020200255802000200;2
+DCC;02;00;256b;02;0002;30;HK;Heizkörper;Vorlaufsolltemperatur Komfort;;Temperatur;0,1;°C;S: 1K;;true;;HK.Heizkörper.Vorlaufsolltemperatur Komfort;;020200256b02000200;2
+DCC;02;00;256a;02;0002;30;HK;Heizkörper;Vorlaufsolltemperatur Normal;;Temperatur;0,1;°C;S: 1K;;true;;HK.Heizkörper.Vorlaufsolltemperatur Normal;;020200256a02000200;2
+DCC;02;00;2569;02;0002;30;HK;Heizkörper;Vorlaufsolltemperatur Absenk;;Temperatur;0,1;°C;S: 1K;;true;;HK.Heizkörper.Vorlaufsolltemperatur Absenk;;020200256902000200;2
+DCC;02;00;252c;02;0002;10;HK;Heizkörper;Vorlaufsolltemperatur Sonderniveau;;Temperatur;0,1;°C;S: 1K;;true;;HK.Heizkörper.Vorlaufsolltemperatur Sonderniveau;;020200252c02000200;2
+DCC;02;00;2559;02;0002;30;HK;Heizkörper;Vorlaufsolltemperatur;;Temperatur;0,1;°C;;;false;;HK.Heizkörper.Vorlaufsolltemperatur;;020200255902000200;2
+DCC;02;00;2507;02;0002;10;HK;Heizkörper;Vorlaufisttemperatur;;Temperatur;0,1;°C;;;false;;HK.Heizkörper.Vorlaufisttemperatur;;020200250702000200;2
+DCC;02;01;2533;02;0002;30;HK;Fussboden;Betriebsart Heizkreis 2 Vorgabe;;Schalten;;;S;1:Standby|2:Zeitprogramm 1|3:Zeitprogramm 2|4:Zeitprogramm 3|5:Sommer|6:Komfort|7:Normal|8:Absenk;true;;HK.Fussboden.Betriebsart Heizkreis 2 Vorgabe;;020201253302000200;1
+DCC;02;01;2582;02;0002;30;HK;Fussboden;So/Wi Umschaltung Heizkreis 2;;Boolesch;;;S;0:Aus|1:Ein;true;;HK.Fussboden.So/Wi Umschaltung Heizkreis 2;;020201258202000200;1
+DCC;02;01;257e;04;0002;30;HK;Fussboden;Betriebsart Heizkreis 2 aktuell;;Schalten;;;;1:System Standby|2:System Sommer|3:Estrich|4:Estrich|6:Zeitprogramm 1|7:Zeitprogramm 2|8:Zeitprogramm 3|9:Sommer|10:Absenk|11:Normal|12:Komfort|13:Standby;false;;HK.Fussboden.Betriebsart Heizkreis 2 aktuell;;020201257e04000200;1
+DCC;02;01;257e;05;0002;30;HK;Fussboden;Status Heizkreis 2;;Schalten;;;;1:Raumfrostschutz|2:Anlagenfrostschutz|16:Eingang H1|17:Eingang H1|18:Eingang H1|19:Eingang H1|20:Eingang H1|21:Eingang H1|24:Party|32:Optimierung|33:Niveauanhebung Außentemperatur|48:ext. Notabnahme|49:ext. Überangebot|50:ext. Heizvorgabe|51:Warmwasser-vorrang|64:Sommerbetrieb witterungsgeführt|65:Heizgrenze Raum|66:Heizgrenze VL|67:Raumthermostat|80:Komfort|81:Normal|82:Absenken|83:Frost|84:Frostschutz aktiv;false;;HK.Fussboden.Status Heizkreis 2;;020201257e05000200;1
+DCC;02;01;253b;02;0002;30;HK;Fussboden;Raumsolltemperatur Komfort;;Temperatur;0,1;°C;S: 0,5K;;true;;HK.Fussboden.Raumsolltemperatur Komfort;;020201253b02000200;2
+DCC;02;01;253a;02;0002;30;HK;Fussboden;Raumsolltemperatur Normal;;Temperatur;0,1;°C;S: 0,5K;;true;;HK.Fussboden.Raumsolltemperatur Normal;;020201253a02000200;2
+DCC;02;01;2539;02;0002;30;HK;Fussboden;Raumsolltemperatur Absenk;;Temperatur;0,1;°C;S: 0,5K;;true;;HK.Fussboden.Raumsolltemperatur Absenk;;020201253902000200;2
+DCC;02;01;2558;02;0002;30;HK;Fussboden;Raumsolltemperatur;;Temperatur;0,1;°C;;;false;;HK.Fussboden.Raumsolltemperatur;;020201255802000200;2
+DCC;02;01;256b;02;0002;30;HK;Fussboden;Vorlaufsolltemperatur Komfort;;Temperatur;0,1;°C;S: 1K;;true;;HK.Fussboden.Vorlaufsolltemperatur Komfort;;020201256b02000200;2
+DCC;02;01;256a;02;0002;30;HK;Fussboden;Vorlaufsolltemperatur Normal;;Temperatur;0,1;°C;S: 1K;;true;;HK.Fussboden.Vorlaufsolltemperatur Normal;;020201256a02000200;2
+DCC;02;01;2569;02;0002;30;HK;Fussboden;Vorlaufsolltemperatur Absenk;;Temperatur;0,1;°C;S: 1K;;true;;HK.Fussboden.Vorlaufsolltemperatur Absenk;;020201256902000200;2
+DCC;02;01;252c;02;0002;10;HK;Fussboden;Vorlaufsolltemperatur Sonderniveau;;Temperatur;0,1;°C;S: 1K;;true;;HK.Fussboden.Vorlaufsolltemperatur Sonderniveau;;020201252c02000200;2
+DCC;02;01;2559;02;0002;30;HK;Fussboden;Vorlaufsolltemperatur;;Temperatur;0,1;°C;;;false;;HK.Fussboden.Vorlaufsolltemperatur;;020201255902000200;2
+DCC;02;01;2507;02;0002;10;HK;Fussboden;Vorlaufisttemperatur;;Temperatur;0,1;°C;;;false;;HK.Fussboden.Vorlaufisttemperatur;;020201250702000200;2
+DCC;02;02;2533;02;0002;30;HK;HK3;Betriebsart Heizkreis 2 Vorgabe;;Schalten;;;S;1:Standby|2:Zeitprogramm 1|3:Zeitprogramm 2|4:Zeitprogramm 3|5:Sommer|6:Komfort|7:Normal|8:Absenk;true;;HK.HK3.Betriebsart Heizkreis 2 Vorgabe;;020202253302000200;1
+DCC;02;02;2582;02;0002;30;HK;HK3;So/Wi Umschaltung Heizkreis 2;;Boolesch;;;S;0:Aus|1:Ein;true;;HK.HK3.So/Wi Umschaltung Heizkreis 2;;020202258202000200;1
+DCC;02;02;257e;04;0002;30;HK;HK3;Betriebsart Heizkreis 2 aktuell;;Schalten;;;;1:System Standby|2:System Sommer|3:Estrich|4:Estrich|6:Zeitprogramm 1|7:Zeitprogramm 2|8:Zeitprogramm 3|9:Sommer|10:Absenk|11:Normal|12:Komfort|13:Standby;false;;HK.HK3.Betriebsart Heizkreis 2 aktuell;;020202257e04000200;1
+DCC;02;02;257e;05;0002;30;HK;HK3;Status Heizkreis 2;;Schalten;;;;1:Raumfrostschutz|2:Anlagenfrostschutz|16:Eingang H1|17:Eingang H1|18:Eingang H1|19:Eingang H1|20:Eingang H1|21:Eingang H1|24:Party|32:Optimierung|33:Niveauanhebung Außentemperatur|48:ext. Notabnahme|49:ext. Überangebot|50:ext. Heizvorgabe|51:Warmwasser-vorrang|64:Sommerbetrieb witterungsgeführt|65:Heizgrenze Raum|66:Heizgrenze VL|67:Raumthermostat|80:Komfort|81:Normal|82:Absenken|83:Frost|84:Frostschutz aktiv;false;;HK.HK3.Status Heizkreis 2;;020202257e05000200;1
+DCC;02;02;253b;02;0002;30;HK;HK3;Raumsolltemperatur Komfort;;Temperatur;0,1;°C;S: 0,5K;;true;;HK.HK3.Raumsolltemperatur Komfort;;020202253b02000200;2
+DCC;02;02;253a;02;0002;30;HK;HK3;Raumsolltemperatur Normal;;Temperatur;0,1;°C;S: 0,5K;;true;;HK.HK3.Raumsolltemperatur Normal;;020202253a02000200;2
+DCC;02;02;2539;02;0002;30;HK;HK3;Raumsolltemperatur Absenk;;Temperatur;0,1;°C;S: 0,5K;;true;;HK.HK3.Raumsolltemperatur Absenk;;020202253902000200;2
+DCC;02;02;2558;02;0002;30;HK;HK3;Raumsolltemperatur;;Temperatur;0,1;°C;;;false;;HK.HK3.Raumsolltemperatur;;020202255802000200;2
+DCC;02;02;256b;02;0002;30;HK;HK3;Vorlaufsolltemperatur Komfort;;Temperatur;0,1;°C;S: 1K;;true;;HK.HK3.Vorlaufsolltemperatur Komfort;;020202256b02000200;2
+DCC;02;02;256a;02;0002;30;HK;HK3;Vorlaufsolltemperatur Normal;;Temperatur;0,1;°C;S: 1K;;true;;HK.HK3.Vorlaufsolltemperatur Normal;;020202256a02000200;2
+DCC;02;02;2569;02;0002;30;HK;HK3;Vorlaufsolltemperatur Absenk;;Temperatur;0,1;°C;S: 1K;;true;;HK.HK3.Vorlaufsolltemperatur Absenk;;020202256902000200;2
+DCC;02;02;252c;02;0002;10;HK;HK3;Vorlaufsolltemperatur Sonderniveau;;Temperatur;0,1;°C;S: 1K;;true;;HK.HK3.Vorlaufsolltemperatur Sonderniveau;;020202252c02000200;2
+DCC;02;02;2559;02;0002;30;HK;HK3;Vorlaufsolltemperatur;;Temperatur;0,1;°C;;;false;;HK.HK3.Vorlaufsolltemperatur;;020202255902000200;2
+DCC;02;02;2507;02;0002;10;HK;HK3;Vorlaufisttemperatur;;Temperatur;0,1;°C;;;false;;HK.HK3.Vorlaufisttemperatur;;020202250702000200;2
+DCC;01;00;27f9;02;0002;10;SG;SG1;N1-Vorgabe über Ethernet ;;Prozent;;;;;false;;SG.SG1.N1-Vorgabe über Ethernet ;;02010027f902000200;
+DCC;01;00;261f;02;0002;10;SG;SG1;Plattenwärmetauschertemperatur (B2);;Temperatur;0,1;°C;;;false;;SG.SG1.Plattenwärmetauschertemperatur (B2);;020100261f02000200;2
+DCC;01;00;2560;02;0002;30;SG;SG1;Pufferspeicher Temperatur oben;;Temperatur;0,1;°C;;;false;;SG.SG1.Pufferspeicher Temperatur oben;;020100256002000200;2
+DCC;01;00;2561;02;0002;30;SG;SG1;Pufferspeicher Temperatur unten;;Temperatur;0,1;°C;;;false;;SG.SG1.Pufferspeicher Temperatur unten;;020100256102000200;2
+DCC;01;00;263f;00;0008;30;SG;SG1;Can Open spezifisch ;;;;;;;false;;SG.SG1.Can Open spezifisch ;;020100263f00000800;2
+DCC;01;00;261e;00;0001;30;SG;SG1;Systembetriebsart;;Schalten;;;S;1:Standby|2:Sommer|3:Automatik;true;;SG.SG1.Systembetriebsart;;020100261e00000100;1
+DCC;01;00;26b1;02;0002;30;SG;SG1;Außentemperatur;;Temperatur;0,1;°C;;;false;;SG.SG1.Außentemperatur;;02010026b102000200;2
+DCC;01;00;259c;01;0002;10;SG;SG1;Wärmeanforderung Heizung;;Temperatur;0,1;°C;;;false;;SG.SG1.Wärmeanforderung Heizung;;020100259c01000200;2
+DCC;03;00;2557;02;0002;30;SG;SG1;Rücklauftemperatur Zirkulation;;Temperatur;0,1;°C;;;false;;SG.SG1.Rücklauftemperatur Zirkulation;;020300255702000200;2
+DCC;03;00;2551;02;0001;10;SG;SG1;Pumpe Warmwasser;;Boolesch;;;;0:Aus|1:Ein;false;;SG.SG1.Pumpe Warmwasser;;020300255102000100;1
+DCC;01;00;26e4;02;0001;60;SG;SG1;Folgewechsel;;Schalten;;;S;0:normal|1:invertiert|2:zeitlich|3:Betriebsstunden;true;;SG.SG1.Folgewechsel;;02010026e402000100;1
+DCC;01;00;26e6;02;0002;60;SG;SG1;Wechselzeit;;Zeit;1;h;S: 1h;;true;;SG.SG1.Wechselzeit;;02010026e602000200;2
+DCC;01;00;26fe;02;0002;10;SG;SG1;Kaskade Abgleichtemperatur;;Temperatur;0,1;°C;;;false;;SG.SG1.Kaskade Abgleichtemperatur;;02010026fe02000200;2
+DCC;01;00;261c;00;0002;30;SG;SG1;Kaskade Soll-Modulation;;;;;;;false;;SG.SG1.Kaskade Soll-Modulation;;020100261c00000200;
+DCC;01;00;2612;00;0002;30;SG;SG1;Kaskade Sollwert System HZ;;Temperatur;0,1;°C;;;false;;SG.SG1.Kaskade Sollwert System HZ;;020100261200000200;2
+DCC;01;00;2613;00;0002;30;SG;SG1;Kaskade Sollwert System WW;;Temperatur;0,1;°C;;;false;;SG.SG1.Kaskade Sollwert System WW;;020100261300000200;2
+DCC;01;00;2562;02;0001;10;SG;SG1;Uhrzeit Aktuelle Uhrzeit Stunde;;Zeit;1;h;;;false;;SG.SG1.Uhrzeit Aktuelle Uhrzeit Stunde;;020100256202000100;2
+DCC;01;00;2562;03;0001;10;SG;SG1;Uhrzeit Aktuelle Uhrzeit Minute;;Zeit;1;m;;;false;;SG.SG1.Uhrzeit Aktuelle Uhrzeit Minute;;020100256203000100;
+DCC;01;00;2563;02;0001;30;SG;SG1;Datum Aktuelles Datum Jahr;;Datum;;;;;false;;SG.SG1.Datum Aktuelles Datum Tag;;020100256302000100;3
+DCC;01;00;2563;03;0001;30;SG;SG1;Datum Aktuelles Datum Monat;;Datum;;;;;false;;SG.SG1.Datum Aktuelles Datum Monat;;020100256303000100;
+DCC;01;00;2563;04;0001;30;SG;SG1;Datum Aktuelles Datum Tag;;Datum;;;;;false;;SG.SG1.Datum Aktuelles Datum Jahr;;020100256304000100;
+DCC;09;01;2639;00;0001;10;WTC;WTC1;Betriebsphase WTC;;Schalten;;;;0:Normalbetrieb|10:Pumpennachlauf|15:Brennertaktsperre Heizen|20:Sperre Mindest-heizleistung|24:Adaption Gasstell-glied läuft|25:Verz√∂gerter Heizbetrieb|30:Softstart Warm-wasser|35:Abregelfunktion Fernsteuerung|40:Spreizung Vorlauf/Abgas|45:Spreizung Vorlauf/Rücklauf|50:Abregelfunktion Abgastemperatur|55:Abschaltung Fernsteuerung|60:Abschaltung Mindestumlauf|70:SCOT Kalibration läuft;false;;WTC.WTC1.Betriebsphase WTC;;020901263900000100;1
+DCC;07;00;2541;00;0001;10;WTC;WTC1;Betriebsphase Brenner;;Schalten;;;;0:Brenner aus|1:Vorbelüftung|2:Brenner ein|3:Brenner ein|4:Nachbelüftung;false;;WTC.WTC1.Betriebsphase Brenner;;020700254100000100;1
+DCC;07;00;2545;00;0002;30;WTC;WTC1;Vorlaufsolltemperatur;;Temperatur;0,1;°C;;;false;;WTC.WTC1.Vorlaufsolltemperatur;;020700254500000200;2
+DCC;07;00;2532;00;0002;10;WTC;WTC1;Kesseltemperatur;;Temperatur;0,1;°C;;;false;;WTC.WTC1.Kesseltemperatur;;020700253200000200;2
+DCC;09;01;2613;02;0002;30;WTC;WTC1;Volumenstrom VPT;;Durchfluss-;;;;;false;;WTC.WTC1.Volumenstrom VPT;;020901261302000200;
+DCC;09;01;2614;02;0002;30;WTC;WTC1;Anlagendruck;;Druck;0,01;bar;;;false;;WTC.WTC1.Anlagendruck;;020901261402000200;2
+DCC;09;01;2631;02;0004;30;Leistung;WTC1;Wärmeleistung VPT;;Leistung;0,01;kW;;;false;;Leistung.WTC1.Wärmeleistung VPT;;020901263102000400;4
+DCC;09;01;2628;02;0004;60;Leistung;WTC1;Tageswärmemenge (Vortag) Gesamt;;Wirkarbeit;0,01;kWh;;;false;;Leistung.WTC1.Tageswärmemenge (Vortag) Gesamt;;020901262802000400;4
+DCC;09;01;2626;02;0004;60;Leistung;WTC1;Tageswärmemenge (Vortag) Heizbetrieb;;Wirkarbeit;0,01;kWh;;;false;;Leistung.WTC1.Tageswärmemenge (Vortag) Heizbetrieb;;020901262602000400;4
+DCC;09;01;2627;02;0004;60;Leistung;WTC1;Tageswärmemenge (Vortag) Warmwasserbetrieb;;Wirkarbeit;0,01;kWh;;;false;;Leistung.WTC1.Tageswärmemenge (Vortag) Warmwasserbetrieb;;020901262702000400;4
+DCC;01;00;259d;01;0002;10;Wasser;SG1;Wärmeanforderung Warmwasser;;Temperatur;0,1;°C;;;false;;Wasser.SG1.Wärmeanforderung Warmwasser;;020100259d01000200;2
+DCC;03;00;2569;02;0001;30;Wasser;SG1;Status Warmwasser;;Boolesch;;;;0:Warnung anstehend|1:Fehler anstehend;false;;Wasser.SG1.Status Warmwasser;;020300256902000100;1
+DCC;03;00;2549;02;0001;10;Wasser;SG1;Warmwasser-Push Starten;;Boolesch;;;S;;true;;Wasser.SG1.Warmwasser-Push Starten;;020300254902000100;1
+DCC;03;00;2539;02;0002;30;Wasser;SG1;WWsolltemperatur Vorgabe Normal;;Temperatur;0,1;°C;S: 1K;;true;;Wasser.SG1.WWsolltemperatur Vorgabe Normal;;020300253902000200;2
+DCC;03;00;2538;02;0002;30;Wasser;SG1;WWsolltemperatur Vorgabe Absenk;;Temperatur;0,1;°C;S: 1K;;true;;Wasser.SG1.WWsolltemperatur Vorgabe Absenk;;020300253802000200;2
+DCC;03;00;252c;02;0002;30;Wasser;SG1;WWsolltemperatur;;Temperatur;0,1;°C;;;false;;Wasser.SG1.WWsolltemperatur;;020300252c02000200;2
+DCC;03;00;2529;02;0002;10;Wasser;SG1;Warmwassertemperatur;;Temperatur;0,1;°C;;;false;;Wasser.SG1.Warmwassertemperatur;;020300252902000200;2
