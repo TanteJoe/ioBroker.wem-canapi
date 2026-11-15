@@ -3,19 +3,22 @@
 /*
  * Created with @iobroker/create-adapter v3.1.5
  */
-
+// const CanApiClient = require('./lib/canApiClient');
+import CanApiClient from './lib/canApiClient.js'
 // The adapter-core module gives you access to the core ioBroker functions
 // you need to create an adapter
-const utils = require('@iobroker/adapter-core');
-const CanApiClient = require('./lib/canApiClient');
-const CsvParser = require('./lib/csvParser');
+//const utils = require('@iobroker/adapter-core');
+
+import {adapter,Adapter} from '@iobroker/adapter-core';
+// const CsvParser = require('./lib/csvParser');
+import CsvParser from './lib/csvParser.js'
 
 // Load your modules here, e.g.:
 // const fs = require('fs');
 
-class WemCanapi extends utils.Adapter {
+class WemCanapi extends Adapter {
 	/**
-	 * @param {Partial<utils.AdapterOptions>} [options] - Adapter options
+	 * @param {Partial<AdapterOptions>} [options] - Adapter options
 	 */
 	constructor(options) {
 		super({
@@ -392,13 +395,16 @@ class WemCanapi extends utils.Adapter {
 	}
 }
 
-if (require.main !== module) {
-	// Export the constructor in compact mode
-	/**
-	 * @param {Partial<utils.AdapterOptions>} [options] - Adapter options
-	 */
-	module.exports = options => new WemCanapi(options);
-} else {
-	// otherwise start the instance directly
-	new WemCanapi();
-}
+export default new WemCanapi;
+
+
+// if (require.main !== module) {
+// 	// Export the constructor in compact mode
+// 	/**
+// 	 * @param {Partial<utils.AdapterOptions>} [options] - Adapter options
+// 	 */
+// 	module.exports = options => new WemCanapi(options);
+// } else {
+// 	// otherwise start the instance directly
+// 	new WemCanapi();
+// }

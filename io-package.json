@@ -2,7 +2,7 @@
 	"common": {
 		"name": "wem-canapi",
 		"messagebox": true,
-		"version": "0.0.1",
+		"version": "0.0.2",
 		"news": {
 			"0.0.1": {
 				"en": "initial release",
@@ -72,8 +72,7 @@
 		},
 		"dependencies": [
 			{
-				"js-controller": ">=6.0.11",
-				"web": ">=5.1.2"
+				"js-controller": ">=6.0.11"
 			}
 		],
 		"globalDependencies": [
