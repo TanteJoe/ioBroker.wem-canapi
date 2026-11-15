@@ -11,6 +11,7 @@ export default [
 			'.vscode/',
 			'*.test.js',
 			'test/**/*.js',
+			'.watch/',
 			'*.config.mjs',
 			'build',
 			'dist',
@@ -24,7 +25,8 @@ export default [
 			'admin/build',
 			'scripts/',
 			'workflows',
-			'nodes_modules'
+			'nodes_modules/',
+			'admin/.watch/'
 		],
 	},
 	{

@@ -4,21 +4,21 @@
  * Created with @iobroker/create-adapter v3.1.5
  */
 // const CanApiClient = require('./lib/canApiClient');
-import CanApiClient from './lib/canApiClient.js'
+import CanApiClient from './lib/canApiClient.js';
 // The adapter-core module gives you access to the core ioBroker functions
 // you need to create an adapter
 //const utils = require('@iobroker/adapter-core');
 
-import {adapter,Adapter} from '@iobroker/adapter-core';
+import { Adapter } from '@iobroker/adapter-core';
 // const CsvParser = require('./lib/csvParser');
-import CsvParser from './lib/csvParser.js'
+import CsvParser from './lib/csvParser.js';
 
 // Load your modules here, e.g.:
 // const fs = require('fs');
 
 class WemCanapi extends Adapter {
 	/**
-	 * @param {Partial<AdapterOptions>} [options] - Adapter options
+	 * @param {import('@iobroker/adapter-core').AdapterOptions} [options] - Adapter options
 	 */
 	constructor(options) {
 		super({
@@ -80,6 +80,7 @@ class WemCanapi extends Adapter {
 		});
 
 		// Verbindung testen
+		//const testpwd = this.config.password;
 		const ok = await this.client.testConnection();
 		await this.setState('info.connection', ok, true);
 
@@ -354,13 +355,16 @@ class WemCanapi extends Adapter {
 			const state = await this.getStateAsync('info.syncrunnig');
 			const now = Date.now();
 			//Reset Running State if havent bin runnig for 5 min
+			// @ts-expect-error Fix false was schief geht
 			if (state?.ts + 300000 <= now) {
 				isrunning = false;
 			} else {
+				// @ts-expect-error Fix false was schief geht
 				isrunning = state?.val;
 			}
 			if (!isrunning) {
 				await this.setState('info.syncrunnig', true, true);
+				// @ts-expect-error Client null breits abgefangen
 				const results = await this.client.readDatapoints(datapoints);
 
 				let anyOk = false;
@@ -395,8 +399,7 @@ class WemCanapi extends Adapter {
 	}
 }
 
-export default new WemCanapi;
-
+export default new WemCanapi();
 
 // if (require.main !== module) {
 // 	// Export the constructor in compact mode
