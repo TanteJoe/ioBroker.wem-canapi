@@ -16,6 +16,19 @@
 				"pl": "Pierwsze wydanie",
 				"uk": "Початкова версія",
 				"zh-cn": "首次出版"
+			},
+			"0.0.2": {
+				"en": "First working release CSV Datapoint has to be approved",
+				"de": "Erstveröffentlichung",
+				"ru": "Начальная версия",
+				"pt": "lançamento inicial",
+				"nl": "Eerste uitgave",
+				"fr": "Première version",
+				"it": "Versione iniziale",
+				"es": "Versión inicial",
+				"pl": "Pierwsze wydanie",
+				"uk": "Початкова версія",
+				"zh-cn": "首次出版"
 			}
 		},
 		"titleLang": {

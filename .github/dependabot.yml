@@ -7,6 +7,8 @@ updates:
       day: 12
       time: "00:05"
       timezone: Europe/Berlin
+    cooldown:
+      default: 7
     open-pull-requests-limit: 5
     assignees:
       - TanteJoe
@@ -19,6 +21,8 @@ updates:
       day: 12
       time: "00:05"
       timezone: Europe/Berlin
+    cooldown:
+      default: 7
     open-pull-requests-limit: 5
     assignees:
       - TanteJoe

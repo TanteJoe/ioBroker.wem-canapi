@@ -365,7 +365,7 @@ class WemCanapi extends Adapter {
 			if (!isrunning) {
 				await this.setState('info.syncrunnig', true, true);
 				// @ts-expect-error Client null breits abgefangen
-				const results = await this.client.readDatapoints(datapoints);
+				const results = await this.client.readDatapoints(datapoints, this);
 
 				let anyOk = false;
 

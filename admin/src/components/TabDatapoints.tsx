@@ -7,7 +7,7 @@ interface Props {
 	onChange: (key: string, val: any) => void;
 }
 
-export default function TabDatapoints({ native, onChange }: Props) {
+export default function TabDatapoints({ native, onChange }: Props): JSX.Element {
 	const [allDP, setAllDP] = useState<Datapoint[]>(native.importedDatapoints || []);
 	const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set(native.selectedDatapoints || []));
 	const [search, setSearch] = useState('');
@@ -24,7 +24,7 @@ export default function TabDatapoints({ native, onChange }: Props) {
 	useEffect(() => {
 		onChange('importedDatapoints', allDP);
 	}, [allDP]);
-	const exportImpotedDatapoints = async => {
+	const exportImpotedDatapoints = async () => {
 		downloadCSV(native.importedDatapoints);
 	};
 	// Filter
@@ -100,22 +100,22 @@ export default function TabDatapoints({ native, onChange }: Props) {
 		});
 	}, []);
 
-	const selectAll = () =>
+	const selectAll = (): void =>
 		setSelectedIds(prev => {
 			const n = new Set(prev);
 			filtered.forEach(dp => n.add(dp.id));
 			return n;
 		});
-	const deselectAll = () =>
+	const deselectAll = (): void =>
 		setSelectedIds(prev => {
 			const n = new Set(prev);
 			filtered.forEach(dp => n.delete(dp.id));
 			return n;
 		});
-	const toggleNode = (key: string) => setExpanded(prev => ({ ...prev, [key]: !prev[key] }));
-	const collapseAll = () => setExpanded({});
+	const toggleNode = (key: string): void => setExpanded(prev => ({ ...prev, [key]: !prev[key] }));
+	const collapseAll = (): void => setExpanded({});
 
-	function showToast(msg: string, type: string) {
+	function showToast(msg: string, type: string): void {
 		setToast({ msg, type });
 		if (type !== 'info') {
 			setTimeout(() => setToast(null), 4000);
