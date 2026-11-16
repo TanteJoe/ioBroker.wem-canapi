@@ -24,7 +24,7 @@ export default function TabDatapoints({ native, onChange }: Props): JSX.Element 
 	useEffect(() => {
 		onChange('importedDatapoints', allDP);
 	}, [allDP]);
-	const exportImpotedDatapoints = async () => {
+	const exportImpotedDatapoints = () => {
 		downloadCSV(native.importedDatapoints);
 	};
 	// Filter
