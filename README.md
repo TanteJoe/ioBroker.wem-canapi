@@ -116,12 +116,10 @@ Disable the WEM Portal connection.
 >[!IMPORTANT]
 > The local CanApiJson interface used by this integration only works when the WEM Portal connection is disabled.
 > If WEM Portal is enabled, the Systemgerät reserves the communication channel for the cloud connection and ioBroker will not be able to communicate with the controller.
-
-You must choose either:
-
-WEM Portal (Cloud Access), or
-ioBroker via CanApiJson (Local Access)
-Simultaneous operation is not supported by the Systemgerät firmware.
+> You must choose either:
+> WEM Portal (Cloud Access), or
+> ioBroker via CanApiJson (Local Access)
+> Simultaneous operation is not supported by the Systemgerät firmware.
 
 Verify Connectivity
 After enabling the JSON interface and disabling WEM Portal, verify that:
