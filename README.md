@@ -16,7 +16,7 @@ Get Values directly from the Weishaupt devices via CanAPI
 
 Local ioBroker integration for Weishaupt heating systems. The integration communicates directly with the Weishaupt system device (SG) over the local LAN and reads heating data through the CanApiJson JSON interface. No cloud connection is required.
 
-[!Warning] ## Warning
+[[!Warning] ## Warning]
 
 Use this integration at your own risk. Some entities can write values to the heating system. Always verify changes directly on your installation.
 
@@ -108,7 +108,7 @@ Disable the WEM Portal connection.
 
 
 
-[!IMPORTANT] ##Important
+[[!IMPORTANT] ##Important]
 
 The local CanApiJson interface used by this integration only works when the WEM Portal connection is disabled.
 
