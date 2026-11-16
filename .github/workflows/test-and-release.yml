@@ -89,7 +89,7 @@ jobs:
          #npm-token: ${{ secrets.NPM_TOKEN }} # This must be created on https://www.npmjs.com in your profile under "Access Tokens". Omit this line if trusted publishing is activated.
          github-token: ${{ secrets.GITHUB_TOKEN }} # This exists by default in GitHub Actions and does not need to be created.
          # Uncomment the following line if your adapter cannot be installed using 'npm ci'
-         #install-command: 'npm install'
+         install-command: 'publish --provenance --access public'
          build: true
          #sentry: true
          # #sentry-token: ${{ secrets.SENTRY_AUTH_TOKEN }}
@@ -97,3 +97,4 @@ jobs:
          #sentry-version-prefix: "iobroker.wem-canapi"
          #sentry-sourcemap-paths: "admin/build/"
          #sentry-github-integration: true
+      
