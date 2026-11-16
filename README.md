@@ -58,41 +58,41 @@ The CanApiJson interface is disabled by default on many installations and must b
 
 From the home screen, navigate to the service menu (wrench icon).
 
-<img src="https://raw.githubusercontent.com/TanteJoe/ioBroker.wem-canapi/main/docs/images/enable_json_01.png" width="400">
+<img src="https://raw.githubusercontent.com/TanteJoe/ioBroker.wem-canapi/refs/heads/main/doc/images/enable_json_01.png" width="400">
 
 Select the installer/service level.
 
-<img src="https://raw.githubusercontent.com/TanteJoe/ioBroker.wem-canapi/main/docs/images/enable_json_02.png" width="400">
+<img src="https://raw.githubusercontent.com/TanteJoe/ioBroker.wem-canapi/refs/heads/main/doc/images/enable_json_02.png" width="400">
 
 #### Step 2 — Log in as installer
 
 Enter the installer password.
 
-<img src="https://raw.githubusercontent.com/TanteJoe/ioBroker.wem-canapi/main/docs/images/enable_json_03.png" width="400">
+<img src="https://raw.githubusercontent.com/TanteJoe/ioBroker.wem-canapi/refs/heads/main/doc/images/enable_json_03.png" width="400">
 
 After successful login, the installer menu will be displayed.
 
-<img src="https://raw.githubusercontent.com/TanteJoe/ioBroker.wem-canapi/main/docs/images/enable_json_04.png" width="400">
+<img src="https://raw.githubusercontent.com/TanteJoe/ioBroker.wem-canapi/refs/heads/main/doc/images/enable_json_04.png" width="400">
 
 #### Step 3 — Open commissioning settings
 
 Select **Commissioning**.
 
-<img src="https://raw.githubusercontent.com/TanteJoe/ioBroker.wem-canapi/main/docs/images/enable_json_05.png" width="400">
+<img src="https://raw.githubusercontent.com/TanteJoe/ioBroker.wem-canapi/refs/heads/main/doc/images/enable_json_05.png" width="400">
 
 Navigate to **Network**.
 
-<img src="https://raw.githubusercontent.com/TanteJoe/ioBroker.wem-canapi/main/docs/images/enable_json_06.png" width="400">
+<img src="https://raw.githubusercontent.com/TanteJoe/ioBroker.wem-canapi/refs/heads/main/doc/images/enable_json_06.png" width="400">
 
 #### Step 4 — Enable the JSON interface
 
 Open **JSON Interface**.
 
-<img src="https://raw.githubusercontent.com/TanteJoe/ioBroker.wem-canapi/main/docs/images/enable_json_07.png" width="400">
+<img src="https://raw.githubusercontent.com/TanteJoe/ioBroker.wem-canapi/refs/heads/main/doc/images/enable_json_07.png" width="400">
 
 Set **JSON Interface** to **On**.
 
-<img src="https://raw.githubusercontent.com/TanteJoe/ioBroker.wem-canapi/main/docs/images/enable_json_08.png" width="400">
+<img src="https://raw.githubusercontent.com/TanteJoe/ioBroker.wem-canapi/refs/heads/main/doc/images/enable_json_08.png" width="400">
 
 The JSON interface is now enabled.
 
@@ -102,15 +102,15 @@ Return to the user settings menu.
 
 Open **Settings**.
 
-<img src="https://raw.githubusercontent.com/TanteJoe/ioBroker.wem-canapi/main/docs/images/enable_json_09.png" width="400">
+<img src="https://raw.githubusercontent.com/TanteJoe/ioBroker.wem-canapi/refs/heads/main/doc/images/enable_json_09.png" width="400">
 
 Select **WEM Portal**.
 
-<img src="https://raw.githubusercontent.com/TanteJoe/ioBroker.wem-canapi/main/docs/images/enable_json_10.png" width="400">
+<img src="https://raw.githubusercontent.com/TanteJoe/ioBroker.wem-canapi/refs/heads/main/doc/images/enable_json_10.png" width="400">
 
 Disable the WEM Portal connection.
 
-<img src="https://raw.githubusercontent.com/TanteJoe/ioBroker.wem-canapi/main/docs/images/enable_json_11.png" width="400">
+<img src="https://raw.githubusercontent.com/TanteJoe/ioBroker.wem-canapi/refs/heads/main/doc/images/enable_json_11.png" width="400">
 
 
 >[!IMPORTANT] ##Important
