@@ -19,22 +19,22 @@ Local ioBroker integration for Weishaupt heating systems. The integration commun
 >[!Warning]
 >Use this integration at your own risk. Some entities can write values to the heating system. Always verify changes directly on your installation.
 
-##Disclaimer
+## Disclaimer
 This is an independent, community-developed integration with no affiliation to Weishaupt GmbH.
 
 Starting with version v0.0.2, the integration can write selected values to the heating system, including operating modes and domestic-hot-water actions. Incorrect values or unexpected device behavior may cause loss of heating, loss of hot water, malfunction, or other damage.
 
 The authors and contributors accept no responsibility or liability for damage, malfunction, data loss, voided warranty, or any other consequence arising from the use of this integration.
 
-##Supported Hardware
-###Tested and intended for:
+## Supported Hardware
+### Tested and intended for:
 
 Weishaupt Systemgerät 2.5 / 2.6
 Article numbers: 48301122172, 48301122242, 48301122512, 48301122522
 Heating systems controlled through the Weishaupt Systemgerät, including WTC gas boilers and installations with additional heating-circuit modules
 Other installations may work, but register availability depends on the installed modules and firmware.
 
-##Prerequisites
+## Prerequisites
 Connect the Weishaupt Systemgerät to the local network using RJ-45.
 Enable the JSON interface in the Systemgerät settings. **
 Determine the IP address or hostname of the Systemgerät.
@@ -47,71 +47,75 @@ Password: Admin123
 Example test URL:
 
 http://admin:Admin123@wem-sg/ajax/CanApiJson.json
-Important
+> [!IMPORTANT]
+>To use this integration, the WEM Portal connection must be disabled. The Weishaupt Systemgerät does not allow simultaneous use of the WEM Portal cloud service and the local CanApiJson interface.
 
-To use this integration, the WEM Portal connection must be disabled. The Weishaupt Systemgerät does not allow simultaneous use of the WEM Portal cloud service and the local CanApiJson interface.
+### **Enable the JSON Interface
 
-**Enable the JSON Interface
 The CanApiJson interface is disabled by default on many installations and must be enabled directly on the Weishaupt Systemgerät.
 
-Step 1 — Open the service menu
+#### Step 1 — Open the service menu
+
 From the home screen, navigate to the service menu (wrench icon).
 
-
+<img src="https://raw.githubusercontent.com/TanteJoe/ioBroker.wem-canapi/main/docs/images/enable_json_01.png" width="400">
 
 Select the installer/service level.
 
+<img src="https://raw.githubusercontent.com/TanteJoe/ioBroker.wem-canapi/main/docs/images/enable_json_02.png" width="400">
 
+#### Step 2 — Log in as installer
 
-Step 2 — Log in as installer
 Enter the installer password.
 
-
+<img src="https://raw.githubusercontent.com/TanteJoe/ioBroker.wem-canapi/main/docs/images/enable_json_03.png" width="400">
 
 After successful login, the installer menu will be displayed.
 
+<img src="https://raw.githubusercontent.com/TanteJoe/ioBroker.wem-canapi/main/docs/images/enable_json_04.png" width="400">
 
+#### Step 3 — Open commissioning settings
 
-Step 3 — Open commissioning settings
-Select Commissioning.
+Select **Commissioning**.
 
+<img src="https://raw.githubusercontent.com/TanteJoe/ioBroker.wem-canapi/main/docs/images/enable_json_05.png" width="400">
 
+Navigate to **Network**.
 
-Navigate to Network.
+<img src="https://raw.githubusercontent.com/TanteJoe/ioBroker.wem-canapi/main/docs/images/enable_json_06.png" width="400">
 
+#### Step 4 — Enable the JSON interface
 
+Open **JSON Interface**.
 
-Step 4 — Enable the JSON interface
-Open JSON Interface.
+<img src="https://raw.githubusercontent.com/TanteJoe/ioBroker.wem-canapi/main/docs/images/enable_json_07.png" width="400">
 
+Set **JSON Interface** to **On**.
 
-
-Set JSON Interface to On.
-
-
+<img src="https://raw.githubusercontent.com/TanteJoe/ioBroker.wem-canapi/main/docs/images/enable_json_08.png" width="400">
 
 The JSON interface is now enabled.
 
-Step 5 — Disable WEM Portal
+#### Step 5 — Disable WEM Portal
+
 Return to the user settings menu.
 
-Open Settings.
+Open **Settings**.
 
+<img src="https://raw.githubusercontent.com/TanteJoe/ioBroker.wem-canapi/main/docs/images/enable_json_09.png" width="400">
 
+Select **WEM Portal**.
 
-Select WEM Portal.
-
-
+<img src="https://raw.githubusercontent.com/TanteJoe/ioBroker.wem-canapi/main/docs/images/enable_json_10.png" width="400">
 
 Disable the WEM Portal connection.
 
+<img src="https://raw.githubusercontent.com/TanteJoe/ioBroker.wem-canapi/main/docs/images/enable_json_11.png" width="400">
 
 
-[[!IMPORTANT] ##Important]
-
-The local CanApiJson interface used by this integration only works when the WEM Portal connection is disabled.
-
-If WEM Portal is enabled, the Systemgerät reserves the communication channel for the cloud connection and ioBroker will not be able to communicate with the controller.
+>[!IMPORTANT] ##Important
+> The local CanApiJson interface used by this integration only works when the WEM Portal connection is disabled.
+> If WEM Portal is enabled, the Systemgerät reserves the communication channel for the cloud connection and ioBroker will not be able to communicate with the controller.
 
 You must choose either:
 
