@@ -16,9 +16,8 @@ Get Values directly from the Weishaupt devices via CanAPI
 
 Local ioBroker integration for Weishaupt heating systems. The integration communicates directly with the Weishaupt system device (SG) over the local LAN and reads heating data through the CanApiJson JSON interface. No cloud connection is required.
 
-[[!Warning] ## Warning]
-
-Use this integration at your own risk. Some entities can write values to the heating system. Always verify changes directly on your installation.
+>[!Warning]
+>Use this integration at your own risk. Some entities can write values to the heating system. Always verify changes directly on your installation.
 
 ##Disclaimer
 This is an independent, community-developed integration with no affiliation to Weishaupt GmbH.
