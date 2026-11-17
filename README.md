@@ -131,17 +131,19 @@ The configured IP address in the integration matches the Systemgerät.
 Once these requirements are met, the integration can be added to ioBroker.
 
 ## Changelog
-<!--
-	Placeholder for the next version (at the beginning of the line):
-	### **WORK IN PROGRESS**
--->
+### **WORK IN PROGRESS**
+* (TanteJoe) Verify. Datapoints cleanup Code
+
 ### 0.0.3 (2026-11-17)
+* (TanteJoe) First Working release with CSV Datapoints untested
+
+### 0.0.2 (2026-11-16)
 * (TanteJoe) initial release
 
 ## License
 MIT License
 
-Copyright (c) 2026 TanteJoe <giithub@schubel.info>
+Copyright (c) 2026 TanteJoe <github@schubel.info>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

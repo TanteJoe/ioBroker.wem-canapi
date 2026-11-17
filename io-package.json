@@ -5,13 +5,43 @@
     "version": "0.0.3",
     "news": {
       "0.0.1": {
-        "en": "initial release"
+        "en": "initial release",
+        "de": "Erstveröffentlichung",
+        "ru": "первоначальный выпуск",
+        "pt": "lançamento inicial",
+        "nl": "eerste release",
+        "fr": "version initiale",
+        "it": "rilascio iniziale",
+        "es": "lanzamiento inicial",
+        "pl": "pierwsze wydanie",
+        "uk": "початковий випуск",
+        "zh-cn": "初始版本"
       },
       "0.0.2": {
-        "en": "First working release CSV Datapoint has to be approved"
+        "en": "First working release CSV Datapoint has to be approved",
+        "de": "Die erste Arbeitsversion von CSV Datapoints müssen getested werden",
+        "ru": "Первый рабочий выпуск CSV Datapoint должен быть одобрен.",
+        "pt": "A primeira versão de trabalho do CSV Datapoint precisa ser aprovada",
+        "nl": "Eerste werkrelease CSV Datapoint moet worden goedgekeurd",
+        "fr": "La première version de travail CSV Datapoint doit être approuvée",
+        "it": "La prima versione funzionante CSV Datapoint deve essere approvata",
+        "es": "La primera versión funcional de CSV Datapoint debe aprobarse",
+        "pl": "Pierwsza działająca wersja CSV Datapoint musi zostać zatwierdzona",
+        "uk": "Перший робочий випуск CSV Datapoint має бути затверджений",
+        "zh-cn": "第一个工作版本 CSV 数据点必须获得批准"
       },
       "0.0.3": {
-        "en": "First release with release-Script"
+        "en": "First release with release-Script",
+        "de": "Erste Veröffentlichung mit Release-Script",
+        "ru": "Первый выпуск с релиз-скриптом",
+        "pt": "Primeiro lançamento com release-Script",
+        "nl": "Eerste release met release-Script",
+        "fr": "Première version avec release-Script",
+        "it": "Prima versione con release-Script",
+        "es": "Primer lanzamiento con lanzamiento-Script",
+        "pl": "Pierwsze wydanie ze skryptem wydania",
+        "uk": "Перший випуск зі сценарієм випуску",
+        "zh-cn": "第一个版本带有release-Script"
       }
     },
     "titleLang": {
@@ -41,7 +71,7 @@
       "zh-cn": "通过 CanAPI 直接从 Weishaupt 设备获取值"
     },
     "authors": [
-      "TanteJoe <giithub@schubel.info>"
+      "TanteJoe <github@schubel.info>"
     ],
     "keywords": [
       "WEM Weishaupt CanAPI"
