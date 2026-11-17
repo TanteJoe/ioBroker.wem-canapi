@@ -1,84 +1,84 @@
 {
-    "name": "iobroker.wem-canapi",
-    "version": "0.0.2",
-    "description": "Get Values directly from the Weishaupt devices via CanAPI",
-    "author": "TanteJoe <github@schubel.info>",
-    "homepage": "https://github.com/TanteJoe/ioBroker.wem-canapi",
-    "license": "MIT",
-    "keywords": [
-        "WEM",
-        "Weishaupt",
-        "CanAPI",
-        "ioBroker"
-    ],
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/TanteJoe/ioBroker.wem-canapi.git"
-    },
-    "engines": {
-        "node": ">= 22"
-    },
-    "dependencies": {
-        "@iobroker/adapter-core": "^3.4.3"
-    },
-    "devDependencies": {
-        "@alcalzone/release-script": "^5.2.1",
-        "@alcalzone/release-script-plugin-iobroker": "^5.2.0",
-        "@alcalzone/release-script-plugin-license": "^5.2.2",
-        "@alcalzone/release-script-plugin-manual-review": "^5.2.0",
-        "@emotion/react": "^11.14.0",
-        "@emotion/styled": "^11.14.0",
-        "@iobroker/adapter-dev": "^1.5.0",
-        "@iobroker/adapter-react-v5": "^7.5.0",
-        "@iobroker/dev-server": "^0.8.0",
-        "@iobroker/eslint-config": "^2.3.4",
-        "@iobroker/testing": "^6.3.0",
-        "@mui/material": "^7.0.0",
-        "@tsconfig/node22": "^22.0.7",
-        "@types/node": "^22.0.0",
-        "@types/react": "^18.0.0",
-        "@types/react-dom": "^18.0.0",
-        "@vitejs/plugin-react": "^4.0.0",
-        "react": "^18.0.0",
-        "react-dom": "^18.0.0",
-        "typescript": "~5.7.2",
-        "vite": "^6.0.0"
-    },
-    "main": "main.js",
-    "files": [
-        "admin/build/",
-        "admin/index_m.html",
-        "admin/index.js",
-        "admin/index.css",
-        "admin/canapi.csv",
-        "admin/wem-canapi.png",
-        "lib/",
-        "io-package.json",
-        "LICENSE",
-        "main.js"
-    ],
-    "scripts": {
-        "build": "cd admin && npm run build && cd .. && node scripts/sync.mjs",
-        "watch": "cd admin && npm run watch",
-        "sync": "node scripts/sync.mjs",
-        "test:js": "mocha --config test/mocharc.custom.json \"{!(node_modules|test)/**/*.test.js,*.test.js,test/**/test!(PackageFiles|Startup).js}\"",
-        "test:package": "mocha test/package --exit",
-        "test:integration": "mocha test/integration --exit",
-        "test": "npm run test:js && npm run test:package",
-        "lint": "eslint -c eslint.config.mjs .",
-        "translate": "translate-adapter",
-        "release": "release-script",
-        "release-patch": "release-script patch --yes",
-        "release-minor": "release-script minor --yes",
-        "release-major": "release-script major --yes",
-        "dev-server": "dev-server watch --no-start",
-        "dev-debug": "dev-server debug --wait --no-start"
-    },
-    "bugs": {
-        "url": "https://github.com/TanteJoe/ioBroker.wem-canapi/issues"
-    },
-    "directories": {
-        "lib": "lib",
-        "test": "test"
-    }
+  "name": "iobroker.wem-canapi",
+  "version": "0.0.3",
+  "description": "Get Values directly from the Weishaupt devices via CanAPI",
+  "author": "TanteJoe <github@schubel.info>",
+  "homepage": "https://github.com/TanteJoe/ioBroker.wem-canapi",
+  "license": "MIT",
+  "keywords": [
+    "WEM",
+    "Weishaupt",
+    "CanAPI",
+    "ioBroker"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TanteJoe/ioBroker.wem-canapi.git"
+  },
+  "engines": {
+    "node": ">= 22"
+  },
+  "dependencies": {
+    "@iobroker/adapter-core": "^3.4.3"
+  },
+  "devDependencies": {
+    "@alcalzone/release-script": "^5.2.1",
+    "@alcalzone/release-script-plugin-iobroker": "^5.2.0",
+    "@alcalzone/release-script-plugin-license": "^5.2.2",
+    "@alcalzone/release-script-plugin-manual-review": "^5.2.0",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@iobroker/adapter-dev": "^1.5.0",
+    "@iobroker/adapter-react-v5": "^7.5.0",
+    "@iobroker/dev-server": "^0.8.0",
+    "@iobroker/eslint-config": "^2.3.4",
+    "@iobroker/testing": "^6.3.0",
+    "@mui/material": "^7.0.0",
+    "@tsconfig/node22": "^22.0.7",
+    "@types/node": "^22.0.0",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "@vitejs/plugin-react": "^4.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "typescript": "~5.7.2",
+    "vite": "^6.0.0"
+  },
+  "main": "main.js",
+  "files": [
+    "admin/build/",
+    "admin/index_m.html",
+    "admin/index.js",
+    "admin/index.css",
+    "admin/canapi.csv",
+    "admin/wem-canapi.png",
+    "lib/",
+    "io-package.json",
+    "LICENSE",
+    "main.js"
+  ],
+  "scripts": {
+    "build": "cd admin && npm run build && cd .. && node scripts/sync.mjs",
+    "watch": "cd admin && npm run watch",
+    "sync": "node scripts/sync.mjs",
+    "test:js": "mocha --config test/mocharc.custom.json \"{!(node_modules|test)/**/*.test.js,*.test.js,test/**/test!(PackageFiles|Startup).js}\"",
+    "test:package": "mocha test/package --exit",
+    "test:integration": "mocha test/integration --exit",
+    "test": "npm run test:js && npm run test:package",
+    "lint": "eslint -c eslint.config.mjs .",
+    "translate": "translate-adapter",
+    "release": "release-script",
+    "release-patch": "release-script patch --yes",
+    "release-minor": "release-script minor --yes",
+    "release-major": "release-script major --yes",
+    "dev-server": "dev-server watch --no-start",
+    "dev-debug": "dev-server debug --wait --no-start"
+  },
+  "bugs": {
+    "url": "https://github.com/TanteJoe/ioBroker.wem-canapi/issues"
+  },
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  }
 }
