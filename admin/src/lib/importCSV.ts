@@ -125,7 +125,12 @@ function _csvRowToDatapoint(row): Datapoint {
 		enumValues: _stringToRecord(values[14]),
 		canWrite: _stringToBoolean(_unescapeCSVValue(values[15])),
 		ioType: _unescapeCSVValue(values[16]),
-		treePath: `${_unescapeCSVValue(values[6])}.${_unescapeCSVValue(values[7])}.${_unescapeCSVValue(values[8])}`,
+		treePath: _buildPath(
+			_unescapeCSVValue(values[6]),
+			_unescapeCSVValue(values[7]),
+			_unescapeCSVValue(values[8]),
+			_unescapeCSVValue(values[8]),
+		),
 		label: _unescapeCSVValue(values[18]),
 		readHex: readh,
 		respbites: _unescapeCSVValue(values[20]),
@@ -174,4 +179,25 @@ function parseCSVRow(row): string[] {
 	values.push(current);
 
 	return values;
+}
+function _buildPath(t: string, n: string, r: string, f: string): string {
+	const s = (str: string): string =>
+		(str || '')
+			.replace(/ä/g, 'ae')
+			.replace(/ö/g, 'oe')
+			.replace(/ü/g, 'ue')
+			.replace(/Ä/g, 'Ae')
+			.replace(/Ö/g, 'Oe')
+			.replace(/Ü/g, 'Ue')
+			.replace(/ß/g, 'ss')
+			.replace(/[^a-zA-Z0-9_-]/g, '_')
+			.replace(/_+/g, '_')
+			.replace(/^_|_$/g, '')
+			.toLowerCase();
+
+	const parts = [s(t), s(n), s(r)];
+	if (f && f !== r) {
+		parts.push(s(f));
+	}
+	return parts.filter(Boolean).join('.');
 }

@@ -9,6 +9,7 @@ import CanApiClient from './lib/canApiClient.js';
 // you need to create an adapter
 //const utils = require('@iobroker/adapter-core');
 
+// @ts-ignore adapter-core is supplied by the ioBroker runtime and may be absent in editor-only environments.
 import { Adapter } from '@iobroker/adapter-core';
 // const CsvParser = require('./lib/csvParser');
 import CsvParser from './lib/csvParser.js';
@@ -18,7 +19,7 @@ import CsvParser from './lib/csvParser.js';
 
 class WemCanapi extends Adapter {
 	/**
-	 * @param {import('@iobroker/adapter-core').AdapterOptions} [options] - Adapter options
+	 * @param {object} [options] - Adapter options
 	 */
 	constructor(options) {
 		super({
@@ -47,7 +48,7 @@ class WemCanapi extends Adapter {
 	 * Is called when databases are connected and adapter received configuration.
 	 */
 	async onReady() {
-		await this.setState('info.connection', false, true);
+		await this.setStateAsync('info.connection', false, true);
 
 		const cfg = this.config;
 		if (!cfg.host) {
@@ -77,6 +78,7 @@ class WemCanapi extends Adapter {
 			password: cfg.password || 'Admin123',
 			timeout: cfg.timeout || 5000,
 			log: this.log,
+			adapter: this,
 		});
 
 		// Verbindung testen
@@ -140,11 +142,11 @@ class WemCanapi extends Adapter {
 				continue;
 			}
 			if (!dp.canWrite) {
-				this.log.warn(`${dp.registerName} ist nicht schreibbar`);
+				this.log.warn(`${dp.pointName} ist nicht schreibbar`);
 				return;
 			}
 
-			this.log.info(`Schreibe ${state.val} → ${dp.registerName}`);
+			this.log.info(`Schreibe ${state.val} → ${dp.pointName} `);
 			const ok = await this.client.writeDatapoint(dp, state.val);
 
 			if (ok) {
@@ -190,6 +192,7 @@ class WemCanapi extends Adapter {
 						username: obj.message.username || '',
 						password: obj.message.password || '',
 						log: this.log.debug,
+						adapter: this,
 					});
 					this.log.debug('Testing Connection from AdminGUI');
 					const ok = await testClient.testConnection();
@@ -396,6 +399,9 @@ class WemCanapi extends Adapter {
 			this.log.warn(`[Poll ${interval}s] Fehler: ${e.message}`);
 			// await this.setState('info.connection', false, true);
 		}
+	}
+	async _getObj(obj) {
+		return await this.getObjectAsync(obj);
 	}
 }
 
