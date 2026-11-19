@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { testCon } from '../lib/socket';
+
 interface Props {
 	native: Record<string, any>;
 	socket: any;
@@ -58,8 +59,8 @@ export default function TabConnection({ native, socket, instance, onChange }: Pr
 						hint: 'IP oder Hostname',
 					},
 					{ id: 'port', label: 'Port', type: 'number', placeholder: '80', hint: 'HTTP Port (Standard: 80)' },
-					{ id: 'username', label: 'Benutzername', type: 'text', placeholder: 'optional', hint: '' },
-					{ id: 'password', label: 'Passwort', type: 'password', placeholder: 'optional', hint: '' },
+					{ id: 'username', label: 'Benutzername', type: 'text', placeholder: 'optional', hint: 'admin' },
+					{ id: 'password', label: 'Passwort', type: 'password', placeholder: 'optional', hint: 'Admin123' },
 					{
 						id: 'timeout',
 						label: 'Timeout (ms)',
