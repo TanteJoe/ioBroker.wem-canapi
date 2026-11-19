@@ -46,7 +46,7 @@
   },
   "main": "main.js",
   "files": [
-    "admin/build/",
+    "admin/i18n/",
     "admin/index_m.html",
     "admin/index.js",
     "admin/index.css",
