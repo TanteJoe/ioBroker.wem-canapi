@@ -9,7 +9,7 @@
     "connecting": "Złączony…",
     "connectionFailed": "Połączenie nie powiodło się",
     "connectionSuccessful": "Połączenie pomyślne!",
-    "datapointsConfigured": "Punkty danych konfiguruje się na karcie <strong>Punkty danych</strong>.",
+    "datapointsConfigured": "Punkty danych konfiguruje się na karcie ",
     "downloadExampleCSV": "Pobierz przykładowy plik CSV",
     "dragAndDropCSV": "Przeciągnij i upuść tutaj plik CSV",
     "exportCurrentDatapoints": "Eksportuj bieżące punkty danych jako plik CSV",
@@ -24,5 +24,8 @@
     "ro": "R/O",
     "rw": "R/W",
     "search": "Szukaj",
-    "selected": "Wybrany"
+    "selected": "Wybrany",
+    "tab": "patka.",
+    "tabConnection": "Połączenie",
+    "tabDatapoints": "Punkty danych"
 }

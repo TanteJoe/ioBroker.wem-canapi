@@ -9,7 +9,7 @@
     "connecting": "Підключення…",
     "connectionFailed": "Помилка підключення",
     "connectionSuccessful": "Підключення успішне!",
-    "datapointsConfigured": "Точки даних налаштовуються на вкладці <strong>Точки даних</strong>.",
+    "datapointsConfigured": "Точки даних налаштовуються на вкладці ",
     "downloadExampleCSV": "Завантажте приклад CSV",
     "dragAndDropCSV": "Перетягніть файл CSV сюди",
     "exportCurrentDatapoints": "Експортувати поточні точки даних як CSV",
@@ -24,5 +24,8 @@
     "ro": "R/O",
     "rw": "R/W",
     "search": "Пошук",
-    "selected": "Вибране"
+    "selected": "Вибране",
+    "tab": "вкладка.",
+    "tabConnection": "Підключення",
+    "tabDatapoints": "Точки даних"
 }

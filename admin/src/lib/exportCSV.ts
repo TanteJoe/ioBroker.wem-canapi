@@ -1,5 +1,5 @@
 import type { Datapoint } from './importCSV';
-import fs from 'fs';
+// import fs from 'fs';
 
 function escapeCSVValue(value: string | number | boolean | null | undefined): string {
 	if (value === null || value === undefined) {
@@ -91,12 +91,12 @@ export function generateCSV(datapoints: Datapoint[]): string {
 }
 
 // Optional: Save to file (Node.js)
-export function saveCSVToFile(datapoints: Datapoint[], filePath: string): void {
-	//const fs = require('fs');
-	const csv = generateCSV(datapoints);
-	fs.writeFileSync(filePath, csv, 'utf-8');
-	console.log(`CSV saved to ${filePath}`);
-}
+// export function saveCSVToFile(datapoints: Datapoint[], filePath: string): void {
+// 	//const fs = require('fs');
+// 	const csv = generateCSV(datapoints);
+// 	fs.writeFileSync(filePath, csv, 'utf-8');
+// 	console.log(`CSV saved to ${filePath}`);
+// }
 
 // Optional: Download in browser
 export function downloadCSV(datapoints: Datapoint[], fileName: string = 'datapoints.csv'): void {

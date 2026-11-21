@@ -3,18 +3,18 @@ import { I18n } from '@iobroker/adapter-react-v5';
 import { parseCSV, type Datapoint } from '../lib/importCSV';
 import { downloadCSV, handleDownload } from '../lib/exportCSV';
 
-import de from '../../i18n/de.json';
-import en from '../../i18n/en.json';
-import fr from '../../i18n/fr.json';
-import it from '../../i18n/it.json';
-import nl from '../../i18n/nl.json';
-import pl from '../../i18n/pl.json';
-import ru from '../../i18n/ru.json';
-import uk from '../../i18n/uk.json';
-I18n.setTranslations({ de, en, fr, it, nl, pl, ru, uk });
+// import de from '../../i18n/de.json';
+// import en from '../../i18n/en.json';
+// import fr from '../../i18n/fr.json';
+// import it from '../../i18n/it.json';
+// import nl from '../../i18n/nl.json';
+// import pl from '../../i18n/pl.json';
+// import ru from '../../i18n/ru.json';
+// import uk from '../../i18n/uk.json';
+// I18n.setTranslations({ de, en, fr, it, nl, pl, ru, uk });
 
-const lang = (window.localStorage.getItem('App.lang') as ioBroker.Languages) || 'en';
-I18n.setLanguage(lang);
+// const lang = (window.localStorage.getItem('App.lang') as ioBroker.Languages) || 'en';
+// I18n.setLanguage(lang);
 
 interface Props {
 	native: Record<string, any>;
@@ -476,7 +476,7 @@ export default function TabDatapoints({ native, onChange }: Props): JSX.Element 
 }
 
 // ── Sub-Komponenten ──────────────────────────────────────────────
-const fmtIvl = (s: number) => {
+const fmtIvl = (s: number): any => {
 	if (!s) {
 		return '?';
 	}
@@ -502,7 +502,7 @@ function NodeHdr({
 	expanded: boolean;
 	depth: number;
 	onClick: () => void;
-}) {
+}): React.JSX.Element {
 	const bg = depth === 0 ? '#f0f0f0' : depth === 1 ? '#f8f8f8' : '#fff';
 	return (
 		<div
@@ -545,7 +545,7 @@ function DPRow({
 	selected: boolean;
 	depth: number;
 	onChange: (id: string, v: boolean) => void;
-}) {
+}): React.JSX.Element {
 	return (
 		<div
 			style={{

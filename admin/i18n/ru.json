@@ -9,7 +9,7 @@
     "connecting": "Подключение…",
     "connectionFailed": "Соединение не удалось",
     "connectionSuccessful": "Подключение успешно!",
-    "datapointsConfigured": "Точки данных настраиваются на вкладке <strong>Точки данных</strong>.",
+    "datapointsConfigured": "Точки данных настраиваются на вкладке ",
     "downloadExampleCSV": "Скачать пример CSV",
     "dragAndDropCSV": "Перетащите CSV-файл сюда.",
     "exportCurrentDatapoints": "Экспортировать текущие точки данных в формате CSV",
@@ -24,5 +24,8 @@
     "ro": "Р/О",
     "rw": "Ч/З",
     "search": "Поиск",
-    "selected": "Выбрано"
+    "selected": "Выбрано",
+    "tab": "вкладка.",
+    "tabConnection": "Связь",
+    "tabDatapoints": "Точки данных"
 }

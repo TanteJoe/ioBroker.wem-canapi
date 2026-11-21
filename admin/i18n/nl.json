@@ -9,7 +9,7 @@
     "connecting": "Verbinden…",
     "connectionFailed": "Verbinding mislukt",
     "connectionSuccessful": "Verbinding succesvol!",
-    "datapointsConfigured": "Datapunten worden geconfigureerd op het tabblad <strong>Datapunten</strong>.",
+    "datapointsConfigured": "Datapunten worden geconfigureerd op het tabblad ",
     "downloadExampleCSV": "Voorbeeld-CSV downloaden",
     "dragAndDropCSV": "Sleep het CSV-bestand hierheen",
     "exportCurrentDatapoints": "Exporteer huidige datapunten als CSV",
@@ -24,5 +24,8 @@
     "ro": "R/O",
     "rw": "R/W",
     "search": "Zoekopdracht",
-    "selected": "Gekozen"
+    "selected": "Gekozen",
+    "tab": "tabblad.",
+    "tabConnection": "Verbinding",
+    "tabDatapoints": "Datapunten"
 }

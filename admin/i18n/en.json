@@ -24,5 +24,8 @@
     "ro" : "R/O",
     "pleaseImportCSV" : "Please import a CSV file",
     "noDatapointsFound" : "No datapoints found",
-    "datapointsConfigured" : "Datapoints are configured in the <strong>Datapoints</strong> tab."
+    "datapointsConfigured" : "Datapoints are configured in the",
+    "tab": " tab.",
+    "tabConnection": "Connection",
+    "tabDatapoints" : "Datapoints"
 }

@@ -9,7 +9,7 @@
     "connecting": "正在连接…",
     "connectionFailed": "连接失败",
     "connectionSuccessful": "连接成功！",
-    "datapointsConfigured": "数据点在<strong>数据点</strong>选项卡中配置。",
+    "datapointsConfigured": "数据点在 ",
     "downloadExampleCSV": "下载 CSV 示例",
     "dragAndDropCSV": "将 CSV 文件拖放到此处",
     "exportCurrentDatapoints": "将当前数据点导出为 CSV",
@@ -24,5 +24,8 @@
     "ro": "反/O",
     "rw": "读/写",
     "search": "搜索",
-    "selected": "已选择"
+    "selected": "已选择",
+    "tab": "选项卡。",
+    "tabConnection": "联系",
+    "tabDatapoints": "数据点"
 }

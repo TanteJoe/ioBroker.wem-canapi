@@ -1,7 +1,5 @@
 type Callback = (socket: any) => void;
 
-//let _socketInstance: any = null;
-
 export function connectToSocket(callback: Callback): void {
 	// Script dynamisch laden - genau wie in der funktionierenden Version
 	const script = document.createElement('script');
@@ -134,34 +132,7 @@ export function extendObject(socket: any, id: string, obj: any): Promise<void> {
 		});
 	});
 }
-// export function testCon(socket:any,id:string,native : Record<string, any>):Promise<void>{
-//     return new Promise(
-//         (resolve, reject) => {
 
-// socket.emit('sendTo',
-//             `wem-canapi.${id}`,
-//             'testConnection',
-//             {
-//                 host:     native.host,
-//                 port:     native.port     || 80,
-//                 username: native.username || '',
-//                 password: native.password || '',
-//             },
-//             (err: any) => {
-//                 if (err) reject(new Error(String(err)));
-//             else resolve();
-//                 /* setStatus(res?.result
-//                     ? '✅ Verbindung erfolgreich!'
-//                     : `❌ ${res?.error || 'Fehler'}`
-//                 );
-//                 setTesting(false);
-//                 console.log('Verbindundstest Result:',res); */
-//             }
-
-//         );
-
-//  } )
-// }
 export function testCon(socket: any, id: string, native: Record<string, any>): Promise<any> {
 	return new Promise((resolve, reject) => {
 		const targetInstance = `${id}`;

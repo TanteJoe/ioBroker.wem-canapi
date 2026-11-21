@@ -9,7 +9,7 @@
     "connecting": "Conectando…",
     "connectionFailed": "Falha na conexão",
     "connectionSuccessful": "Conexão bem-sucedida!",
-    "datapointsConfigured": "Os pontos de dados são configurados na guia <strong>Pontos de dados</strong>.",
+    "datapointsConfigured": "Os pontos de dados são configurados na guia ",
     "downloadExampleCSV": "Baixar exemplo CSV",
     "dragAndDropCSV": "Arraste e solte o arquivo CSV aqui",
     "exportCurrentDatapoints": "Exportar pontos de dados atuais como CSV",
@@ -24,5 +24,8 @@
     "ro": "R/O",
     "rw": "R/W",
     "search": "Procurar",
-    "selected": "Selecionado"
+    "selected": "Selecionado",
+    "tab": "guia.",
+    "tabConnection": "Conexão",
+    "tabDatapoints": "Pontos de dados"
 }

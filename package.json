@@ -46,6 +46,7 @@
     "vite": "^6.0.0"
   },
   "main": "main.js",
+  "type": "module",
   "files": [
     "admin/i18n/",
     "admin/index_m.html",

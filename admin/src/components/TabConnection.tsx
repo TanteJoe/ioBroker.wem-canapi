@@ -2,31 +2,38 @@ import React, { useState } from 'react';
 import { testCon } from '../lib/socket';
 import { I18n } from '@iobroker/adapter-react-v5';
 
-import de from '../../i18n/de.json';
-import en from '../../i18n/en.json';
-import fr from '../../i18n/fr.json';
-import it from '../../i18n/it.json';
-import nl from '../../i18n/nl.json';
-import pl from '../../i18n/pl.json';
-import ru from '../../i18n/ru.json';
-import uk from '../../i18n/uk.json';
-I18n.setTranslations({ de, en, fr, it, nl, pl, ru, uk });
+// import de from '../../i18n/de.json';
+// import en from '../../i18n/en.json';
+// import fr from '../../i18n/fr.json';
+// import it from '../../i18n/it.json';
+// import nl from '../../i18n/nl.json';
+// import pl from '../../i18n/pl.json';
+// import ru from '../../i18n/ru.json';
+// import uk from '../../i18n/uk.json';
+// I18n.setTranslations({ de, en, fr, it, nl, pl, ru, uk });
 
-const lang = (window.localStorage.getItem('App.lang') as ioBroker.Languages) || 'en';
-I18n.setLanguage(lang);
+// const lang = (window.localStorage.getItem('App.lang') as ioBroker.Languages) || 'en';
+// I18n.setLanguage(lang);
 
 interface Props {
 	native: Record<string, any>;
 	socket: any;
 	instance: number;
 	onChange: (key: string, val: any) => void;
+	onOpenDatapoints: () => void;
 }
 
-export default function TabConnection({ native, socket, instance, onChange }: Props) {
+export default function TabConnection({
+	native,
+	socket,
+	instance,
+	onChange,
+	onOpenDatapoints,
+}: Props): React.JSX.Element {
 	const [status, setStatus] = useState('');
 	const [testing, setTesting] = useState(false);
 
-	async function testConnection() {
+	async function testConnection(): Promise<void> {
 		if (!native.host) {
 			setStatus(`⚠️ ${I18n.t('pleaseEnterHost')}`);
 			return;
@@ -149,7 +156,18 @@ export default function TabConnection({ native, socket, instance, onChange }: Pr
 					color: '#1565c0',
 				}}
 			>
-				💡 {I18n.t('datapointsConfigured')}
+				💡 {I18n.t('datapointsConfigured')}{' '}
+				<a
+					href="#"
+					onClick={e => {
+						e.preventDefault();
+						onOpenDatapoints();
+					}}
+					style={{ fontWeight: 700, color: 'inherit', textDecoration: 'underline' }}
+				>
+					{I18n.t('tabDatapoints')}
+				</a>{' '}
+				{I18n.t('tab')}
 			</div>
 		</div>
 	);

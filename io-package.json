@@ -89,7 +89,7 @@
     "tier": 3,
     "mode": "daemon",
     "type": "climate-control",
-    "compact": true,
+    "compact": false,
     "connectionType": "local",
     "dataSource": "poll",
     "adminUI": {

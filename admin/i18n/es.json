@@ -9,7 +9,7 @@
     "connecting": "Conectando…",
     "connectionFailed": "La conexión falló",
     "connectionSuccessful": "¡Conexión exitosa!",
-    "datapointsConfigured": "Los puntos de datos se configuran en la pestaña <strong>Puntos de datos</strong>.",
+    "datapointsConfigured": "Los puntos de datos se configuran en la pestaña ",
     "downloadExampleCSV": "Descargar CSV de ejemplo",
     "dragAndDropCSV": "Arrastre y suelte el archivo CSV aquí",
     "exportCurrentDatapoints": "Exportar puntos de datos actuales como CSV",
@@ -24,5 +24,8 @@
     "ro": "R/O",
     "rw": "R/E",
     "search": "Buscar",
-    "selected": "Seleccionado"
+    "selected": "Seleccionado",
+    "tab": "pestaña.",
+    "tabConnection": "Conexión",
+    "tabDatapoints": "Puntos de datos"
 }

@@ -3,30 +3,9 @@
 /*
  * Created with @iobroker/create-adapter v3.1.5
  */
-// const CanApiClient = require('./lib/canApiClient');
 import CanApiClient from './lib/canApiClient.js';
-// The adapter-core module gives you access to the core ioBroker functions
-// you need to create an adapter
-//const utils = require('@iobroker/adapter-core');
-
 // @ts-expect-error adapter-core is supplied by the ioBroker runtime and may be absent in editor-only environments.
 import { Adapter } from '@iobroker/adapter-core';
-// const CsvParser = require('./lib/csvParser');
-import CsvParser from './lib/csvParser.js';
-
-// import { I18n } from '@iobroker/adapter-react-v5';
-// import de from './admin/i18n/de.json';
-// import en from './admin/i18n/en.json';
-// import fr from './admin/i18n/fr.json';
-// import it from './admin/i18n/it.json';
-// import nl from './admin/i18n/nl.json';
-// import pl from './admin/i18n/pl.json';
-// import ru from './admin/i18n/ru.json';
-// import uk from './admin/i18n/uk.json';
-// I18n.setTranslations({ de, en, fr, it, nl, pl, ru, uk });
-
-// Load your modules here, e.g.:
-// const fs = require('fs');
 
 class WemCanapi extends Adapter {
 	/**
@@ -81,19 +60,22 @@ class WemCanapi extends Adapter {
 			this.dpMap.set(dp.id, dp);
 		}
 
+		if (!cfg.username || !cfg.password) {
+			this.log.warn('Benutzername oder Passwort nicht konfiguriert - Anfrage erfolgt ohne Authentifizierung.');
+		}
+
 		// HTTP-Client erstellen
 		this.client = new CanApiClient({
 			host: cfg.host,
 			port: cfg.port || 80,
-			username: cfg.username || 'admin',
-			password: cfg.password || 'Admin123',
+			username: cfg.username || '',
+			password: cfg.password || '',
 			timeout: cfg.timeout || 5000,
 			log: this.log,
 			adapter: this,
 		});
 
 		// Verbindung testen
-		//const testpwd = this.config.password;
 		const ok = await this.client.testConnection();
 		await this.setState('info.connection', ok, true);
 
@@ -121,20 +103,15 @@ class WemCanapi extends Adapter {
 	 */
 	async onUnload(callback) {
 		try {
-			/* for (const t of this.timers.values()) this.clearInterval(t);
-            this.timers.clear();
-            await this.setState('info.connection', false, true); */
 			if (this.timerId) {
 				this.clearTimeout(this.timerId);
-				await this.setState('info.connection', false, true);
 			}
-			callback();
-			//}
+			await this.setState('info.connection', false, true);
 		} catch (e) {
 			this.log.debug(`Error on stopping ${e.message}`);
-			/* ignore */
+		} finally {
+			callback();
 		}
-		callback();
 	}
 
 	// ─────────────────────────────────────────────────────────────
@@ -189,18 +166,6 @@ class WemCanapi extends Adapter {
 		}
 
 		switch (obj.command) {
-			// ── CSV parsen ───────────────────────────────────────
-			case 'parseCSV': {
-				try {
-					const parser = new CsvParser();
-					const dps = parser.parse(obj.message.csvContent);
-					this._respond(obj, { result: dps, error: null });
-				} catch (e) {
-					this._respond(obj, { result: null, error: e.message });
-				}
-				break;
-			}
-
 			// ── Verbindungstest ──────────────────────────────────
 			case 'testConnection': {
 				try {
@@ -209,7 +174,7 @@ class WemCanapi extends Adapter {
 						port: obj.message.port || 80,
 						username: obj.message.username || '',
 						password: obj.message.password || '',
-						log: this.log.debug,
+						log: this.log,
 						adapter: this,
 					});
 					this.log.debug('Testing Connection from AdminGUI');
@@ -285,7 +250,7 @@ class WemCanapi extends Adapter {
 			const common = {
 				name: dp.pointName || dp.deviceName,
 				desc: `${dp.deviceName}: ${dp.pointName}`,
-				type: dp.ioType || 'number',
+				type: CanApiClient.ioType(dp),
 				role: this._role(dp),
 				read: true,
 				write: dp.canWrite || false,
@@ -363,8 +328,8 @@ class WemCanapi extends Adapter {
 				this.timerrunning = true;
 				for (const [interval, dps] of this.groups.entries()) {
 					if (lastinterval != interval) {
-						if ((this.timercounter * 10000) % interval === 0) {
-							this.log.info(`Starte Polling: ${dps.length} Datenpunkte alle ${interval}s`);
+						if ((this.timercounter * 10) % interval === 0) {
+							this.log.debug(`Starte Polling: ${dps.length} Datenpunkte alle ${interval}s`);
 
 							await this._pollGroup(interval, dps);
 							//    console.log('debug groups');
@@ -432,7 +397,7 @@ class WemCanapi extends Adapter {
 			}
 		} catch (e) {
 			this.log.warn(`[Poll ${interval}s] Fehler: ${e.message}`);
-			// await this.setState('info.connection', false, true);
+			await this.setState('info.syncrunnig', false, true);
 		}
 	}
 	async _getObj(obj) {
@@ -444,9 +409,6 @@ class WemCanapi extends Adapter {
 		for (const dp of datapoints) {
 			const obj = await this._getObj(dp.treePath);
 			if (!obj?.errorcount || obj.errorcount <= 5) {
-				// this.log.silly(
-				// 	`Datenpunkt ${dp.treePath} hat ${obj.errorcount || 0} übersprungen wegen Fehlerstatus`,
-				// );
 				filtered.push(dp);
 			}
 		}
@@ -464,15 +426,4 @@ class WemCanapi extends Adapter {
 		}
 	}
 }
-export default new WemCanapi();
-
-// if (require.main !== module) {
-// 	// Export the constructor in compact mode
-// 	/**
-// 	 * @param {Partial<utils.AdapterOptions>} [options] - Adapter options
-// 	 */
-// 	module.exports = options => new WemCanapi(options);
-// } else {
-// 	// otherwise start the instance directly
-// 	new WemCanapi();
-// }
+new WemCanapi();

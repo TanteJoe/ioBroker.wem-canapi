@@ -9,7 +9,7 @@
     "connecting": "Connessione…",
     "connectionFailed": "Connessione non riuscita",
     "connectionSuccessful": "Connessione riuscita!",
-    "datapointsConfigured": "I datapoint sono configurati nella scheda <strong>Datapoint</strong>.",
+    "datapointsConfigured": "I datapoint sono configurati nella scheda ",
     "downloadExampleCSV": "Scarica CSV di esempio",
     "dragAndDropCSV": "Trascina e rilascia il file CSV qui",
     "exportCurrentDatapoints": "Esporta i punti dati correnti come CSV",
@@ -24,5 +24,8 @@
     "ro": "R/O",
     "rw": "R/W",
     "search": "Ricerca",
-    "selected": "Selezionato"
+    "selected": "Selezionato",
+    "tab": "scheda.",
+    "tabConnection": "Connessione",
+    "tabDatapoints": "Punti dati"
 }

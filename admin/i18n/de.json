@@ -1,7 +1,7 @@
 {
-    "Host": "Gastgeber",
+    "Host": "Host",
     "Password": "Passwort",
-    "Port": "Hafen",
+    "Port": "Port",
     "all": "Alle",
     "allDevices": "Alle Geräte",
     "allTypes": "Alle Typen",
@@ -9,7 +9,7 @@
     "connecting": "Verbinden…",
     "connectionFailed": "Verbindung fehlgeschlagen",
     "connectionSuccessful": "Verbindung erfolgreich!",
-    "datapointsConfigured": "Datenpunkte werden auf der Registerkarte <strong>Datenpunkte</strong> konfiguriert.",
+    "datapointsConfigured": "Datenpunkte werden auf der Registerkarte ",
     "downloadExampleCSV": "Beispiel-CSV herunterladen",
     "dragAndDropCSV": "Ziehen Sie die CSV-Datei hier per Drag & Drop",
     "exportCurrentDatapoints": "Aktuelle Datenpunkte als CSV exportieren",
@@ -17,12 +17,15 @@
     "imported": "Importiert",
     "loadDefaults": "Laden Sie die Standardeinstellungen aus der Paket-CSV",
     "noDatapointsFound": "Keine Datenpunkte gefunden",
-    "noSocket": "Keine Steckdose",
+    "noSocket": "Keine Socketverbindung",
     "none": "Keiner",
     "pleaseEnterHost": "Bitte Host eingeben",
     "pleaseImportCSV": "Bitte importieren Sie eine CSV-Datei",
     "ro": "R/O",
     "rw": "R/W",
     "search": "Suchen",
-    "selected": "Ausgewählt"
+    "selected": "Ausgewählt",
+    "tab": "  konfiguriert.",
+    "tabConnection": "Verbindung",
+    "tabDatapoints": "Datenpunkte"
 }

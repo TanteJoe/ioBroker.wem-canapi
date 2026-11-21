@@ -132,7 +132,10 @@ Once these requirements are met, the integration can be added to ioBroker.
 
 ## Changelog
 ### **WORK IN PROGRESS**
-* (TanteJoe) Verify. Datapoints cleanup Code
+* (TanteJoe) Verify. Datapoints
+* (TanteJoe) Disable Datapoints on 5 Errors
+* (TanteJoe) Reset disabled Datapoint
+* (TanteJoe) Transaltion integrated
 
 ### 0.0.3 (2026-11-17)
 * (TanteJoe) First Working release with CSV Datapoints untested
