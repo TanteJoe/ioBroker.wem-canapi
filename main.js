@@ -9,10 +9,21 @@ import CanApiClient from './lib/canApiClient.js';
 // you need to create an adapter
 //const utils = require('@iobroker/adapter-core');
 
-// @ts-ignore adapter-core is supplied by the ioBroker runtime and may be absent in editor-only environments.
+// @ts-expect-error adapter-core is supplied by the ioBroker runtime and may be absent in editor-only environments.
 import { Adapter } from '@iobroker/adapter-core';
 // const CsvParser = require('./lib/csvParser');
 import CsvParser from './lib/csvParser.js';
+
+// import { I18n } from '@iobroker/adapter-react-v5';
+// import de from './admin/i18n/de.json';
+// import en from './admin/i18n/en.json';
+// import fr from './admin/i18n/fr.json';
+// import it from './admin/i18n/it.json';
+// import nl from './admin/i18n/nl.json';
+// import pl from './admin/i18n/pl.json';
+// import ru from './admin/i18n/ru.json';
+// import uk from './admin/i18n/uk.json';
+// I18n.setTranslations({ de, en, fr, it, nl, pl, ru, uk });
 
 // Load your modules here, e.g.:
 // const fs = require('fs');
@@ -94,6 +105,7 @@ class WemCanapi extends Adapter {
 		// Objekte anlegen
 		const activeDPs = selected.map(id => this.dpMap.get(id)).filter(Boolean);
 		await this._createSyncState();
+		await this._createResetObject();
 		await this._createObjects(activeDPs);
 		await this.subscribeStatesAsync('*');
 
@@ -136,6 +148,12 @@ class WemCanapi extends Adapter {
 
 		// ioBroker-ID → Datenpunkt finden
 		const localId = id.replace(`${this.namespace}.`, '');
+		if ('info.ResetAllObjects' === localId && state.val === true) {
+			this.log.info('Reset All Objects');
+			await this._resetObj(this.dpMap.values());
+			await this.setState(localId, { val: false, ack: true });
+			return;
+		}
 
 		for (const dp of this.dpMap.values()) {
 			if (dp.treePath !== localId) {
@@ -227,6 +245,23 @@ class WemCanapi extends Adapter {
 				def: false,
 				read: true,
 				write: false,
+			},
+			native: {},
+		});
+	}
+	async _createResetObject() {
+		// State anlegen if Sync is running
+
+		await this.setObjectNotExistsAsync('info.ResetAllObjects', {
+			type: 'state',
+			common: {
+				name: 'Reset All Objects',
+				desc: 'Reset error counts for all objects',
+				type: 'boolean',
+				role: 'button',
+				def: false,
+				read: true,
+				write: true,
 			},
 			native: {},
 		});
@@ -368,7 +403,7 @@ class WemCanapi extends Adapter {
 			if (!isrunning) {
 				await this.setState('info.syncrunnig', true, true);
 				// @ts-expect-error Client null breits abgefangen
-				const results = await this.client.readDatapoints(datapoints, this);
+				const results = await this.client.readDatapoints(await this._filterDatapointsOnError(datapoints), this);
 
 				let anyOk = false;
 
@@ -401,10 +436,34 @@ class WemCanapi extends Adapter {
 		}
 	}
 	async _getObj(obj) {
-		return await this.getObjectAsync(obj);
+		const returnobj = await this.getObjectAsync(obj);
+		return returnobj;
+	}
+	async _filterDatapointsOnError(datapoints) {
+		const filtered = [];
+		for (const dp of datapoints) {
+			const obj = await this._getObj(dp.treePath);
+			if (!obj?.errorcount || obj.errorcount <= 5) {
+				// this.log.silly(
+				// 	`Datenpunkt ${dp.treePath} hat ${obj.errorcount || 0} übersprungen wegen Fehlerstatus`,
+				// );
+				filtered.push(dp);
+			}
+		}
+
+		return filtered;
+	}
+	async _resetObj(datapoints) {
+		for (const dp of datapoints) {
+			const obj = await this._getObj(dp.treePath);
+			if (obj?.errorcount) {
+				obj.common.color = '';
+				obj.errorcount = 0;
+				await this.setObjectAsync(`${dp.treePath}`, obj);
+			}
+		}
 	}
 }
-
 export default new WemCanapi();
 
 // if (require.main !== module) {

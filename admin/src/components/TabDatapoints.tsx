@@ -1,6 +1,20 @@
 import React, { useState, useEffect, useMemo, useCallback, useRef } from 'react';
+import { I18n } from '@iobroker/adapter-react-v5';
 import { parseCSV, type Datapoint } from '../lib/importCSV';
 import { downloadCSV, handleDownload } from '../lib/exportCSV';
+
+import de from '../../i18n/de.json';
+import en from '../../i18n/en.json';
+import fr from '../../i18n/fr.json';
+import it from '../../i18n/it.json';
+import nl from '../../i18n/nl.json';
+import pl from '../../i18n/pl.json';
+import ru from '../../i18n/ru.json';
+import uk from '../../i18n/uk.json';
+I18n.setTranslations({ de, en, fr, it, nl, pl, ru, uk });
+
+const lang = (window.localStorage.getItem('App.lang') as ioBroker.Languages) || 'en';
+I18n.setLanguage(lang);
 
 interface Props {
 	native: Record<string, any>;
@@ -92,6 +106,27 @@ export default function TabDatapoints({ native, onChange }: Props): JSX.Element 
 		reader.readAsText(file, 'utf-8');
 	}, []);
 
+	const loadServerCSV = useCallback(async () => {
+		try {
+			showToast('Lade canapi.csv vom Server…', 'info');
+			const res = await fetch('canapi.csv');
+			if (!res.ok) {
+				throw new Error(`HTTP ${res.status}`);
+			}
+			const dps = parseCSV(await res.text());
+			if (!dps.length) {
+				showToast('Keine Datenpunkte gefunden', 'error');
+				return;
+			}
+			setAllDP(dps);
+			const ids = new Set(dps.map(d => d.id));
+			setSelectedIds(prev => new Set([...prev].filter(id => ids.has(id))));
+			showToast(`✅ ${dps.length} Datenpunkte importiert`, 'ok');
+		} catch (e: any) {
+			showToast(`❌ ${e.message}`, 'error');
+		}
+	}, []);
+
 	const toggleDP = useCallback((id: string, checked: boolean) => {
 		setSelectedIds(prev => {
 			const next = new Set(prev);
@@ -137,7 +172,7 @@ export default function TabDatapoints({ native, onChange }: Props): JSX.Element 
 						cursor: 'pointer',
 					}}
 				>
-					📥 Download ExampleCSV
+					📥 {I18n.t('downloadExampleCSV')}
 				</button>
 				<button
 					onClick={exportImpotedDatapoints}
@@ -151,7 +186,21 @@ export default function TabDatapoints({ native, onChange }: Props): JSX.Element 
 						cursor: 'pointer',
 					}}
 				>
-					⬇ Download CurrentDatapoints as CSV
+					⬇ {I18n.t('exportCurrentDatapoints')}
+				</button>
+				<button
+					onClick={loadServerCSV}
+					style={{
+						padding: '9px 24px',
+						border: 'none',
+						borderRadius: 4,
+						fontSize: 14,
+						background: '#af5626',
+						color: '#fff',
+						cursor: 'pointer',
+					}}
+				>
+					📦 {I18n.t('loadDefaults')}
 				</button>
 			</div>
 			{/* Upload */}
@@ -183,8 +232,8 @@ export default function TabDatapoints({ native, onChange }: Props): JSX.Element 
 				}}
 			>
 				<div style={{ fontSize: 36 }}>📂</div>
-				<div style={{ fontWeight: 600, margin: '6px 0 2px' }}>CAN-API CSV importieren</div>
-				<div style={{ fontSize: 12, color: '#777' }}>Klicken oder Datei hierher ziehen (canapi.csv)</div>
+				<div style={{ fontWeight: 600, margin: '6px 0 2px' }}>{I18n.t('importCANAPICSV')}</div>
+				<div style={{ fontSize: 12, color: '#777' }}>{I18n.t('dragAndDropCSV')}</div>
 			</div>
 			<input
 				ref={fileRef}
@@ -224,7 +273,7 @@ export default function TabDatapoints({ native, onChange }: Props): JSX.Element 
 			<div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', alignItems: 'center', marginBottom: 10 }}>
 				<input
 					type="text"
-					placeholder="🔍 Suchen…"
+					placeholder={`🔍 ${I18n.t('search')}`}
 					value={search}
 					onChange={e => setSearch(e.target.value)}
 					style={{
@@ -248,7 +297,7 @@ export default function TabDatapoints({ native, onChange }: Props): JSX.Element 
 						background: '#fff',
 					}}
 				>
-					<option value="">Alle Geräte</option>
+					<option value="">{I18n.t('allDevices')}</option>
 					{devices.map(d => (
 						<option
 							key={d}
@@ -269,7 +318,7 @@ export default function TabDatapoints({ native, onChange }: Props): JSX.Element 
 						background: '#fff',
 					}}
 				>
-					<option value="">Alle Typen</option>
+					<option value="">{I18n.t('allTypes')}</option>
 					{types.map(t => (
 						<option
 							key={t}
@@ -280,9 +329,9 @@ export default function TabDatapoints({ native, onChange }: Props): JSX.Element 
 					))}
 				</select>
 				{[
-					{ label: '✓ Alle', color: '#388e3c', fn: selectAll },
-					{ label: '✗ Keine', color: '#d32f2f', fn: deselectAll },
-					{ label: '▶ Einklappen', color: '#616161', fn: collapseAll },
+					{ label: `✓ ${I18n.t('all')}`, color: '#388e3c', fn: selectAll },
+					{ label: `✗ ${I18n.t('none')}`, color: '#d32f2f', fn: deselectAll },
+					{ label: `▶ ${I18n.t('collapseAll')}`, color: '#616161', fn: collapseAll },
 				].map(b => (
 					<button
 						key={b.label}
@@ -317,10 +366,10 @@ export default function TabDatapoints({ native, onChange }: Props): JSX.Element 
 				}}
 			>
 				{[
-					{ label: 'Importiert', val: stats.total },
-					{ label: 'Ausgewählt', val: stats.sel },
-					{ label: 'R/W', val: stats.rw },
-					{ label: 'R/O', val: stats.ro },
+					{ label: I18n.t('imported'), val: stats.total },
+					{ label: I18n.t('selected'), val: stats.sel },
+					{ label: I18n.t('rw'), val: stats.rw },
+					{ label: I18n.t('ro'), val: stats.ro },
 				].map(s => (
 					<span
 						key={s.label}
@@ -344,9 +393,7 @@ export default function TabDatapoints({ native, onChange }: Props): JSX.Element 
 			>
 				{filtered.length === 0 ? (
 					<div style={{ padding: 40, textAlign: 'center', color: '#aaa', fontSize: 15 }}>
-						{allDP.length === 0
-							? '📂 Bitte importieren Sie eine CSV-Datei'
-							: '🔍 Keine Datenpunkte gefunden'}
+						{allDP.length === 0 ? `📂 ${I18n.t('pleaseImportCSV')}` : `🔍 ${I18n.t('noDatapointsFound')}`}
 					</div>
 				) : (
 					Object.entries(tree).map(([devType, devNames]) => {

@@ -71,7 +71,7 @@ DCC;09;01;2639;00;0001;10;WTC;WTC1;Betriebsphase WTC;;Schalten;;;;0:Normalbetrie
 DCC;07;00;2541;00;0001;10;WTC;WTC1;Betriebsphase Brenner;;Schalten;;;;0:Brenner aus|1:Vorbelüftung|2:Brenner ein|3:Brenner ein|4:Nachbelüftung;false;;WTC.WTC1.Betriebsphase Brenner;;020700254100000100;1
 DCC;07;00;2545;00;0002;30;WTC;WTC1;Vorlaufsolltemperatur;;Temperatur;0,1;°C;;;false;;WTC.WTC1.Vorlaufsolltemperatur;;020700254500000200;2
 DCC;07;00;2532;00;0002;10;WTC;WTC1;Kesseltemperatur;;Temperatur;0,1;°C;;;false;;WTC.WTC1.Kesseltemperatur;;020700253200000200;2
-DCC;09;01;2613;02;0002;30;WTC;WTC1;Volumenstrom VPT;;Durchfluss-;;;;;false;;WTC.WTC1.Volumenstrom VPT;;020901261302000200;
+DCC;09;01;2613;02;0002;30;WTC;WTC1;Volumenstrom VPT;;Durchfluss-;;l/h;;;false;;WTC.WTC1.Volumenstrom VPT;;020901261302000200;
 DCC;09;01;2614;02;0002;30;WTC;WTC1;Anlagendruck;;Druck;0,01;bar;;;false;;WTC.WTC1.Anlagendruck;;020901261402000200;2
 DCC;09;01;2631;02;0004;30;Leistung;WTC1;Wärmeleistung VPT;;Leistung;0,01;kW;;;false;;Leistung.WTC1.Wärmeleistung VPT;;020901263102000400;4
 DCC;09;01;2628;02;0004;60;Leistung;WTC1;Tageswärmemenge (Vortag) Gesamt;;Wirkarbeit;0,01;kWh;;;false;;Leistung.WTC1.Tageswärmemenge (Vortag) Gesamt;;020901262802000400;4
