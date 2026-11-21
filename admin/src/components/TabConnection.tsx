@@ -2,19 +2,6 @@ import React, { useState } from 'react';
 import { testCon } from '../lib/socket';
 import { I18n } from '@iobroker/adapter-react-v5';
 
-// import de from '../../i18n/de.json';
-// import en from '../../i18n/en.json';
-// import fr from '../../i18n/fr.json';
-// import it from '../../i18n/it.json';
-// import nl from '../../i18n/nl.json';
-// import pl from '../../i18n/pl.json';
-// import ru from '../../i18n/ru.json';
-// import uk from '../../i18n/uk.json';
-// I18n.setTranslations({ de, en, fr, it, nl, pl, ru, uk });
-
-// const lang = (window.localStorage.getItem('App.lang') as ioBroker.Languages) || 'en';
-// I18n.setLanguage(lang);
-
 interface Props {
 	native: Record<string, any>;
 	socket: any;

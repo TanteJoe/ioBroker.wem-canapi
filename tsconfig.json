@@ -31,7 +31,7 @@
 	"include": [
 		"**/*.js",
 		"**/*.d.ts"
-, "main.test.ts"	],
+, "main.test.ts", "test/package.cjs"	],
 	"exclude": [
 		"node_modules/**",
 		"widgets/**"
