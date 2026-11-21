@@ -31,7 +31,7 @@
 	"include": [
 		"**/*.js",
 		"**/*.d.ts"
-, "main.test.ts", "test/package.cjs"	],
+, "main.test.ts", "test/package.cjs", "test/integration.cjs", "test/mocha.setup.cjs"	],
 	"exclude": [
 		"node_modules/**",
 		"widgets/**"
