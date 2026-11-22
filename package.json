@@ -19,8 +19,7 @@
     "node": ">= 22"
   },
   "dependencies": {
-    "@iobroker/adapter-core": "^3.4.3",
-    "@iobroker/adapter-react-v5": "^7.5.0"
+    "@iobroker/adapter-core": "^3.4.3"
   },
   "devDependencies": {
     "@alcalzone/release-script": "^5.2.1",

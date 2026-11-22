@@ -5,7 +5,10 @@
 	"title": "WEM CanAPI",
 	"description": "Get Values directly from the Weishaupt devices via CanAPI",
 	"keywords": [
-		"WEM Weishaupt CanAPI"
+		"WEM Weishaupt CanAPI",
+		"WEM",
+		"CanAPI",
+		"Weishaupt"
 	],
 	"expert": "no",
 	"features": [
@@ -18,7 +21,7 @@
 	"dataSource": "poll",
 	"connectionIndicator": "no",
 	"language": "JavaScript",
-	"nodeVersion": "20",
+	"nodeVersion": "22",
 	"adminUi": "react",
 	"tools": [
 		"ESLint",
