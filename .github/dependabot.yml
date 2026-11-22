@@ -3,13 +3,12 @@ updates:
   - package-ecosystem: npm
     directory: "/"
     schedule:
-      interval: monthly
-      day: 12
+      interval: weekly
       time: "00:05"
       timezone: Europe/Berlin
     cooldown:
       default: 7
-    open-pull-requests-limit: 5
+    open-pull-requests-limit: 15
     assignees:
       - TanteJoe
     versioning-strategy: increase
@@ -20,12 +19,22 @@ updates:
   - package-ecosystem: github-actions
     directory: "/"
     schedule:
-      interval: monthly
-      day: 12
+      interval: weekly
       time: "00:05"
       timezone: Europe/Berlin
     cooldown:
       default: 7
-    open-pull-requests-limit: 5
+    open-pull-requests-limit: 15
+    assignees:
+      - TanteJoe
+  - package-ecosystem: "npm"
+    directory: "/admin"
+    schedule:
+      interval: "weekly"
+      time: "00:05"
+      timezone: Europe/Berlin
+    cooldown:
+      default: 7
+    open-pull-requests-limit: 15
     assignees:
       - TanteJoe
