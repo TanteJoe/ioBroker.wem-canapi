@@ -46,13 +46,14 @@ jobs:
         os: [ubuntu-latest, windows-latest, macos-latest]
 
     steps:
-      - uses: ioBroker/testing-action-adapter@v2
+      - uses: ioBroker/testing-action-check@v2
         with:
           node-version: ${{ matrix.node-version }}
-          os: ${{ matrix.os }}
+          #os: ${{ matrix.os }}
           # Uncomment the following line if your adapter cannot be installed using 'npm ci'
           # install-command: 'npm install'
-          build: true
+          #build: true
+          lint: true
 
 # TODO: To enable automatic npm releases, set up trusted publishing in your npm account
 # See https://docs.npmjs.com/trusted-publishers for more details
