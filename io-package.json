@@ -2,8 +2,21 @@
   "common": {
     "name": "wem-canapi",
     "messagebox": true,
-    "version": "0.0.3",
+    "version": "0.0.4",
     "news": {
+      "0.0.4": {
+        "en": "Verify. Datapoints\nDisable Datapoints on 5 Errors\nReset disabled Datapoint\nTransaltion integrated",
+        "de": "Prüfen. Datenpunkte\nDatenpunkte bei 5 Fehlern deaktivieren\nDatapoint zurücksetzen\nIntegrierte Übersetzung",
+        "ru": "Подтвердите. Точки данных\nОтключите точки данных при 5 ошибках\nСбросить отключенную точку данных\nИнтегрированный перевод",
+        "pt": "Verifica. Datapoints\nDesative datapoints em 5 erros\nRedefinir datapoint inativo\nTradução integrada",
+        "nl": "Verifiëren. Datapunten\nDatapunten uitschakelen voor 5 fouten\nUitgeschakeld Datapoint opnieuw instellen\nGeïntegreerde vertaling",
+        "fr": "Vérifiez. Points de données\nDésactivez les points en cas de 5 erreurs\nPoint de données désactivé\nTraduction intégrée",
+        "it": "Verifichi Datapoint\nDisattiva i datapoint su 5 errori\nReimposta Datapoint\nTraduzione integrata",
+        "es": "Comprobar. Puntos de datos\nDesactivar puntos de datos en 5 errores\nReiniciar Datapoint\nTraducción integrada",
+        "pl": "Zweryfikuj. Punkty danych\nWyłącz punkty danych przy 5 błędach\nZresetuj wyłączony punkt danych\nTransalcja zintegrowana",
+        "uk": "Перевірити. Точки даних\nВідключення точок даних по 5 помилках\nСкинути вимкнену точку даних\nТрансальція інтегрована",
+        "zh-cn": "验证。数据点\n出现 5 个错误时禁用 DataPoints\n重置已禁用的数据点\n整合翻译"
+      },
       "0.0.1": {
         "en": "initial release",
         "de": "Erstveröffentlichung",
