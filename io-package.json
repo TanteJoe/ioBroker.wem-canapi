@@ -130,7 +130,7 @@
     "username": "",
     "password": "",
     "timeout": 5000,
-    "requestArraySize" : 6,
+    "requestArraySize": 6,
     "selectedDatapoints": [],
     "importedDatapoints": []
   },

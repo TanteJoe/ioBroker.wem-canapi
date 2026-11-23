@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { testCon } from '../lib/socket';
+//import { testCon } from '../lib/socket';
 import { I18n } from '@iobroker/adapter-react-v5';
 
 interface Props {
@@ -32,10 +32,23 @@ export default function TabConnection({
 		try {
 			setTesting(true);
 			setStatus(`⏳ ${I18n.t('connecting')}`);
-			const result = await testCon(socket, `wem-canapi.${instance}`, native);
-			setStatus(`✅ ${I18n.t('connectionSuccessful')}`);
-		} catch (error) {
-			setStatus(`❌ ${I18n.t('connectionFailed')}`);
+			const res = await socket.sendTo(
+				`wem-canapi.${instance}`,
+				'testConnection',
+				{
+					host: native.host,
+					port: native.port || 80,
+					username: native.username || '',
+					password: native.password || '',
+				},
+				10000,
+			);
+			console.log('testConnection result:', res);
+			setStatus(res?.result ? `✅ ${I18n.t('connectionSuccessful')}` : `❌ ${I18n.t('connectionFailed')}`);
+		} catch (e: any) {
+			setStatus(`❌ ${e?.message || I18n.t('connectionFailed')}`);
+		} finally {
+			setTesting(false);
 		}
 	}
 
@@ -61,28 +74,46 @@ export default function TabConnection({
 				{[
 					{
 						id: 'host',
-						label: 'Host / IP-Adresse',
+						label: I18n.t('Host'),
 						type: 'text',
 						placeholder: '192.168.1.100',
-						hint: 'IP oder Hostname',
+						hint: I18n.t('hostHint'),
 					},
 					{
 						id: 'port',
 						label: I18n.t('Port'),
 						type: 'number',
 						placeholder: '80',
-						hint: 'HTTP Port (Standard: 80)',
+						hint: I18n.t('portHint'),
 					},
-					{ id: 'username', label: 'Benutzername', type: 'text', placeholder: 'optional', hint: 'admin' },
-					{ id: 'password', label: 'Passwort', type: 'password', placeholder: 'optional', hint: 'Admin123' },
+					{
+						id: 'username',
+						label: I18n.t('usernameLabel'),
+						type: 'text',
+						placeholder: I18n.t('optional'),
+						hint: '',
+					},
+					{
+						id: 'password',
+						label: I18n.t('passwordLabel'),
+						type: 'password',
+						placeholder: I18n.t('optional'),
+						hint: '',
+					},
 					{
 						id: 'timeout',
-						label: 'Timeout (ms)',
+						label: I18n.t('timeoutLabel'),
 						type: 'number',
 						placeholder: '5000',
-						hint: 'HTTP Request Timeout',
+						hint: I18n.t('timeoutHint'),
 					},
-					{ id: 'requestArraySize', label: 'Batchsize der Abfagen', placeholder: '6', hint: '' },
+					{
+						id: 'requestArraySize',
+						label: I18n.t('requestArraySizeLabel'),
+						type: 'number',
+						placeholder: '6',
+						hint: I18n.t('requestArraySizeHint'),
+					},
 				].map(f => (
 					<div
 						key={f.id}
@@ -121,7 +152,7 @@ export default function TabConnection({
 						cursor: testing ? 'not-allowed' : 'pointer',
 					}}
 				>
-					🔍 Verbindung testen
+					🔍 {I18n.t('testConnection')}
 				</button>
 				{status && (
 					<span

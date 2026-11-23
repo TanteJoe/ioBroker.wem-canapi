@@ -80,6 +80,7 @@ export default class App extends GenericApp<GenericAppProps, AppState> {
 				uk,
 				'zh-cn': zhCn,
 			},
+			socket: { port: parseInt(window.location.port, 10) },
 		});
 		this.state = { ...this.state, activeTab: 0 };
 	}

@@ -79,15 +79,15 @@ export default function TabDatapoints({ native, onChange }: Props): JSX.Element 
 			try {
 				const dps = parseCSV(ev.target?.result as string);
 				if (!dps.length) {
-					showToast('Keine Datenpunkte gefunden', 'error');
+					showToast({ msg: I18n.t('noDatapointsFoundMessage'), type: 'error' });
 					return;
 				}
 				setAllDP(dps);
 				const ids = new Set(dps.map(d => d.id));
 				setSelectedIds(prev => new Set([...prev].filter(id => ids.has(id))));
-				showToast(`✅ ${dps.length} Datenpunkte importiert`, 'ok');
+				showToast(`✅ ${dps.length} ${I18n.t('datapointsImported')}`, 'ok');
 			} catch (e: any) {
-				showToast(`❌ ${e.message}`, 'error');
+				showToast({ msg: I18n.t('noDatapointsFoundMessage'), type: 'error' });
 			}
 		};
 		reader.readAsText(file, 'utf-8');
@@ -108,9 +108,9 @@ export default function TabDatapoints({ native, onChange }: Props): JSX.Element 
 			setAllDP(dps);
 			const ids = new Set(dps.map(d => d.id));
 			setSelectedIds(prev => new Set([...prev].filter(id => ids.has(id))));
-			showToast(`✅ ${dps.length} Datenpunkte importiert`, 'ok');
+			showToast(`✅ ${dps.length} ${I18n.t('datapointsImported')}`, 'ok');
 		} catch (e: any) {
-			showToast(`❌ ${e.message}`, 'error');
+			showToast({ msg: I18n.t('noDatapointsFoundMessage'), type: 'error' });
 		}
 	}, []);
 

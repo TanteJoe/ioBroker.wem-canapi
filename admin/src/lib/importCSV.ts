@@ -94,7 +94,7 @@ function _csvRowToDatapoint(row): Datapoint {
 
 	// Split by comma, but respect quoted values
 	const values = parseCSVRow(row);
-	console.log('Anzahl felder ${values.length}');
+	//console.log('Anzahl felder ${values.length}');
 	if (values.length < 21) {
 		return null;
 	} // Ensure we have all expected fields
@@ -165,7 +165,7 @@ function parseCSVRow(row): string[] {
 			}
 		} else if (char === ';' && !inQuotes) {
 			// End of field
-			console.log('Feld ende gefunden');
+			//console.log('Feld ende gefunden');
 			if (current != 'DCC') {
 				values.push(current);
 			}

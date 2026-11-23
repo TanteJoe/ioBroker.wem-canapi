@@ -179,7 +179,7 @@ class WemCanapi extends Adapter {
 					});
 					this.log.debug('Testing Connection from AdminGUI');
 					const ok = await testClient.testConnection();
-					this._respond(obj, { result: ok, error: ok ? null : 'Verbindung fehlgeschlagen' });
+					this._respond(obj, { result: ok, error: ok ? null : 'Connection failed' });
 				} catch (e) {
 					this._respond(obj, { result: false, error: e.message });
 				}
@@ -262,7 +262,7 @@ class WemCanapi extends Adapter {
 			}
 			if (dp.unit === '°C') {
 				common.min = -50;
-				common.max = 150;
+				common.max = 80;
 			}
 
 			await this.setObjectNotExistsAsync(dp.treePath, {
