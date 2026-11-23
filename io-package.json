@@ -2,8 +2,21 @@
   "common": {
     "name": "wem-canapi",
     "messagebox": true,
-    "version": "0.0.4",
+    "version": "0.1.0",
     "news": {
+      "0.1.0": {
+        "en": "Fixing Connection Test\nmake RequestBatchSize configurable\nTranslation Errors",
+        "de": "Verbindungstest beheben\nRequestBatchSize konfigurierbar\nÜbersetzungsfehler",
+        "ru": "Тест фиксации соединения\nсделать размер запроса/пакета настраиваемым\nОшибки перевода",
+        "pt": "Teste de conexão fixa\nconfigure requestBatchSize\nErros de tradução",
+        "nl": "Verbindingstest repareren\nRequestBatchSize configureerbaar maken\nVertaalfouten",
+        "fr": "Test de fixation\nconfigurer RequestBatchSize\nErreurs de traduction",
+        "it": "Fixing Connection Test\nconfigurare RequestBatchSize\nErrori di traduzione",
+        "es": "Fijar prueba de conexión\nhacer configurable RequestBatchSize\nErrores de traducción",
+        "pl": "Test połączenia naprawczego\nskonfigurować RequestBatchSize\nBłędy tłumaczeniowe",
+        "uk": "Тест фіксації з'єднання\nзробити RequestBatchSize налаштованим\nПомилки перекладу",
+        "zh-cn": "修复连接测试\n使请求批量大小可配置\n翻译错误"
+      },
       "0.0.4": {
         "en": "Verify. Datapoints\nDisable Datapoints on 5 Errors\nReset disabled Datapoint\nTransaltion integrated",
         "de": "Prüfen. Datenpunkte\nDatenpunkte bei 5 Fehlern deaktivieren\nDatapoint zurücksetzen\nIntegrierte Übersetzung",
