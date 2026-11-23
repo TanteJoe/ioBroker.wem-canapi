@@ -131,7 +131,7 @@ The configured IP address in the integration matches the Systemgerät.
 Once these requirements are met, the integration can be added to ioBroker.
 
 ## Changelog
-### ***WORKING IN PROGRSS*** 
+### **WORK IN PROGRESS**
 * (TanteJoe) Fixing Connection Test
 * (TantaJoe) make RequestBatchSize configurable
 * (TanteJoe) Translation Errors
