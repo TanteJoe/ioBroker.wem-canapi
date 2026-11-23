@@ -66,7 +66,13 @@ export default function TabConnection({
 						placeholder: '192.168.1.100',
 						hint: 'IP oder Hostname',
 					},
-					{ id: 'port', label: 'Port', type: 'number', placeholder: '80', hint: 'HTTP Port (Standard: 80)' },
+					{
+						id: 'port',
+						label: I18n.t('Port'),
+						type: 'number',
+						placeholder: '80',
+						hint: 'HTTP Port (Standard: 80)',
+					},
 					{ id: 'username', label: 'Benutzername', type: 'text', placeholder: 'optional', hint: 'admin' },
 					{ id: 'password', label: 'Passwort', type: 'password', placeholder: 'optional', hint: 'Admin123' },
 					{
@@ -76,6 +82,7 @@ export default function TabConnection({
 						placeholder: '5000',
 						hint: 'HTTP Request Timeout',
 					},
+					{ id: 'requestArraySize', label: 'Batchsize der Abfagen', placeholder: '6', hint: '' },
 				].map(f => (
 					<div
 						key={f.id}

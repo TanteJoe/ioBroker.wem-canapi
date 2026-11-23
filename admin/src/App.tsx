@@ -24,6 +24,7 @@ const DEFAULTS = {
 	username: '',
 	password: '',
 	timeout: 5000,
+	requestArraySize: 6,
 	selectedDatapoints: [] as string[],
 	importedDatapoints: [] as any[],
 };

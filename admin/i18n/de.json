@@ -1,7 +1,7 @@
 {
     "Host": "Host",
     "Password": "Passwort",
-    "Port": "Port",
+    "Port": "Netzwerkport",
     "all": "Alle",
     "allDevices": "Alle Geräte",
     "allTypes": "Alle Typen",
