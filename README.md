@@ -132,7 +132,7 @@ Once these requirements are met, the integration can be added to ioBroker.
 
 ## Changelog
 ### **WORK IN PROGRESS**
-* (TanteJoe) password encrypted
+* (TanteJoe) password encrypted (Please reenter the Password in the Admin-Config) 
 * (TanteJoe) fix git Action for test:integration
 
 ### 0.1.0 (2026-11-23)

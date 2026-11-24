@@ -394,6 +394,8 @@ class WemCanapi extends Adapter {
 				// Verbindungsstatus aktualisieren
 				await this.setState('info.connection', anyOk, true);
 				await this.setState('info.syncrunnig', false, true);
+			} else {
+				this.log.warn(`[Poll ${interval}s] Fehler: Sync was allready running`);
 			}
 		} catch (e) {
 			this.log.warn(`[Poll ${interval}s] Fehler: ${e.message}`);
