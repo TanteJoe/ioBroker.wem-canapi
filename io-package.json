@@ -137,6 +137,9 @@
     "username",
     "password"
   ],
+  "encryptedNative": [
+    "password"
+  ],
   "native": {
     "host": "",
     "port": 80,
