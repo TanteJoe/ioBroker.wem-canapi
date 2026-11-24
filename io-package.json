@@ -2,8 +2,21 @@
   "common": {
     "name": "wem-canapi",
     "messagebox": true,
-    "version": "0.1.0",
+    "version": "0.1.1",
     "news": {
+      "0.1.1": {
+        "en": "password encrypted (Please reenter the Password in the Admin-Config) \nfix git Action for test:integration",
+        "de": "Passwort verschlüsselt (Bitte erneut in Admin-Config eingeben) \nFix Git Aktion für Test:Integration",
+        "ru": "пароль зашифрован (повторно введите пароль в Admin-Config) \nисправить действие git для тестирования: интеграция",
+        "pt": "senha criptografada (reinsira a senha no Admin-Config) \nfix git Ação de teste:integração",
+        "nl": "wachtwoord versleuteld (voer het wachtwoord opnieuw in de Admin-Config in) \ngit Action repareren voor test:integration",
+        "fr": "mot de passe crypté (veuillez saisir à nouveau le mot de passe dans Admin-Config) \nfix git Action for test:integration",
+        "it": "password criptata (Reinserisca la password in Admin-Config) \nfix git Action for test:integration",
+        "es": "cifrada con contraseña (vuelva a introducir la contraseña en Admin-Config) \nfix git Action para test:integration",
+        "pl": "zaszyfrowane hasło (wprowadź ponownie hasło w konfiguracji administratora) \nnaprawić git Akcja dla test:integracja",
+        "uk": "пароль зашифрований (Будь ласка, повторно введіть пароль у Admin-Config) \nвиправлено дію git для тестування: інтеграція",
+        "zh-cn": "密码已加密（请在管理员配置中重新输入密码） \n修复 git 操作以进行测试:集成"
+      },
       "0.1.0": {
         "en": "Fixing Connection Test\nmake RequestBatchSize configurable\nTranslation Errors",
         "de": "Verbindungstest beheben\nRequestBatchSize konfigurierbar\nÜbersetzungsfehler",
