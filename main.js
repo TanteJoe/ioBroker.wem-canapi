@@ -225,7 +225,7 @@ class WemCanapi extends Adapter {
 				type: 'boolean',
 				role: 'button',
 				def: false,
-				read: true,
+				read: false,
 				write: true,
 			},
 			native: {},
@@ -290,13 +290,13 @@ class WemCanapi extends Adapter {
 			return 'value.pressure';
 		}
 		if (dt.includes('prozent')) {
-			return 'level';
+			return dp.canWrite ? 'level' : 'value';
 		}
 		if (dt.includes('tageszeit')) {
 			return 'value.time';
 		}
 		if (dt.includes('datum')) {
-			return 'value.date';
+			return 'value';
 		}
 		return dp.canWrite ? 'level' : 'value';
 	}
@@ -410,7 +410,7 @@ class WemCanapi extends Adapter {
 		const filtered = [];
 		for (const dp of datapoints) {
 			const obj = await this._getObj(dp.treePath);
-			if (!obj?.errorcount || obj.errorcount <= 5) {
+			if (!obj?.native.errorcount || obj.native.errorcount <= 5) {
 				filtered.push(dp);
 			}
 		}
@@ -420,9 +420,9 @@ class WemCanapi extends Adapter {
 	async _resetObj(datapoints) {
 		for (const dp of datapoints) {
 			const obj = await this._getObj(dp.treePath);
-			if (obj?.errorcount) {
+			if (obj?.native.errorcount) {
 				obj.common.color = '';
-				obj.errorcount = 0;
+				obj.native.errorcount = 0;
 				await this.setObjectAsync(`${dp.treePath}`, obj);
 			}
 		}

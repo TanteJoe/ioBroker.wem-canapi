@@ -46,7 +46,7 @@ DCC;02;02;2569;02;0002;30;HK;HK3;Vorlaufsolltemperatur Absenk;;Temperatur;0,1;°
 DCC;02;02;252c;02;0002;10;HK;HK3;Vorlaufsolltemperatur Sonderniveau;;Temperatur;0,1;°C;S: 1K;;true;;HK.HK3.Vorlaufsolltemperatur Sonderniveau;;020202252c02000200;2
 DCC;02;02;2559;02;0002;30;HK;HK3;Vorlaufsolltemperatur;;Temperatur;0,1;°C;;;false;;HK.HK3.Vorlaufsolltemperatur;;020202255902000200;2
 DCC;02;02;2507;02;0002;10;HK;HK3;Vorlaufisttemperatur;;Temperatur;0,1;°C;;;false;;HK.HK3.Vorlaufisttemperatur;;020202250702000200;2
-DCC;01;00;27f9;02;0002;10;SG;SG1;N1-Vorgabe über Ethernet ;;Prozent;;;;;false;;SG.SG1.N1-Vorgabe über Ethernet ;;02010027f902000200;
+DCC;01;00;27f9;02;0002;10;SG;SG1;N1-Vorgabe über Ethernet ;;Prozent;;%;;;false;;SG.SG1.N1-Vorgabe über Ethernet ;;02010027f902000200;2
 DCC;01;00;261f;02;0002;10;SG;SG1;Plattenwärmetauschertemperatur (B2);;Temperatur;0,1;°C;;;false;;SG.SG1.Plattenwärmetauschertemperatur (B2);;020100261f02000200;2
 DCC;01;00;2560;02;0002;30;SG;SG1;Pufferspeicher Temperatur oben;;Temperatur;0,1;°C;;;false;;SG.SG1.Pufferspeicher Temperatur oben;;020100256002000200;2
 DCC;01;00;2561;02;0002;30;SG;SG1;Pufferspeicher Temperatur unten;;Temperatur;0,1;°C;;;false;;SG.SG1.Pufferspeicher Temperatur unten;;020100256102000200;2
