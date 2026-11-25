@@ -2,8 +2,21 @@
   "common": {
     "name": "wem-canapi",
     "messagebox": true,
-    "version": "0.1.1",
+    "version": "0.1.2",
     "news": {
+      "0.1.2": {
+        "en": "+ (TanteJoe) Fixing Object Stucture",
+        "de": "+ (TanteJoe) Objektstruktur fixieren",
+        "ru": "+ (TanteJoe) Исправление структуры объекта",
+        "pt": "+ (TanteJoe) Fixar a estrutura",
+        "nl": "+ (TanteJoe) Objectstructuur repareren",
+        "fr": "+ (TanteJoe) Fixing Object Structure",
+        "it": "+ (TanteJoe) Struttura fissa",
+        "es": "+ (TanteJoe) Fijar estructura de objetos",
+        "pl": "+ (TanteJoe) Elementy mocujące",
+        "uk": "+ (TanteJoe) Фіктура об'єкта фіксації",
+        "zh-cn": "+ (TanteJoe) 修复对象结构"
+      },
       "0.1.1": {
         "en": "password encrypted (Please reenter the Password in the Admin-Config) \nfix git Action for test:integration",
         "de": "Passwort verschlüsselt (Bitte erneut in Admin-Config eingeben) \nFix Git Aktion für Test:Integration",
